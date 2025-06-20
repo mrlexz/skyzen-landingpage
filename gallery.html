@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skyzen</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <style type="text/tailwindcss">
+
+      :root {
+        --primary: #016672;       /* Your CMYK color converted to HEX */
+        --primary-light:#83afb4; /* Lighter variant */
+        --primary-light-50: #83afb480;  /* Darker variant */
+      }
+      /* Custom CSS that gets processed by Tailwind */
+      @layer components {
+        .btn-custom {
+          @apply px-6 py-3 rounded-lg font-semibold bg-purple-600 text-white hover:bg-purple-700 transition;
+        }
+        .bg-primary {
+          background-color: var(--primary);
+        }
+        .bg-hover {
+          background-color: var(--primary-light);
+        }
+        .bg-hover-50 {
+          background-color: var(--primary-light-50);
+        }
+        .rounded-bl-4xl {
+          border-bottom-left-radius: 2rem;
+        }
+        .rounded-tr-4xl {
+          border-top-right-radius: 2rem;
+        }
+      }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-bottom: 100px;
+        }
+
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            padding: 8px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            gap: 12px
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 12px 16px;
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 14px;
+            position: relative;
+            border: 2px solid;
+            border-color: var(--primary);
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 20px;
+
+        }
+
+        .tab-btn.active {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.02);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: white;
+            background: var(--primary-light);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border-bottom-left-radius: 60px;
+            border-top-right-radius: 60px;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(39, 174, 96, 0.2), rgba(46, 204, 113, 0.2));
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .view-btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 5px 20px;
+            border-radius: 16px;
+            cursor: pointer;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            font-size: 16px;
+            border: 2px solid;
+            border-color: var(--primary);
+        }
+
+        .gallery-item:hover .view-btn {
+            transform: translateY(0);
+        }
+
+        .view-btn:hover {
+            background: var(--primary);
+            transform: scale(1.05);
+            color: white;
+        }
+
+        .gallery-info {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            transition: all 0.3s ease;
+            max-width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+
+        }
+
+        .gallery-info h3 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .gallery-info p {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        /* Fullscreen Modal */
+        .fullscreen-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+        }
+
+        .fullscreen-modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            width: 80%;
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: white;
+            color: #333;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: -70px;
+        }
+
+        .next-btn {
+            right: -70px;
+        }
+
+        .modal-info {
+            position: absolute;
+            bottom: -60px;
+            left: 0;
+            right: 0;
+            color: white;
+            text-align: center;
+        }
+
+        .modal-info h3 {
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+
+        .video-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            background: white;
+        }
+
+        .video-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background: #000;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .video-item:hover .video-thumbnail img {
+            transform: scale(1.1);
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .play-button:hover {
+            background: white;
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid var(--primary);
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 5px;
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-item:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .video-item:hover .play-button {
+            opacity: 0;
+        }
+
+        .modal-video {
+            width: 100%;
+            height: 100%;
+            max-width: 90vw;
+            max-height: 70vh;
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .prev-btn {
+                left: -50px;
+            }
+            
+            .next-btn {
+                right: -50px;
+            }
+        }
+    </style>
+  </head>
+  <body class="">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <div class="w-full h-full">
+      <div class="container">
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+          <button class="tab-btn active" data-tab="images">Hình ảnh</button>
+          <button class="tab-btn" data-tab="videos">Video</button>
+        </div>
+
+        <!-- Images Tab -->
+        <div class="tab-content active" id="imagesTab">
+          <div class="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" id="galleryGrid"></div>
+        </div>
+
+        <!-- Videos Tab -->
+        <div class="tab-content" id="videosTab">
+          <div class="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" id="videoGrid">
+            <!-- Video items will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Fullscreen Modal -->
+      <div class="fullscreen-modal" id="fullscreenModal">
+        <div class="modal-content">
+          <button class="close-btn" id="closeBtn">&times;</button>
+          <button class="nav-btn prev-btn" id="prevBtn">‹</button>
+          <button class="nav-btn next-btn" id="nextBtn">›</button>
+          <img id="modalImage" src="" alt="" />
+          <video
+            id="modalVideo"
+            class="modal-video"
+            controls
+            style="display: none"
+            autoplay
+          >
+            <source src="" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="modal-info">
+            <h3 id="modalTitle"></h3>
+            <!-- <p id="modalDescription"></p> -->
+          </div>
+        </div>
+      </div>
+      <div id="navbar-container"></div>
+    </div>
+
+    <script>
+      // Sample gallery data
+      const galleryData = [
+        {
+          id: 1,
+          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View01_Prefinal_OPT2_WM.jpg",
+          title: "Tòa nhà chính",
+          description: "Kiến trúc hiện đại với thiết kế bền vững",
+          category: "exterior",
+        },
+        {
+          id: 2,
+          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View03_Prefinal_WM.jpg",
+          title: "Phòng khách sang trọng",
+          description: "Không gian sống tinh tế và ấm cúng",
+          category: "interior",
+        },
+        {
+          id: 3,
+          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View04_Prefinal_WM.jpg",
+          title: "Hồ bơi vô cực",
+          description: "Thư giãn trong không gian xanh mát",
+          category: "amenities",
+        },
+        {
+          id: 4,
+          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View05_Prefinal_WM.jpg",
+          title: "Vườn cảnh quan",
+          description: "Thiên nhiên hòa quyện với kiến trúc",
+          category: "landscape",
+        },
+        {
+          id: 5,
+          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View06_Draft2_WM.jpg",
+          title: "Mặt tiền hiện đại",
+          description: "Thiết kế độc đáo và bắt mắt",
+          category: "exterior",
+        },
+        {
+          id: 6,
+          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View07_Prefinal_WM.jpg",
+          title: "Phòng bếp tinh tế",
+          description: "Không gian nấu nướng đẳng cấp",
+          category: "interior",
+        },
+        {
+          id: 7,
+          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View08_Draft2_OPT1_WM.jpg",
+          title: "Gym & Spa",
+          description: "Chăm sóc sức khỏe toàn diện",
+          category: "amenities",
+        },
+        {
+          id: 8,
+          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View09_Draft2_WM.jpg",
+          title: "Công viên xanh",
+          description: "Oasis xanh giữa lòng thành phố",
+          category: "landscape",
+        },
+      ];
+
+      // Sample video data
+      const videoData = [
+        {
+          id: 1,
+          src: "https://360.ecocentralpark.vn/assets/11-CRQ8VxhR.mp4",
+          thumbnail:
+            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=400&fit=crop",
+          title: "Tour 3D Eco Central Park",
+          description: "Khám phá toàn bộ dự án qua công nghệ 3D hiện đại",
+          duration: "03:45",
+          category: "tour",
+        },
+        {
+          id: 2,
+          src: "https://360.ecocentralpark.vn/assets/11-CRQ8VxhR.mp4",
+          thumbnail:
+            "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop",
+          title: "Phong cách sống xanh",
+          description: "Trải nghiệm cuộc sống trong không gian xanh",
+          duration: "02:30",
+          category: "lifestyle",
+        },
+      ];
+
+      let currentImageIndex = 0;
+      let filteredData = [...galleryData];
+      let currentTab = "images";
+      let isVideoMode = false;
+
+      // Initialize gallery
+      function initGallery() {
+        renderGallery(galleryData);
+        renderVideoGallery(videoData);
+        setupEventListeners();
+      }
+
+      // Render gallery items
+      function renderGallery(data) {
+        const galleryGrid = document.getElementById("galleryGrid");
+        galleryGrid.innerHTML = "";
+
+        data.forEach((item, index) => {
+          const galleryItem = document.createElement("div");
+          galleryItem.className = "gallery-item group";
+          galleryItem.innerHTML = `
+                    <img src="${item.src}" alt="${item.title}" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="transition-all duration-300">
+                            <h3 class="text-white text-xl font-bold">${item.title}</h3>
+                        </div>
+                        <button class="view-btn" onclick="openFullscreen(${index}, false)">Xem ảnh</button>
+                    </div>
+                    <div class="gallery-info group-hover:opacity-0 group-hover:invisible transition-all duration-300">
+                        <h3>${item.title}</h3>
+                    </div>
+                `;
+          galleryGrid.appendChild(galleryItem);
+        });
+
+        if (currentTab === "images") {
+          filteredData = data;
+        }
+      }
+
+      // Render video gallery items
+      function renderVideoGallery(data) {
+        const videoGrid = document.getElementById("videoGrid");
+        videoGrid.innerHTML = "";
+
+        data.forEach((item, index) => {
+          const videoItem = document.createElement("div");
+          videoItem.className = "video-item";
+          videoItem.innerHTML = `
+                    <div class="video-thumbnail">
+                        <img src="${item.thumbnail}" alt="${item.title}" loading="lazy">
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-overlay">
+                        <button class="view-btn" onclick="openFullscreen(${index}, true)">Xem video</button>
+                    </div>
+                `;
+          videoGrid.appendChild(videoItem);
+        });
+
+        if (currentTab === "videos") {
+          filteredData = data;
+        }
+      }
+
+      // Setup event listeners
+      function setupEventListeners() {
+        // Tab buttons
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        tabBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const tabName = btn.getAttribute("data-tab");
+            switchTab(tabName);
+          });
+        });
+
+        // Filter buttons
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const parentFilter = btn.closest(".tab-content");
+            const buttonsInSameTab =
+              parentFilter.querySelectorAll(".filter-btn");
+
+            // Remove active class from buttons in the same tab
+            buttonsInSameTab.forEach((b) => b.classList.remove("active"));
+            // Add active class to clicked button
+            btn.classList.add("active");
+
+            const filter = btn.getAttribute("data-filter");
+            const isVideoFilter = btn.getAttribute("data-target") === "video";
+
+            if (isVideoFilter) {
+              const filteredData =
+                filter === "all"
+                  ? videoData
+                  : videoData.filter((item) => item.category === filter);
+              renderVideoGallery(filteredData);
+            } else {
+              const filteredData =
+                filter === "all"
+                  ? galleryData
+                  : galleryData.filter((item) => item.category === filter);
+              renderGallery(filteredData);
+            }
+          });
+        });
+
+        // Modal controls
+        document
+          .getElementById("closeBtn")
+          .addEventListener("click", closeFullscreen);
+        document
+          .getElementById("prevBtn")
+          .addEventListener("click", showPrevImage);
+        document
+          .getElementById("nextBtn")
+          .addEventListener("click", showNextImage);
+
+        // Close modal when clicking outside
+        document
+          .getElementById("fullscreenModal")
+          .addEventListener("click", (e) => {
+            if (e.target.id === "fullscreenModal") {
+              closeFullscreen();
+            }
+          });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+          if (
+            document
+              .getElementById("fullscreenModal")
+              .classList.contains("active")
+          ) {
+            switch (e.key) {
+              case "Escape":
+                closeFullscreen();
+                break;
+              case "ArrowLeft":
+                showPrevImage();
+                break;
+              case "ArrowRight":
+                showNextImage();
+                break;
+            }
+          }
+        });
+      }
+
+      // Switch between tabs
+      function switchTab(tabName) {
+        currentTab = tabName;
+
+        // Update tab buttons
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        tabBtns.forEach((btn) => {
+          btn.classList.remove("active");
+          if (btn.getAttribute("data-tab") === tabName) {
+            btn.classList.add("active");
+          }
+        });
+
+        // Update tab content
+        const tabContents = document.querySelectorAll(".tab-content");
+        tabContents.forEach((content) => {
+          content.classList.remove("active");
+        });
+
+        if (tabName === "images") {
+          document.getElementById("imagesTab").classList.add("active");
+          filteredData = [...galleryData];
+        } else if (tabName === "videos") {
+          document.getElementById("videosTab").classList.add("active");
+          filteredData = [...videoData];
+        }
+      }
+
+      // Open fullscreen modal
+      function openFullscreen(index, isVideo = false) {
+        currentImageIndex = index;
+        isVideoMode = isVideo;
+        const modal = document.getElementById("fullscreenModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalVideo = document.getElementById("modalVideo");
+        const modalTitle = document.getElementById("modalTitle");
+
+        const currentItem = filteredData[index];
+
+        if (isVideo) {
+          modalImage.style.display = "none";
+          modalVideo.style.display = "block";
+          modalVideo.src = currentItem.src;
+          modalVideo.load();
+        } else {
+          modalVideo.style.display = "none";
+          modalImage.style.display = "block";
+          modalImage.src = currentItem.src || currentItem.thumbnail;
+        }
+
+        modalTitle.textContent = currentItem.title;
+
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      // Close fullscreen modal
+      function closeFullscreen() {
+        const modal = document.getElementById("fullscreenModal");
+        const modalVideo = document.getElementById("modalVideo");
+
+        // Pause video if playing
+        if (isVideoMode && modalVideo) {
+          modalVideo.pause();
+          modalVideo.currentTime = 0;
+        }
+
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      // Show previous image
+      function showPrevImage() {
+        currentImageIndex =
+          (currentImageIndex - 1 + filteredData.length) % filteredData.length;
+        updateModalImage();
+      }
+
+      // Show next image
+      function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % filteredData.length;
+        updateModalImage();
+      }
+
+      // Update modal image
+      function updateModalImage() {
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+
+        const currentItem = filteredData[currentImageIndex];
+        modalImage.src = currentItem.src;
+        modalTitle.textContent = currentItem.title;
+      }
+
+      // Initialize when page loads
+      document.addEventListener("DOMContentLoaded", initGallery);
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
