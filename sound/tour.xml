@@ -1,0 +1,819 @@
+<krpano onstart="playsound(bg, sound/bgsound.mp3,0)" version="1.20.11" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+	<incclude url="%SWFPATH%/skin/debug.xml"/>
+	<incclude url="%SWFPATH%/skin/layout.xml"/>
+	<incclude url="%SWFPATH%/skin/skin.xml" />
+	<include url="%SWFPATH%/module/imghotspot/imghotspot.xml"/>
+	<include url="%SWFPATH%/module/placehotspot/placehotspot.xml"/>
+	<include url="skin/texthotspot.xml" devices="desktop|table"/>
+	<include url="skin/texthotspot_mobile.xml" devices="mobile"/>
+	<include url="%SWFPATH%/module/callout.xml"/>
+	<include url="%SWFPATH%/skin/tooltip.xml"/>
+	<include url="%SWFPATH%/skin/gallery.xml"/>
+	<include url="%SWFPATH%/skin/ga.xml"/>
+	<inclsude url="%SWFPATH%/module/thumb/thumb.xml"/>
+	<include url="skin/data.xml" />
+  	<include url="%SWFPATH%/plugins/showtext.xml" />
+  	<include url="%SWFPATH%/skin/tooltip.xml" />
+	<include url="add_hotspot/plugins_l/add_hotspot.xml" />
+	<include url="floorplan_SM/editor/floorplan_SM.xml" />
+
+	
+	
+	<!--<include url="gokuplugin/sound/sound.xml"/>-->
+	<!-- MENU PLUGIN (BEGIN) --> 
+    <action name="menu_st" autorun="onstart">
+		delayedcall(0.5, includexml(menu/plugins/menu_sm.xml); delayedcall(0.3, menu_st()); );
+	</action>
+	
+	<callout 
+			key="U2FsdGVkX1+ERv32PI3rx8NGOPISwbGkhWEACPGWCeg=" 
+			size="10" 
+			color="0xffffff"
+			rotate="0"
+			distancepopup="3"   
+			min_fov="180" 
+			max_fov="0" 
+			line_lenght="100"
+			line_width="2" 
+			shape="round"
+			circle_active_width="50"
+			animation="center_screen" 
+			text_width="300"
+			callout_bg_border="0,0,0,2"
+			text_x="10"
+			css_title="color:#FFFFFF;font-size:10px;"
+			css_text="color:#fff;font-size:12px;text-shadow: 3px 3px 8px #000000;"
+			title_background="0xcba043"
+			text_background=""
+			title_padding="6.5"
+			text_padding="10 10 0 0"
+		/>
+	<!-- SOUND PLUGIN -->
+	<plugin name="soundinterface"
+        url.html5="plugins/soundinterface.js"
+        url.flash="plugins/soundinterface.swf"
+        preload="true"
+        rootpath=""
+        volume="1.0"
+        mute="false"
+        panningmodel="simple"
+        worldscale="1.0"
+        autopause="true"
+        autounlock="true"
+        />
+	<action name="play">
+ playsound(bg)
+ </action>
+
+ <plugin type="image" keep="true" url="gokuplugin/sound/volume.png" name="sound_on" visible="true"
+	scale="0.18" align="bottomcenter" x="-25" y="55"
+   	alpha="1.0" 
+   	onhover="showtext(Tắt nhạc)" onover="set(alpha,1.0)" onout="set(alpha,0.7)"
+ 	onclick="action(mute); set(plugin[sound_on].visible,false); set(plugin[sound_off].visible,true)"/>
+
+ <plugin type="image" keep="true" name="sound_off" url="gokuplugin/sound/mute.png" visible="false" 
+  scale="0.18"
+  align="bottomcenter" x="-25" y="55"
+  alpha="0.8" 
+  onhover="showtext(Bật nhạc)" onover="set(alpha,1.0)" onout="set(alpha,0.7)"
+ onclick="action(play); set(plugin[sound_off].visible,false); set(plugin[sound_on].visible,true)"/>
+
+ <action name="mute">
+ stopsound(bg)
+ </action>
+    <!-- END SOUND PLUGIN --> 
+	<!-- AUTO ROTATE BUTTON -->
+<plugin name="autorotate_off"
+		visible="true"
+		keep="true"
+        url="photo/autorotate.png"
+        scale="0.18" align="bottomrcenter" x="25" y="55"
+        onhover="showtext(Tắt tự động xoay)"
+        onover="set(alpha,1.0)" onout="set(alpha,0.7)"
+        onclick="switch(autorotate.enabled);
+        set(plugin[autorotate_off].visible,false);
+        set(plugin[autorotate_on].visible,true)"
+
+        />
+
+<plugin name="autorotate_on"
+		visible="false"
+		keep="true"
+		scale="0.18" align="bottomcenter" x="50" y="55"
+        url="photo/autorotateoff.png"
+        onhover="showtext(Bật tự động xoay)"
+        onover="set(alpha,1.0)" onout="set(alpha,0.7)"
+        onclick="switch(autorotate.enabled);
+        set(plugin[autorotate_on].visible,false);
+        set(plugin[autorotate_off].visible,true)"
+        />
+ <!--AUTO ROTATE BUTTON END -->
+	<!-- GOKU BUTTON: TOAN CANH DU AN BUTTON (BEGIN) -->
+
+	<!-- <include url="menu/plugins/edit_menu_sm.xml" /> -->
+
+	<!-- MENU PLUGIN (END) --> 
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	<skin_settings maps="true"
+	               maps_type="google"
+	               maps_bing_api_key=""
+	               maps_google_api_key=""
+	               maps_zoombuttons="false"
+	               maps_loadonfirstuse="true"
+	               gyro="true"
+	               gyro_keeplookingdirection="false"
+	               webvr="true"
+	               webvr_keeplookingdirection="true"
+	               webvr_prev_next_hotspots="true"
+	               autotour="true"
+	               littleplanetintro="false"
+	               followmousecontrol="false"
+	               title="true"
+	               thumbs="true"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="false"
+	               tooltips_thumbs="false"
+	               tooltips_hotspots="false"
+	               tooltips_mapspots="false"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext=""
+	               layout_width="100%"
+	               layout_maxwidth="814"
+	               controlbar_width="-24"
+	               controlbar_height="40"
+	               controlbar_offset="20"
+	               controlbar_offset_closed="-40"
+	               controlbar_overlap.no-fractionalscaling="10"
+	               controlbar_overlap.fractionalscaling="0"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x2D3E50"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="1"
+	               design_bgshadow="0 4 10 0x000000 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="0"
+	               design_text_css="color:#FFFFFF; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	
+		<!-- *** add hotspt *** -->
+
+	<editor_hs pin="agencygoku@gmail.com" />
+
+	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/poligon.xml"/>
+
+<scene name="scene_3da" title="Toàn Cảnh Dự Án [br] Oyster Gành Hào 1" onstart="" thumburl="panos/3da.tiles/thumb.jpg" lat="10.36295639" lng="107.06093750" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/3da.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/3da.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						create_hs_back(scene_3dc,hotspot1,46.360,-12.350,0);
+						create_hs_back(scene_3db,hotspot1,31.420,-3.820,0);
+						create_hs_back(scene_matbang,hotspot1,-5.030,-8.380,0);
+						create_hs_back(scene_can1!1!cuavao,hotspot1,-7.630,6.500,0);
+						
+						
+						
+						
+						"
+						/>
+
+	
+		<hotspot name="hsp_0_1" style="pl_hs_add_hs" onclick="loadscene(scene_can1!1!cuavao, null, MERGE, BLEND(1));" fillcolor2="0x43C4EC" fillalpha="0" borderalpha="0" borderalpha2="0.00" >
+			<point ath="-5.7022" atv="-4.1350" /> 
+			<point ath="-4.3633" atv="-3.9711" /> 
+			<point ath="-4.1967" atv="16.7936" /> 
+			<point ath="-5.2946" atv="16.8302" /> 
+		</hotspot>
+	</scene>
+
+	<scene name="scene_3db" title="Toàn Cảnh Dự Án [br] Oyster Gành Hào 2" onstart="" thumburl="panos/3db.tiles/thumb.jpg" lat="10.36162361" lng="107.06371556" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view  hlookat ="-42.36" vlookat ="12.08" fovtype="MFOV" fov="120.00" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/3db.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/3db.tiles/pano_%s.jpg" />
+		</image>
+			<events name=""
+		onloadcomplete="
+						create_hs_back(scene_3dc,hotspot1,-48.050,20.830,0);
+						create_hs_back(scene_3da,hotspot1,-57.870,11.840,0);
+						create_hs_back(scene_matbang,hotspot1,-36.060,9.770,0);
+						
+						
+						
+						"
+						/>
+
+	</scene>
+
+	<scene name="scene_3dc" title="Toàn Cảnh Dự Án [br] Oyster Gành Hào 3" onstart="" thumburl="panos/3dc.tiles/thumb.jpg" lat="10.36262861" lng="107.06152806" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat ="37.23" vlookat ="39.57" fovtype="MFOV" fov="120.00" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/3dc.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/3dc.tiles/pano_%s.jpg" />
+		</image>
+			<events name=""
+		onloadcomplete="
+						create_hs_back(scene_matbang,hotspot1,41.190,23.560,0);
+						create_hs_back(scene_3da,hotspot1,-54.290,36.120,0);
+						create_hs_back(scene_3db,hotspot1,115.770,6.990,0);
+						
+						
+						"
+						/>
+
+	</scene>
+
+	<scene name="scene_matbang" title="Sơ Đồ Mặt Bằng Dự Án [br] Oyster Gành Hào" onstart="" thumburl="panos/matbang.tiles/thumb.jpg" lat="10.36373000" lng="107.06221500" heading="0.0">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat ="-216.13" vlookat ="89.85" fovtype="MFOV" fov="64.91" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/matbang.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/matbang.tiles/pano_%s.jpg" />
+		</image>
+			<events name=""
+		onloadcomplete="
+						create_hs_back(scene_3da,hotspot1,51.420,40.880,0);
+						create_hs_back(scene_3dc,hotspot1,-45.330,63.930,0);
+						create_hs_back(scene_3db,hotspot1,-462.410,17.080,0);
+						
+						
+						
+						"
+						/>
+
+	</scene>
+	
+	<scene name="scene_can1!1!cuavao" title="can1!1!cuavao" onstart="" thumburl="panos/can1!1!cuavao.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can1!1!cuavao.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can1!1!cuavao.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-1.14" atv="31.46" linkedscene="scene_can1!3!loidi" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="267.73" atv="27.90" linkedscene="scene_can1!2!wc" />
+
+	</scene>
+
+	<scene name="scene_can1!2!wc" title="can1!2!wc" onstart="" thumburl="panos/can1!2!wc.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can1!2!wc.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can1!2!wc.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="84.13" atv="35.68" linkedscene="scene_can1!1!cuavao" />
+
+	</scene>
+
+	<scene name="scene_can1!3!loidi" title="can1!3!loidi" onstart="" thumburl="panos/can1!3!loidi.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can1!3!loidi.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can1!3!loidi.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="0.34" atv="30.01" linkedscene="scene_can1!4!loidi2" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="186.31" atv="42.16" linkedscene="scene_can1!1!cuavao" />
+
+		
+
+	</scene>
+
+	<scene name="scene_can1!4!loidi2" title="can1!4!loidi2" onstart="" thumburl="panos/can1!4!loidi2.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can1!4!loidi2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can1!4!loidi2.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="0.34" atv="30.01" linkedscene="scene_can1!5!loidi3" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="186.31" atv="42.16" linkedscene="scene_can1!3!loidi" />
+	</scene>
+
+	<scene name="scene_can1!5!loidi3" title="can1!5!loidi3" onstart="" thumburl="panos/can1!5!loidi3.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can1!5!loidi3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can1!5!loidi3.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-92.20" atv="20.41" linkedscene="scene_can1!6!loidi4" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="186.31" atv="42.16" linkedscene="scene_can1!4!loidi2" />
+
+	</scene>
+
+	<scene name="scene_can1!6!loidi4" title="can1!6!loidi4" onstart="" thumburl="panos/can1!6!loidi4.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can1!6!loidi4.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can1!6!loidi4.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-271.54" atv="38.01" linkedscene="scene_can1!5!loidi3" />
+	</scene>
+
+	<scene name="scene_can2!1!cuavao" title="can2!1!cuavao" onstart="" thumburl="panos/can2!1!cuavao.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!1!cuavao.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!1!cuavao.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="0.58" atv="22.44" linkedscene="scene_can2!3!loidi" />
+
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="70.39" atv="48.40" linkedscene="scene_can2!2!wc1" />
+
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="271.42" atv="21.12" linkedscene="scene_can2!15!phongngucuavao" />
+
+	
+	</scene>
+
+	
+
+	<scene name="scene_can2!2!wc1" title="can2!2!wc1" onstart="" thumburl="panos/can2!2!wc1.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!2!wc1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!2!wc1.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-69.98" atv="50.71" linkedscene="scene_can2!1!cuavao" />
+
+	</scene>
+
+	<scene name="scene_can2!3!loidi" title="can2!3!loidi" onstart="" thumburl="panos/can2!3!loidi.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!3!loidi.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!3!loidi.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="73.76" atv="38.37" linkedscene="scene_can2!5!phongan" />
+
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="0.28" atv="52.45" linkedscene="scene_can2!4!loidi2" />
+
+	</scene>
+
+	<scene name="scene_can2!4!loidi2" title="can2!4!loidi2" onstart="" thumburl="panos/can2!4!loidi2.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!4!loidi2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!4!loidi2.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="181.25" atv="39.07" linkedscene="scene_can2!3!loidi" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="272.41" atv="42.71" linkedscene="scene_can2!8!phongngudoidienphongan" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="36.79" atv="30.90" linkedscene="scene_can2!6!phongkhach" />
+		<hotspot name="spot5" style="skin_hotspotstyle" ath="119.97" atv="33.53" linkedscene="scene_can2!5!phongan" />
+	</scene>
+
+	<scene name="scene_can2!5!phongan" title="can2!5!phongan" onstart="" thumburl="panos/can2!5!phongan.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!5!phongan.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!5!phongan.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-96.03" atv="39.52" linkedscene="scene_can2!3!loidi" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-62.36" atv="38.21" linkedscene="scene_can2!4!loidi2" />
+
+	</scene>
+
+	<scene name="scene_can2!6!phongkhach" title="can2!6!phongkhach" onstart="" thumburl="panos/can2!6!phongkhach.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!6!phongkhach.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!6!phongkhach.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-149.09" atv="34.68" linkedscene="scene_can2!4!loidi2" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-34.83" atv="47.79" linkedscene="scene_can2!7!phongkhach2" />
+
+	</scene>
+
+	<scene name="scene_can2!7!phongkhach2" title="can2!7!phongkhach2" onstart="" thumburl="panos/can2!7!phongkhach2.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!7!phongkhach2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!7!phongkhach2.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-214.73" atv="42.72" linkedscene="scene_can2!6!phongkhach" />
+
+	</scene>
+
+	<scene name="scene_can2!8!phongngudoidienphongan" title="can2!8!phongngudoidienphongan" onstart="" thumburl="panos/can2!8!phongngudoidienphongan.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!8!phongngudoidienphongan.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!8!phongngudoidienphongan.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="90.07" atv="46.04" linkedscene="scene_can2!3!loidi" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="0.00" atv="39.28" linkedscene="scene_can2!10!phongngudoidienphongan2" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-88.54" atv="49.62" linkedscene="scene_can2!9!wcphongngu" />
+
+	</scene>
+
+	<scene name="scene_can2!9!wcphongngu" title="can2!9!wcphongngu" onstart="" thumburl="panos/can2!9!wcphongngu.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!9!wcphongngu.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!9!wcphongngu.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="90.83" atv="50.51" linkedscene="scene_can2!8!phongngudoidienphongan" />
+
+	</scene>
+	
+	<scene name="scene_can2!10!phongngudoidienphongan2" title="can2!10!phongngudoidienphongan2" onstart="" thumburl="panos/can2!10!phongngudoidienphongan2.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!10!phongngudoidienphongan2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!10!phongngudoidienphongan2.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-180.18" atv="41.45" linkedscene="scene_can2!10!phongngudoidienphongan2" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-3.72" atv="37.51" linkedscene="scene_can2!11!phongngudoidienphongan3" />
+		
+
+	</scene>
+
+	<scene name="scene_can2!11!phongngudoidienphongan3" title="can2!11!phongngudoidienphongan3" onstart="" thumburl="panos/can2!11!phongngudoidienphongan3.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!11!phongngudoidienphongan3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!11!phongngudoidienphongan3.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-185.74" atv="32.93" linkedscene="scene_can2!10!phongngudoidienphongan2" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-98.30" atv="32.13" linkedscene="scene_can2!12!phongngudoidienphongan4" />
+
+	</scene>
+
+	<scene name="scene_can2!12!phongngudoidienphongan4" title="can2!12!phongngudoidienphongan4" onstart="" thumburl="panos/can2!12!phongngudoidienphongan4.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!12!phongngudoidienphongan4.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!12!phongngudoidienphongan4.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="93.99" atv="37.31" linkedscene="scene_can2!11!phongngudoidienphongan3" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="266.87" atv="44.22" linkedscene="scene_can2!13!phongngudoidienphongan5" />
+
+	</scene>
+
+	<scene name="scene_can2!13!phongngudoidienphongan5" title="can2!13!phongngudoidienphongan5" onstart="" thumburl="panos/can2!13!phongngudoidienphongan5.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!13!phongngudoidienphongan5.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!13!phongngudoidienphongan5.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="89.34" atv="32.29" linkedscene="scene_can2!12!phongngudoidienphongan4" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="180.96" atv="40.07" linkedscene="scene_can2!14!phongngudoidienphongan6" />
+
+	</scene>
+
+	<scene name="scene_can2!14!phongngudoidienphongan6" title="can2!14!phongngudoidienphongan6" onstart="" thumburl="panos/can2!14!phongngudoidienphongan6.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!14!phongngudoidienphongan6.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!14!phongngudoidienphongan6.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-11.07" atv="43.49" linkedscene="scene_can2!13!phongngudoidienphongan5" />
+
+	</scene>
+
+	<scene name="scene_can2!15!phongngucuavao" title="can2!15!phongngucuavao" onstart="" thumburl="panos/can2!15!phongngucuavao.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!15!phongngucuavao.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!15!phongngucuavao.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="89.91" atv="54.20" linkedscene="scene_can2!1!cuavao" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="1.68" atv="32.04" linkedscene="scene_can2!16!phongngucuavao2" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-89.57" atv="44.35" linkedscene="scene_can2!17!phongngucuavao3" />
+	</scene>
+
+	<scene name="scene_can2!16!phongngucuavao2" title="can2!16!phongngucuavao2" onstart="" thumburl="panos/can2!16!phongngucuavao2.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!16!phongngucuavao2.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!16!phongngucuavao2.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="171.48" atv="40.08" linkedscene="scene_can2!15!phongngucuavao" />
+
+	</scene>
+
+	<scene name="scene_can2!17!phongngucuavao3" title="can2!17!phongngucuavao3" onstart="" thumburl="panos/can2!17!phongngucuavao3.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!17!phongngucuavao3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!17!phongngucuavao3.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-88.40" atv="45.15" linkedscene="scene_can2!18!phongngucuavao4" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="93.22" atv="35.72" linkedscene="scene_can2!16!phongngucuavao2" />
+
+	</scene>
+
+	<scene name="scene_can2!18!phongngucuavao4" title="can2!18!phongngucuavao4" onstart="" thumburl="panos/can2!18!phongngucuavao4.tiles/thumb.jpg" lat="" lng="" heading="">
+		
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/can2!18!phongngucuavao4.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/can2!18!phongngucuavao4.tiles/pano_%s.jpg" />
+		</image>
+		<events name=""
+		onloadcomplete="
+						"
+						/>
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="128.49" atv="42.77" linkedscene="scene_can2!17!phongngucuavao3" />
+
+	</scene>
+	
+	<!-- GOKU BUTTON: TOAN CANH DU AN BUTTON (BEGIN) -->
+
+		<style name="button"
+	       url="plugins/textfield.swf"
+	       keep="true"
+	       children="false"
+	       height="30"
+	       onloaded="set(alpha,0); set(textblur,15); set(blur,15); tween(alpha,1.0,0.3); tween(textblur,0,0.3); tween(blur,0,0.3);"
+	       onover="tween(alpha,0.7,distance(0.3,0.2));"
+	       onout="tween(alpha,1.0,distance(0.3,0.2));"
+	       autosize="none"
+	       css="p{color:#FFFFFF; font-family:Arial; font-size:18; margin-left:5; margin-right:5; padding:5px; text-align:center; }"
+	       background="true" backgroundcolor="0x901c1e"
+	       bordercolor="0" borderwidth="0"
+	       blur="0"
+	       glow="4"
+	       glowcolor="16777215"
+	       roundedge="5"
+	       shadow="1"
+	       textblur="0" textglow="0" textglowcolor="16777215" textshadow="0"
+	       />
+
+		<plugin name="fullscreen_button" 
+	        style="button"
+	        align="top" x="0" y="30" width="160"
+	        html="[p][b]TOÀN CẢNH DỰ ÁN[/b][/p]"
+	        onclick="loadscene(scene_3da,null,MERGE,BLEND(0.8));"
+	        />
+
+	<!-- GOKU BUTTON: TOAN CANH DU AN BUTTON (END) -->
+
+
+
+	<include url="plugins/gtransition/gtransition_settings.xml" />
+	<include url="plugins/gtransition/gtransition.xml" />
+
+	<include url="plugins/garrows/garrows_settings.xml" />
+	<include url="plugins/garrows/garrows.xml" />
+
+
+</krpano>

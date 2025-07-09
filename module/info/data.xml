@@ -1,0 +1,42 @@
+<krpano>
+
+<data name="html_example_code"><![CDATA[
+		<style>
+		body {background-color: powderblue;}
+		h2   {text-align:center}
+		p    {color: red;}
+		</style>
+
+		<h2>THÔNG TIN ĐỊA ĐIỂM</h2>
+
+		<hr>
+		<img src="http://vietlandmarks.com/upload/142029729454a8044e0707a.jpg" alt="Smiley face" height="auto" width="100%">
+		<ul>
+			<li>With support for browser-based-scrolling by mouse-wheel, scroll-bars and touch-controls.</li>
+			<li>Fully integrated into krpano as &lt;layer&gt; container element.</li>
+		</ul>
+		Here a <a href="https://krpano.com" target="_blank" style="color:#FFFFFF;">link</a> for testing browser events.<br>
+		Here a <span style="text-decoration:underline;cursor:pointer;" onclick="document.getElementById('krpanoSWFObject').call('tween(layer[html_div].x,calc(layer[html_div].x LT 200 ? 200 : 10));');" style="color:#FFFFFF;">link</span> for testing the krpano JS API.<br>
+		<br>
+		And here some text to scroll:<br>
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<br>
+		Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<br>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<br>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<br>
+	]]></data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</krpano>
