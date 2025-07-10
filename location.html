@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skyzen</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <style type="text/tailwindcss">
+      :root {
+        --primary: #016672;       /* Your CMYK color converted to HEX */
+        --primary-light:#83afb4; /* Lighter variant */
+        --primary-light-50: #83afb480;  /* Darker variant */
+      }
+      /* Custom CSS that gets processed by Tailwind */
+      @layer components {
+        .btn-custom {
+          @apply px-6 py-3 rounded-lg font-semibold bg-purple-600 text-white hover:bg-purple-700 transition;
+        }
+        .bg-primary {
+          background-color: var(--primary);
+        }
+        .bg-hover {
+          background-color: var(--primary-light);
+        }
+        .bg-hover-50 {
+          background-color: var(--primary-light-50);
+        }
+        .rounded-bl-4xl {
+          border-bottom-left-radius: 2rem;
+        }
+        .rounded-tr-4xl {
+          border-top-right-radius: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-full h-full">
+      <section class="w-full h-full overflow-auto">
+        <div class="w-max mx-auto h-[calc(100vh-56px)]">
+          <img alt="map" class="aspect-[2000/958] h-full w-full 2xl:w-[100vw]" src="./assets/Map-SkyZen.gif">
+        </div>
+      </section>
+      <div id="navbar-container"></div>
+    </div>
+    <script>
+      // Load navbar.html into the container
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+        });
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
