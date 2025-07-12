@@ -43,6 +43,10 @@
         .text-primary {
           color: var(--primary);
         }
+
+        .activeBtn__line_active {
+          width: 80px !important;
+        }
       }
     </style>
   </head>
@@ -63,7 +67,7 @@
           <div
             class="flex items-center justify-center text-center rounded-bl-2xl rounded-tr-2xl w-16 md:w-24 h-8 md:h-9 p-2 border-2 border-primary transition-all duration-200 bg-active text-white"
           >
-            <span>căn A</span>
+            <span class="text-xs lg:text-sm">căn A</span>
           </div>
           <div
             class="relative transition-all duration-300 activeBtn__line_active w-4 md:w-10"
@@ -73,13 +77,13 @@
             />
           </div></button
         ><button
+          onclick="changeTour('scene_canb!s2')"
           class="flex justify-end items-center capitalize text-xs-8 md:text-xs font-semibold"
         >
           <div
-            onclick="changeTour('scene_canb!s2')"
             class="flex items-center justify-center text-center rounded-bl-2xl rounded-tr-2xl w-16 md:w-24 h-8 md:h-9 p-2 border-2 border-primary transition-all duration-200 bg-secondary hover:bg-hover text-primary hover:text-white"
           >
-            <span>Căn B</span>
+            <span class="text-xs lg:text-sm">Căn B</span>
           </div>
           <div class="relative transition-all duration-300 w-4 md:w-10">
             <hr
@@ -93,7 +97,7 @@
           <div
             class="flex items-center justify-center text-center rounded-bl-2xl rounded-tr-2xl w-16 md:w-24 h-8 md:h-9 p-2 border-2 border-primary transition-all duration-200 bg-secondary hover:bg-hover text-primary hover:text-white"
           >
-            <span>Căn C</span>
+            <span class="text-xs lg:text-sm">Căn C</span>
           </div>
           <div class="relative transition-all duration-300 w-4 md:w-10">
             <hr
@@ -107,7 +111,7 @@
           <div
             class="flex items-center justify-center text-center rounded-bl-2xl rounded-tr-2xl w-16 md:w-24 h-8 md:h-9 p-2 border-2 border-primary transition-all duration-200 bg-secondary hover:bg-hover text-primary hover:text-white"
           >
-            <span>Căn D</span>
+            <span class="text-xs lg:text-sm">Căn D</span>
           </div>
           <div class="relative transition-all duration-300 w-4 md:w-10">
             <hr
@@ -121,7 +125,7 @@
           <div
             class="flex items-center justify-center text-center rounded-bl-2xl rounded-tr-2xl w-16 md:w-24 h-8 md:h-9 p-2 border-2 border-primary transition-all duration-200 bg-secondary hover:bg-hover text-primary hover:text-white"
           >
-            <span>Căn Hộ Officetel</span>
+            <span class="text-xs lg:text-sm">Căn Hộ Officetel</span>
           </div>
           <div class="relative transition-all duration-300 w-4 md:w-10">
             <hr
@@ -142,12 +146,18 @@
         const buttons = document.querySelectorAll('section button');
         buttons.forEach(btn => {
           const div = btn.querySelector('div:first-child');
-          if (btn.getAttribute('onclick').includes(scene)) {
+          const div2 = btn.querySelector('div:last-child');
+          if (btn.getAttribute('onclick')?.includes(scene)) {
+            
             div.classList.remove('bg-secondary', 'text-primary');
             div.classList.add('bg-active', 'text-white');
+
+            div2.classList.add('activeBtn__line_active');
           } else {
             div.classList.remove('bg-active', 'text-white');
             div.classList.add('bg-secondary', 'text-primary');
+            
+            div2.classList.remove('activeBtn__line_active');
           }
         });
       }

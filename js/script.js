@@ -1,7 +1,6 @@
 fetch("navbar.html")
   .then((response) => response.text())
   .then((data) => {
-    console.log("----------------");
     document.getElementById("navbar-container").innerHTML = data;
 
     highlightActiveLink();
@@ -27,6 +26,7 @@ function highlightActiveLink() {
       const span = link.querySelector("span");
       if (span) {
         span.classList.remove("hidden");
+        span.classList.remove("font-light");
         span.classList.add("font-semibold");
       }
     }
