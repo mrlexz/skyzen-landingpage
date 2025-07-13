@@ -1,0 +1,833 @@
+{
+  "T1": {
+    "T1-01": {
+      "name": "01.01-Z",
+      "ll": "66.84",
+      "tt": "61.98",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "SHOPHOUSE",
+      "houseNumber": "1"
+    },
+    "T1-02": {
+      "name": "01.02-Z",
+      "ll": "66.11",
+      "tt": "60.20",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "SHOPHOUSE",
+      "houseNumber": "2"
+    },
+    "T1-03": {
+      "name": "01.03-Z",
+      "ll": "60.19",
+      "tt": "55.25",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "SHOPHOUSE",
+      "houseNumber": "3"
+    },
+    "T1-04": {
+      "name": "01.04-Z",
+      "ll": "60.70",
+      "tt": "55.71",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "SHOPHOUSE",
+      "houseNumber": "4"
+    }
+  },
+  "T2": {
+    "T2-01": {
+      "name": "02.01-Z",
+      "ll": "34.68",
+      "tt": "29.29",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 02",
+      "houseNumber": "1"
+    },
+    "T2-02": {
+      "name": "02.02-Z",
+      "ll": "32.35",
+      "tt": "28.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 01",
+      "houseNumber": "2"
+    },
+    "T2-03": {
+      "name": "02.03-Z",
+      "ll": "31.52",
+      "tt": "27.99",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 01",
+      "houseNumber": "3"
+    },
+    "T2-04": {
+      "name": "02.04-Z",
+      "ll": "31.52",
+      "tt": "27.99",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 01",
+      "houseNumber": "4"
+    },
+    "T2-05": {
+      "name": "02.05-Z",
+      "ll": "31.52",
+      "tt": "27.99",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 01",
+      "houseNumber": "5"
+    },
+    "T2-06": {
+      "name": "02.06-Z",
+      "ll": "31.52",
+      "tt": "27.99",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 01",
+      "houseNumber": "6"
+    },
+    "T2-07": {
+      "name": "02.07-Z",
+      "ll": "31.72",
+      "tt": "28.20",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 01",
+      "houseNumber": "7"
+    },
+    "T2-08": {
+      "name": "02.08-Z",
+      "ll": "31.72",
+      "tt": "28.20",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 01",
+      "houseNumber": "8"
+    },
+    "T2-09": {
+      "name": "02.09-Z",
+      "ll": "31.52",
+      "tt": "27.99",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 01",
+      "houseNumber": "9"
+    },
+    "T2-10": {
+      "name": "02.10-Z",
+      "ll": "33.22",
+      "tt": "29.68",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 02",
+      "houseNumber": "10"
+    },
+    "T2-11": {
+      "name": "02.11-Z",
+      "ll": "34.07",
+      "tt": "29.33",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "officetel 02",
+      "houseNumber": "10"
+    }
+  },
+  "T3": {
+    "T3-01": {
+      "name": "03.01-Z",
+      "ll": "34.68",
+      "tt": "29.29",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Sảnh chung cư"
+    },
+    "T3-02": {
+      "name": "03.02-Z",
+      "ll": "32.35",
+      "tt": "28.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Sảnh Officetel"
+    }
+  },
+  "T6": {
+    "T4-01": {
+      "name": "04.01-Z",
+      "ll": "34.68",
+      "tt": "29.29",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Sảnh chung cư"
+    },
+    "T4-02": {
+      "name": "04.02-Z",
+      "ll": "32.35",
+      "tt": "28.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Sảnh Officetel"
+    }
+  },
+  "T79": {
+    "T6-01": {
+      "name": "06.01-Z",
+      "ll": "33.58",
+      "tt": "31.51",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 03",
+      "houseNumber": "1"
+    },
+    "T6-02": {
+      "name": "06.02-Z",
+      "ll": "33.16",
+      "tt": "29.52",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "2"
+    },
+    "T6-03": {
+      "name": "06.03-Z",
+      "ll": "34.51",
+      "tt": "29.49",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "3"
+    },
+    "T6-04": {
+      "name": "06.04-Z",
+      "ll": "34.51",
+      "tt": "29.49",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "4"
+    },
+    "T6-05": {
+      "name": "06.05-Z",
+      "ll": "33.16",
+      "tt": "29.52",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "5"
+    },
+    "T6-06": {
+      "name": "06.06-Z",
+      "ll": "35.05",
+      "tt": "31.42",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 03",
+      "houseNumber": "6"
+    },
+    "T6-07": {
+      "name": "06.07-Z",
+      "ll": "35.08",
+      "tt": "31.42",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 03",
+      "houseNumber": "7"
+    },
+    "T6-08": {
+      "name": "06.08-Z",
+      "ll": "31.52",
+      "tt": "27.97",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "8"
+    },
+    "T6-09": {
+      "name": "06.09-Z",
+      "ll": "31.52",
+      "tt": "27.97",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "9"
+    },
+    "T6-10": {
+      "name": "06.10-Z",
+      "ll": "33.19",
+      "tt": "29.52",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "10"
+    },
+    "T6-11": {
+      "name": "06.11-Z",
+      "ll": "34.68",
+      "tt": "29.60",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "11"
+    },
+    "T6-12": {
+      "name": "06.12-Z",
+      "ll": "32.09",
+      "tt": "27.94",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "12"
+    },
+    "T6-13": {
+      "name": "06.13-Z",
+      "ll": "31.52",
+      "tt": "27.94",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "13"
+    },
+    "T6-14": {
+      "name": "06.14-Z",
+      "ll": "31.52",
+      "tt": "27.94",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "14"
+    },
+    "T6-15": {
+      "name": "06.15-Z",
+      "ll": "31.52",
+      "tt": "27.94",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "15"
+    },
+    "T6-16": {
+      "name": "06.16-Z",
+      "ll": "31.52",
+      "tt": "27.94",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "16"
+    },
+    "T6-17": {
+      "name": "06.17-Z",
+      "ll": "31.95",
+      "tt": "28.29",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "17"
+    },
+    "T6-18": {
+      "name": "06.18-Z",
+      "ll": "31.95",
+      "tt": "28.29",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "18"
+    },
+    "T6-19": {
+      "name": "06.19-Z",
+      "ll": "31.52",
+      "tt": "27.94",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "19"
+    },
+    "T6-20": {
+      "name": "06.20-Z",
+      "ll": "33.21",
+      "tt": "29.51",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "20"
+    },
+    "T6-21": {
+      "name": "06.21-Z",
+      "ll": "34.51",
+      "tt": "29.43",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "21"
+    },
+    "T6-22": {
+      "name": "06.22-Z",
+      "ll": "34.30",
+      "tt": "29.59",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "22"
+    },
+    "T6-23": {
+      "name": "06.23-Z",
+      "ll": "33.16",
+      "tt": "29.49",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 02",
+      "houseNumber": "23"
+    },
+    "T6-24": {
+      "name": "06.24-Z",
+      "ll": "48.27",
+      "tt": "43.67",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 04",
+      "houseNumber": "24"
+    },
+    "T6-25": {
+      "name": "06.25-Z",
+      "ll": "35.10",
+      "tt": "31.02",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 03",
+      "houseNumber": "25"
+    },
+    "T6-26": {
+      "name": "06.26-Z",
+      "ll": "31.52",
+      "tt": "27.94",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "26"
+    },
+    "T6-27": {
+      "name": "06.27-Z",
+      "ll": "32.20",
+      "tt": "27.94",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Officetel 01",
+      "houseNumber": "27"
+    }
+  },
+  "T1020": {
+    "T14-01": {
+      "name": "14.01-Z",
+      "ll": "35.58",
+      "tt": "31.56",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "1"
+    },
+    "T14-02": {
+      "name": "14.02-Z",
+      "ll": "68.12",
+      "tt": "60.89",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "2"
+    },
+    "T14-03": {
+      "name": "14.03-Z",
+      "ll": "68.12",
+      "tt": "60.86",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "3"
+    },
+    "T14-04": {
+      "name": "14.04-Z",
+      "ll": "35.05",
+      "tt": "31.47",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "4"
+    },
+    "T14-05": {
+      "name": "14.05-Z",
+      "ll": "35.08",
+      "tt": "31.47",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "5"
+    },
+    "T14-06": {
+      "name": "14.06-Z",
+      "ll": "58.94",
+      "tt": "53.12",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "6"
+    },
+    "T14-07": {
+      "name": "14.07-Z",
+      "ll": "68.70",
+      "tt": "60.92",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "7"
+    },
+    "T14-08": {
+      "name": "14.08-Z",
+      "ll": "59.50",
+      "tt": "53.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "8"
+    },
+    "T14-09": {
+      "name": "14.09-Z",
+      "ll": "59.47",
+      "tt": "53.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "9"
+    },
+    "T14-10": {
+      "name": "14.10-Z",
+      "ll": "59.36",
+      "tt": "53.44",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "10"
+    },
+    "T14-11": {
+      "name": "14.11-Z",
+      "ll": "59.36",
+      "tt": "53.44",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "11"
+    },
+    "T14-12": {
+      "name": "14.12-Z",
+      "ll": "68.61",
+      "tt": "60.80",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "12"
+    },
+    "T14-13": {
+      "name": "14.13-Z",
+      "ll": "67.45",
+      "tt": "60.89",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "13"
+    },
+    "T14-14": {
+      "name": "14.14-Z",
+      "ll": "50.00",
+      "tt": "45.33",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-1WC",
+      "houseNumber": "14"
+    },
+    "T14-15": {
+      "name": "14.15-Z",
+      "ll": "36.85",
+      "tt": "32.27",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "15"
+    },
+    "T14-16": {
+      "name": "14.16-Z",
+      "ll": "59.61",
+      "tt": "53.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "16"
+    }
+  },
+  "T2240": {
+    "T15-01": {
+      "name": "15.01-Z",
+      "ll": "35.58",
+      "tt": "31.56",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "1"
+    },
+    "T15-02": {
+      "name": "15.02-Z",
+      "ll": "68.12",
+      "tt": "60.89",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "2"
+    },
+    "T15-03": {
+      "name": "15.03-Z",
+      "ll": "68.12",
+      "tt": "60.86",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "3"
+    },
+    "T15-04": {
+      "name": "15.04-Z",
+      "ll": "35.05",
+      "tt": "31.47",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "4"
+    },
+    "T15-05": {
+      "name": "15.05-Z",
+      "ll": "35.08",
+      "tt": "31.47",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "5"
+    },
+    "T15-06": {
+      "name": "15.06-Z",
+      "ll": "58.94",
+      "tt": "53.12",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "6"
+    },
+    "T15-07": {
+      "name": "15.07-Z",
+      "ll": "68.70",
+      "tt": "60.92",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "7"
+    },
+    "T15-08": {
+      "name": "15.08-Z",
+      "ll": "51.16",
+      "tt": "45.11",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-1WC",
+      "houseNumber": "8"
+    },
+    "T15-09": {
+      "name": "15.09-Z",
+      "ll": "59.47",
+      "tt": "53.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "9"
+    },
+    "T15-10": {
+      "name": "15.10-Z",
+      "ll": "59.47",
+      "tt": "53.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "10"
+    },
+    "T15-11": {
+      "name": "15.11-Z",
+      "ll": "59.36",
+      "tt": "53.44",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "11"
+    },
+    "T15-12": {
+      "name": "15.12-Z",
+      "ll": "59.36",
+      "tt": "53.44",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "12"
+    },
+    "T15-13": {
+      "name": "15.13-Z",
+      "ll": "68.61",
+      "tt": "60.80",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "13"
+    },
+    "T15-14": {
+      "name": "15.14-Z",
+      "ll": "67.45",
+      "tt": "60.89",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "14"
+    },
+    "T15-15": {
+      "name": "15.15-Z",
+      "ll": "50.00",
+      "tt": "45.33",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-1WC",
+      "houseNumber": "15"
+    },
+    "T15-16": {
+      "name": "15.16-Z",
+      "ll": "36.85",
+      "tt": "32.27",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "16"
+    },
+    "T15-17": {
+      "name": "15.17-Z",
+      "ll": "59.61",
+      "tt": "53.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "17"
+    }
+  },
+  "T18": {
+    "T18-01": {
+      "name": "18.01-Z",
+      "ll": "58.98",
+      "tt": "53.12",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "1"
+    },
+    "T18-02": {
+      "name": "18.02-Z",
+      "ll": "68.70",
+      "tt": "60.92",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "2"
+    },
+    "T18-03": {
+      "name": "18.03-Z",
+      "ll": "51.16",
+      "tt": "45.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-1WC",
+      "houseNumber": "3"
+    },
+    "T18-04": {
+      "name": "18.04-Z",
+      "ll": "59.47",
+      "tt": "53.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "4"
+    },
+    "T18-05": {
+      "name": "18.05-Z",
+      "ll": "59.47",
+      "tt": "53.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "5"
+    },
+    "T18-06": {
+      "name": "18.06-Z",
+      "ll": "59.37",
+      "tt": "53.44",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "6"
+    },
+    "T18-07": {
+      "name": "18.07-Z",
+      "ll": "59.37",
+      "tt": "53.44",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "7"
+    },
+    "T18-08": {
+      "name": "18.08-Z",
+      "ll": "68.71",
+      "tt": "60.80",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "8"
+    },
+    "T18-09": {
+      "name": "18.09-Z",
+      "ll": "67.45",
+      "tt": "60.89",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "3PN-2WC",
+      "houseNumber": "9"
+    },
+    "T18-10": {
+      "name": "18.10-Z",
+      "ll": "50.00",
+      "tt": "45.33",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-1WC",
+      "houseNumber": "10"
+    },
+    "T18-11": {
+      "name": "18.11-Z",
+      "ll": "36.84",
+      "tt": "32.27",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "Studio",
+      "houseNumber": "11"
+    },
+    "T18-12": {
+      "name": "18.12-Z",
+      "ll": "59.61",
+      "tt": "53.10",
+      "icon": "",
+      "button": "Xem chi tiết",
+      "type": "2PN-2WC",
+      "houseNumber": "12"
+    }
+  }
+}

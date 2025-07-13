@@ -1,0 +1,88 @@
+<div
+  class="popup-hover-content"
+  style="
+    display: flex;
+    align-items: center;
+    min-width: 170px;
+    max-width: 240px;
+    background: #fff;
+    overflow: unset;
+  "
+>
+  <div
+    class="popup-hover-icon"
+    style="display: flex; align-items: center; justify-content: center"
+  >
+    <img
+      src="{{icon}}"
+      alt="icon"
+      style="
+        width: 40px;
+        height: 80px;
+        object-fit: contain;
+      "
+    />
+  </div>
+  <div
+    class="popup-hover-info"
+    style="
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4px;
+    "
+  >
+    <span
+      style="
+        display: inline-block;
+        background: var(--floor-plan-color);
+        color: #fff;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 6px 0;
+        margin-bottom: 4px;
+        text-align: center;
+      "
+    >
+      {{name}}
+    </span>
+    <div
+      class="popup-hover-ll"
+      style="
+        font-size: 10px;
+        color: var(--floor-plan-color);
+        margin-bottom: 4px;
+        font-weight: bold;
+      "
+    >
+      NFA <b>{{ll}}</b> m²
+    </div>
+    <div
+      class="popup-hover-tt"
+      style="
+        font-size: 10px;
+        color: var(--floor-plan-color);
+        margin-bottom: 2px;
+        font-weight: bold;
+      "
+    >
+      NSA <b>{{tt}}</b> m²
+    </div>
+    <button
+      class="popup-hover-btn"
+      style="
+        width: 100%;
+        padding: 6px 0;
+        background: var(--floor-plan-color);
+        color: #fff;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 10px;
+      "
+    >
+      {{button}}
+    </button>
+  </div>
+</div>

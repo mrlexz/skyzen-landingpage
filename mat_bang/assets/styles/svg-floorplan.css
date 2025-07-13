@@ -1,0 +1,123 @@
+.svg-path-animated {
+  transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1), opacity 0.7s,
+    fill 0.2s, fill-opacity 0.2s, stroke 0.2s, stroke-width 0.2s;
+  cursor: pointer;
+}
+
+.svg-path-hovered {
+  fill: var(--floor-plan-color) !important;
+  fill-opacity: 0.3 !important;
+  stroke: var(--floor-plan-color) !important;
+  stroke-width: 8px !important;
+}
+
+.svg-bg-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  object-fit: contain;
+}
+
+.popup-hover {
+  display: none;
+  position: absolute;
+  z-index: 999;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.popup-hover-content {
+  display: flex;
+  align-items: center;
+  min-width: 170px;
+  max-width: 240px;
+  background: #fff;
+  border: 1px solid #219653;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  transform: translate(20px, -50px);
+  transition: ease-in-out 0.4s;
+}
+
+.popup-hover-content.active {
+  transform: translate(20px, -15px);
+}
+
+.popup-hover-content::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  border-right: 20px solid var(--floor-plan-color);
+  z-index: 2;
+}
+.popup-hover-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 56px;
+  background: none;
+}
+.popup-hover-icon-wrapper img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.popup-hover-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4px 8px 4px 0;
+}
+.popup-hover-title {
+  display: inline-block;
+  background: var(--floor-plan-color);
+  color: #fff;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 6px 0;
+  margin-bottom: 4px;
+  text-align: center;
+  border-radius: 2px;
+}
+.popup-hover-ll,
+.popup-hover-tt {
+  font-size: 11px;
+  color: #025d0f;
+  margin-bottom: 4px;
+  font-weight: bold;
+  text-align: left;
+}
+.popup-hover-btn {
+  width: 100%;
+  padding: 6px 0;
+  background: var(--floor-plan-color);
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 11px;
+  border-radius: 2px;
+  margin-top: 2px;
+}
+
+.popup-hover-icon {
+  transform: translateY(-40px);
+  transition: ease-in-out 0.7s;
+}
+
+.popup-hover-content.active .popup-hover-icon {
+  transform: translateY(0);
+}
