@@ -6,11 +6,10 @@
     <title>Skyzen</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     <style type="text/tailwindcss">
-
       :root {
-        --primary: #016672;       /* Your CMYK color converted to HEX */
-        --primary-light:#83afb4; /* Lighter variant */
-        --primary-light-50: #83afb480;  /* Darker variant */
+        --primary: #016672; /* Your CMYK color converted to HEX */
+        --primary-light: #83afb4; /* Lighter variant */
+        --primary-light-50: #83afb480; /* Darker variant */
       }
       /* Custom CSS that gets processed by Tailwind */
       @layer components {
@@ -35,435 +34,475 @@
       }
     </style>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        padding-bottom: 100px;
+      }
+
+      .tab-navigation {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        padding: 8px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 12px;
+      }
+
+      .tab-btn {
+        flex: 1;
+        padding: 12px 16px;
+        background: transparent;
+        border: none;
+        color: var(--primary);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        font-size: 14px;
+        position: relative;
+        border: 2px solid;
+        border-color: var(--primary);
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+
+      .tab-btn.active {
+        background: var(--primary);
+        color: white;
+        transform: scale(1.02);
+      }
+
+      .tab-btn:hover:not(.active) {
+        color: white;
+        background: var(--primary-light);
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+
+      .gallery-filter {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 50px;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        border-bottom-left-radius: 60px;
+        border-top-right-radius: 60px;
+        background: #f5f5f5;
+        min-height: 250px;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+        position: relative;
+        z-index: 2;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(39, 174, 96, 0.2),
+          rgba(46, 204, 113, 0.2)
+        );
+        opacity: 0;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        z-index: 3;
+      }
+
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+
+      .view-btn {
+        background: white;
+        color: var(--primary);
+        border: none;
+        padding: 5px 20px;
+        border-radius: 16px;
+        cursor: pointer;
+        transform: translateY(20px);
+        transition: all 0.3s ease;
+        font-size: 16px;
+        border: 2px solid;
+        border-color: var(--primary);
+      }
+
+      .gallery-item:hover .view-btn {
+        transform: translateY(0);
+      }
+
+      .view-btn:hover {
+        background: var(--primary);
+        transform: scale(1.05);
+        color: white;
+      }
+
+      .gallery-info {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        transition: all 0.3s ease;
+        max-width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        z-index: 3;
+      }
+
+      .gallery-info h3 {
+        color: white;
+        margin-bottom: 8px;
+        font-size: 1.3rem;
+      }
+
+      .gallery-info p {
+        color: white;
+        font-size: 0.95rem;
+      }
+
+      .image-placeholder {
+        background: linear-gradient(
+          90deg,
+          #f5f5f5 25%,
+          #e8e8e8 37%,
+          #f5f5f5 63%
+        );
+        background-size: 400% 100%;
+        animation: shimmer 1.5s ease infinite;
+        width: 100%;
+        height: 250px;
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: 100% 50%;
         }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            line-height: 1.6;
+        100% {
+          background-position: 0 50%;
         }
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            padding-bottom: 100px;
+      /* Fullscreen Modal */
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        z-index: 9999;
+        backdrop-filter: blur(10px);
+      }
+
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
         }
-
-        .tab-navigation {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            padding: 8px;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            gap: 12px
+        to {
+          opacity: 1;
         }
+      }
 
-        .tab-btn {
-            flex: 1;
-            padding: 12px 16px;
-            background: transparent;
-            border: none;
-            color: var(--primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 14px;
-            position: relative;
-            border: 2px solid;
-            border-color: var(--primary);
-            border-bottom-left-radius: 20px;
-            border-top-right-radius: 20px;
+      .modal-content {
+        width: 80%;
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        animation: zoomIn 0.3s ease;
+      }
 
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.5);
+          opacity: 0;
         }
-
-        .tab-btn.active {
-            background: var(--primary);
-            color: white;
-            transform: scale(1.02);
+        to {
+          transform: scale(1);
+          opacity: 1;
         }
+      }
 
-        .tab-btn:hover:not(.active) {
-            color: white;
-            background: var(--primary-light);
-        }
+      .modal-content img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+      }
 
-        .tab-content {
-            display: none;
-        }
+      .close-btn {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        background: white;
+        color: #333;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
 
-        .tab-content.active {
-            display: block;
-        }
+      .close-btn:hover {
+        background: #ff6b6b;
+        color: white;
+        transform: scale(1.1);
+      }
 
-        .gallery-filter {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-            gap: 10px;
+      .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-btn:hover {
+        background: white;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .prev-btn {
+        left: -70px;
+      }
+
+      .next-btn {
+        right: -70px;
+      }
+
+      .modal-info {
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        right: 0;
+        color: white;
+        text-align: center;
+      }
+
+      .modal-info h3 {
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+      }
+
+      .video-item {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        background: white;
+      }
+
+      .video-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .video-thumbnail {
+        position: relative;
+        width: 100%;
+        height: 250px;
+        background: #000;
+        overflow: hidden;
+      }
+
+      .video-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .video-item:hover .video-thumbnail img {
+        transform: scale(1.1);
+      }
+
+      .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .play-button:hover {
+        background: white;
+        transform: translate(-50%, -50%) scale(1.1);
+        box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+      }
+
+      .play-button::after {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 20px solid var(--primary);
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        margin-left: 5px;
+      }
+
+      .video-duration {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .video-item:hover .video-overlay {
+        opacity: 1;
+      }
+
+      .video-item:hover .play-button {
+        opacity: 0;
+      }
+
+      .modal-video {
+        width: 100%;
+        height: 100%;
+        max-width: 90vw;
+        max-height: 70vh;
+        border-radius: 10px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2rem;
         }
 
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            border-bottom-left-radius: 60px;
-            border-top-right-radius: 60px;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(39, 174, 96, 0.2), rgba(46, 204, 113, 0.2));
-            opacity: 0;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .view-btn {
-            background: white;
-            color: var(--primary);
-            border: none;
-            padding: 5px 20px;
-            border-radius: 16px;
-            cursor: pointer;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            font-size: 16px;
-            border: 2px solid;
-            border-color: var(--primary);
-        }
-
-        .gallery-item:hover .view-btn {
-            transform: translateY(0);
-        }
-
-        .view-btn:hover {
-            background: var(--primary);
-            transform: scale(1.05);
-            color: white;
-        }
-
-        .gallery-info {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            transition: all 0.3s ease;
-            max-width: 90%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-
-        }
-
-        .gallery-info h3 {
-            color: white;
-            margin-bottom: 8px;
-            font-size: 1.3rem;
-        }
-
-        .gallery-info p {
-            color: white;
-            font-size: 0.95rem;
-        }
-
-        /* Fullscreen Modal */
-        .fullscreen-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 9999;
-            backdrop-filter: blur(10px);
-        }
-
-        .fullscreen-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            width: 80%;
-            position: relative;
-            max-width: 90vw;
-            max-height: 90vh;
-            animation: zoomIn 0.3s ease;
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.5); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        .modal-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: -50px;
-            right: 0;
-            background: white;
-            color: #333;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .close-btn:hover {
-            background: #ff6b6b;
-            color: white;
-            transform: scale(1.1);
+        .filter-btn {
+          padding: 10px 20px;
+          font-size: 14px;
         }
 
         .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .nav-btn:hover {
-            background: white;
-            transform: translateY(-50%) scale(1.1);
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
         }
 
         .prev-btn {
-            left: -70px;
+          left: -50px;
         }
 
         .next-btn {
-            right: -70px;
+          right: -50px;
         }
-
-        .modal-info {
-            position: absolute;
-            bottom: -60px;
-            left: 0;
-            right: 0;
-            color: white;
-            text-align: center;
-        }
-
-        .modal-info h3 {
-            margin-bottom: 5px;
-            font-size: 1.5rem;
-        }
-
-        .video-item {
-            position: relative;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            background: white;
-        }
-
-        .video-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .video-thumbnail {
-            position: relative;
-            width: 100%;
-            height: 250px;
-            background: #000;
-            overflow: hidden;
-        }
-
-        .video-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .video-item:hover .video-thumbnail img {
-            transform: scale(1.1);
-        }
-
-        .play-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px;
-            height: 70px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .play-button:hover {
-            background: white;
-            transform: translate(-50%, -50%) scale(1.1);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-        }
-
-        .play-button::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 20px solid var(--primary);
-            border-top: 12px solid transparent;
-            border-bottom: 12px solid transparent;
-            margin-left: 5px;
-        }
-
-        .video-duration {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .video-item:hover .video-overlay {
-            opacity: 1;
-        }
-
-        .video-item:hover .play-button {
-            opacity: 0;
-        }
-
-        .modal-video {
-            width: 100%;
-            height: 100%;
-            max-width: 90vw;
-            max-height: 70vh;
-            border-radius: 10px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-            }
-            
-            .filter-btn {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-            
-            .nav-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 16px;
-            }
-            
-            .prev-btn {
-                left: -50px;
-            }
-            
-            .next-btn {
-                right: -50px;
-            }
-        }
+      }
     </style>
   </head>
   <body class="">
@@ -479,12 +518,18 @@
 
         <!-- Images Tab -->
         <div class="tab-content active" id="imagesTab">
-          <div class="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" id="galleryGrid"></div>
+          <div
+            class="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            id="galleryGrid"
+          ></div>
         </div>
 
         <!-- Videos Tab -->
         <div class="tab-content" id="videosTab">
-          <div class="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" id="videoGrid">
+          <div
+            class="gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            id="videoGrid"
+          >
             <!-- Video items will be populated by JavaScript -->
           </div>
         </div>
@@ -509,7 +554,6 @@
           </video>
           <div class="modal-info">
             <h3 id="modalTitle"></h3>
-            <!-- <p id="modalDescription"></p> -->
           </div>
         </div>
       </div>
@@ -521,62 +565,530 @@
       const galleryData = [
         {
           id: 1,
-          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View01_Prefinal_OPT2_WM.jpg",
-          title: "Tòa nhà chính",
-          description: "Kiến trúc hiện đại với thiết kế bền vững",
-          category: "exterior",
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/3D_GOLF/01.jpg",
+          title: "Sân golf 3D",
+          description: "View 1 sân golf 3D",
+          category: "3d_golf",
         },
         {
           id: 2,
-          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View03_Prefinal_WM.jpg",
-          title: "Phòng khách sang trọng",
-          description: "Không gian sống tinh tế và ấm cúng",
-          category: "interior",
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/3D_GOLF/3.jpg",
+          title: "Sân golf 3D",
+          description: "View 3 sân golf 3D",
+          category: "3d_golf",
         },
         {
           id: 3,
-          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View04_Prefinal_WM.jpg",
-          title: "Hồ bơi vô cực",
-          description: "Thư giãn trong không gian xanh mát",
-          category: "amenities",
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/3D_GOLF/4.jpg",
+          title: "Sân golf 3D",
+          description: "View 4 sân golf 3D",
+          category: "3d_golf",
         },
         {
           id: 4,
-          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View05_Prefinal_WM.jpg",
-          title: "Vườn cảnh quan",
-          description: "Thiên nhiên hòa quyện với kiến trúc",
-          category: "landscape",
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/3D_GOLF/6.jpg",
+          title: "Sân golf 3D",
+          description: "View 6 sân golf 3D",
+          category: "3d_golf",
         },
         {
           id: 5,
-          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View06_Draft2_WM.jpg",
-          title: "Mặt tiền hiện đại",
-          description: "Thiết kế độc đáo và bắt mắt",
-          category: "exterior",
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/3D_GOLF/7.jpg",
+          title: "Sân golf 3D",
+          description: "View 7 sân golf 3D",
+          category: "3d_golf",
         },
         {
           id: 6,
-          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View07_Prefinal_WM.jpg",
-          title: "Phòng bếp tinh tế",
-          description: "Không gian nấu nướng đẳng cấp",
-          category: "interior",
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/3D_GOLF/T1.png",
+          title: "Sân golf 3D",
+          description: "Thumbnail 1 sân golf 3D",
+          category: "3d_golf",
         },
         {
           id: 7,
-          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View08_Draft2_OPT1_WM.jpg",
-          title: "Gym & Spa",
-          description: "Chăm sóc sức khỏe toàn diện",
-          category: "amenities",
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/3D_GOLF/T2.png",
+          title: "Sân golf 3D",
+          description: "Thumbnail 2 sân golf 3D",
+          category: "3d_golf",
         },
         {
           id: 8,
-          src: "https://3dscanning.vn/image/Lumious_Prime%20Master_View09_Draft2_WM.jpg",
-          title: "Công viên xanh",
-          description: "Oasis xanh giữa lòng thành phố",
-          category: "landscape",
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/3D_GOLF/T3.png",
+          title: "Sân golf 3D",
+          description: "Thumbnail 3 sân golf 3D",
+          category: "3d_golf",
+        },
+        {
+          id: 9,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/3D_GOLF/T4.png",
+          title: "Sân golf 3D",
+          description: "Thumbnail 4 sân golf 3D",
+          category: "3d_golf",
+        },
+        {
+          id: 10,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/CO_WORKING_SPACE/Image_1.jpg",
+          title: "Không gian làm việc chung",
+          description: "Hình ảnh 1 không gian làm việc chung",
+          category: "co_working_space",
+        },
+        {
+          id: 11,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/CO_WORKING_SPACE/Scene%2017.jpg",
+          title: "Không gian làm việc chung",
+          description: "Scene 17 không gian làm việc chung",
+          category: "co_working_space",
+        },
+        {
+          id: 12,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/CO_WORKING_SPACE/Scene%2018.jpg",
+          title: "Không gian làm việc chung",
+          description: "Scene 18 không gian làm việc chung",
+          category: "co_working_space",
+        },
+        {
+          id: 13,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/CO_WORKING_SPACE/Scene%2019_1.jpg",
+          title: "Không gian làm việc chung",
+          description: "Scene 19 không gian làm việc chung",
+          category: "co_working_space",
+        },
+        {
+          id: 14,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/GOURMET_ROOM/1%20ps.jpg",
+          title: "Phòng ẩm thực",
+          description: "Hình ảnh phòng ẩm thực",
+          category: "gourmet_room",
+        },
+        {
+          id: 15,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/GYM/01pts.jpg",
+          title: "Phòng gym",
+          description: "View 1 phòng gym",
+          category: "gym",
+        },
+        {
+          id: 16,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/GYM/02.jpg",
+          title: "Phòng gym",
+          description: "View 2 phòng gym",
+          category: "gym",
+        },
+        {
+          id: 17,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/GYM/03.jpg",
+          title: "Phòng gym",
+          description: "View 3 phòng gym",
+          category: "gym",
+        },
+        {
+          id: 18,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/GYM/04.jpg",
+          title: "Phòng gym",
+          description: "View 4 phòng gym",
+          category: "gym",
+        },
+        {
+          id: 19,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/GYM/05.jpg",
+          title: "Phòng gym",
+          description: "View 5 phòng gym",
+          category: "gym",
+        },
+        {
+          id: 20,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/GYM/06.jpg",
+          title: "Phòng gym",
+          description: "View 6 phòng gym",
+          category: "gym",
+        },
+        {
+          id: 21,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/GYM/07.jpg",
+          title: "Phòng gym",
+          description: "View 7 phòng gym",
+          category: "gym",
+        },
+        {
+          id: 22,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/GYM/08.jpg",
+          title: "Phòng gym",
+          description: "View 8 phòng gym",
+          category: "gym",
+        },
+        {
+          id: 23,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/KARAOKE/1.png",
+          title: "Phòng karaoke",
+          description: "View 1 phòng karaoke",
+          category: "karaoke",
+        },
+        {
+          id: 24,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/KARAOKE/2.png",
+          title: "Phòng karaoke",
+          description: "View 2 phòng karaoke",
+          category: "karaoke",
+        },
+        {
+          id: 25,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/KARAOKE/Scene%208_2.png",
+          title: "Phòng karaoke",
+          description: "Scene 8 phòng karaoke",
+          category: "karaoke",
+        },
+        {
+          id: 26,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/LIVESTREAM_BOOTH/CO_WORKING_0.1.jpg",
+          title: "Livestream Booth",
+          description: "Co-working view 0.1",
+          category: "livestream_booth",
+        },
+        {
+          id: 27,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/LIVESTREAM_BOOTH/CO_WORKING_0.2.jpg",
+          title: "Livestream Booth",
+          description: "Co-working view 0.2",
+          category: "livestream_booth",
+        },
+        {
+          id: 28,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/LIVESTREAM_BOOTH/CO_WORKING_0.3.jpg",
+          title: "Livestream Booth",
+          description: "Co-working view 0.3",
+          category: "livestream_booth",
+        },
+        {
+          id: 29,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/LIVESTREAM_BOOTH/Image_1.jpg",
+          title: "Livestream Booth",
+          description: "Image 1",
+          category: "livestream_booth",
+        },
+        {
+          id: 30,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/i_2.jpg",
+          title: "Main Lobby",
+          description: "Image 2",
+          category: "main_lobby",
+        },
+        {
+          id: 31,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%203_2.jpg",
+          title: "Main Lobby",
+          description: "Scene 3",
+          category: "main_lobby",
+        },
+        {
+          id: 32,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%205_2.jpg",
+          title: "Main Lobby",
+          description: "Scene 5",
+          category: "main_lobby",
+        },
+        {
+          id: 33,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%207_2.jpg",
+          title: "Main Lobby",
+          description: "Scene 7",
+          category: "main_lobby",
+        },
+        {
+          id: 34,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%209_2.jpg",
+          title: "Main Lobby",
+          description: "Scene 9",
+          category: "main_lobby",
+        },
+        {
+          id: 35,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%2011_2.jpg",
+          title: "Main Lobby",
+          description: "Scene 11",
+          category: "main_lobby",
+        },
+        {
+          id: 36,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%2012_2.jpg",
+          title: "Main Lobby",
+          description: "Scene 12",
+          category: "main_lobby",
+        },
+        {
+          id: 37,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%2013_2.jpg",
+          title: "Main Lobby",
+          description: "Scene 13",
+          category: "main_lobby",
+        },
+        {
+          id: 38,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%2014_2.jpg",
+          title: "Main Lobby",
+          description: "Scene 14",
+          category: "main_lobby",
+        },
+        {
+          id: 39,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%2015_2.jpg",
+          title: "Main Lobby",
+          description: "Scene 15",
+          category: "main_lobby",
+        },
+        {
+          id: 40,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%2017_1.jpg",
+          title: "Main Lobby",
+          description: "Scene 17",
+          category: "main_lobby",
+        },
+        {
+          id: 41,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%2018_1.jpg",
+          title: "Main Lobby",
+          description: "Scene 18",
+          category: "main_lobby",
+        },
+        {
+          id: 42,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%2019_1.jpg",
+          title: "Main Lobby",
+          description: "Scene 19",
+          category: "main_lobby",
+        },
+        {
+          id: 43,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/MAIN_LOBBY/Scene%2020_1.jpg",
+          title: "Main Lobby",
+          description: "Scene 20",
+          category: "main_lobby",
+        },
+        {
+          id: 44,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/BG_03073.png",
+          title: "Phối cảnh dự án",
+          description: "Background 03073",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 45,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/Gate_V3.jpg",
+          title: "Phối cảnh dự án",
+          description: "Gate version 3",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 46,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/Hi%CC%80nh%20cha%CC%82%CC%81t%20lu%CC%9Bo%CC%9B%CC%A3ng%20cao.png",
+          title: "Phối cảnh dự án",
+          description: "Hình chất lượng cao",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 47,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/KIM%20SON%202_FACADE%20View%201.jpg",
+          title: "Phối cảnh dự án",
+          description: "Kim Sơn 2 Facade View 1",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 48,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/KIM%20SON%202_FACADE%20View%202.jpg",
+          title: "Phối cảnh dự án",
+          description: "Kim Sơn 2 Facade View 2",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 49,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/render_skyzen_draft.jpg",
+          title: "Phối cảnh dự án",
+          description: "Render Skyzen draft",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 50,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/TT1b%20copy%201.png",
+          title: "Phối cảnh dự án",
+          description: "TT1b copy 1",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 51,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/TT2%20copy%202.png",
+          title: "Phối cảnh dự án",
+          description: "TT2 copy 2",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 52,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/z6697788732364_5e454a8a7d6f1c8745dbae6ca27e0511.jpg",
+          title: "Phối cảnh dự án",
+          description: "View 1",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 53,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/z6697788929984_e080ea70b6aaa03716089d20ed50c3e0.jpg",
+          title: "Phối cảnh dự án",
+          description: "View 2",
+          category: "phoi_canh_du_an",
+        },
+        {
+          id: 54,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/PLAYGROUND/Scene%202_1.jpg",
+          title: "Playground",
+          description: "Scene 2 view 1",
+          category: "playground",
+        },
+        {
+          id: 55,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/PLAYGROUND/Scene%202_2.jpg",
+          title: "Playground",
+          description: "Scene 2 view 2",
+          category: "playground",
+        },
+        {
+          id: 56,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/PLAYGROUND/Scene%202_3.jpg",
+          title: "Playground",
+          description: "Scene 2 view 3",
+          category: "playground",
+        },
+        {
+          id: 57,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/PLAYGROUND/Scene%202_4.jpg",
+          title: "Playground",
+          description: "Scene 2 view 4",
+          category: "playground",
+        },
+        {
+          id: 58,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/PLAYGROUND/Scene%202_5.jpg",
+          title: "Playground",
+          description: "Scene 2 view 5",
+          category: "playground",
+        },
+        {
+          id: 59,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/PLAYGROUND/Scene%202_7.jpg",
+          title: "Playground",
+          description: "Scene 2 view 7",
+          category: "playground",
+        },
+        {
+          id: 60,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/PLAYGROUND/Scene%202_8.jpg",
+          title: "Playground",
+          description: "Scene 2 view 8",
+          category: "playground",
+        },
+        {
+          id: 61,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/SAUNA/sauna%20(1).jpg",
+          title: "Sauna",
+          description: "Sauna view 1",
+          category: "sauna",
+        },
+        {
+          id: 62,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/SAUNA/sauna%20(2).jpg",
+          title: "Sauna",
+          description: "Sauna view 2",
+          category: "sauna",
+        },
+        {
+          id: 63,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/SAUNA/sauna%20(3).jpg",
+          title: "Sauna",
+          description: "Sauna view 3",
+          category: "sauna",
+        },
+        {
+          id: 64,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/tien_ich_38/Ho%20boi%201%20copy.png",
+          title: "Tiện ích 38",
+          description: "Hồ bơi 1 copy",
+          category: "tien_ich_38",
+        },
+        {
+          id: 65,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/tien_ich_38/z6653489983940_781b8242d05039e9ed353f9af20999e9.jpg",
+          title: "Tiện ích 38",
+          description: "View 1",
+          category: "tien_ich_38",
+        },
+        {
+          id: 66,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/tien_ich_38/z6653489996860_5aeb6399ec5d5a3ea6fafe1f88a39de0.jpg",
+          title: "Tiện ích 38",
+          description: "View 2",
+          category: "tien_ich_38",
+        },
+        {
+          id: 67,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/tien_ich_38/z6697789485589_53cf73ab63202065635ba84554d3129c.jpg",
+          title: "Tiện ích 38",
+          description: "View 3",
+          category: "tien_ich_38",
+        },
+        {
+          id: 68,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/tien_ich_38/z6697789685310_3705c0d397b7916923bf829d759350d.png",
+          title: "Tiện ích 38",
+          description: "View 4",
+          category: "tien_ich_38",
+        },
+        {
+          id: 69,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/tien_ich_38/z6697789685310_3705c0d397b7916923bf829d7593503b.jpg",
+          title: "Tiện ích 38",
+          description: "View 5",
+          category: "tien_ich_38",
+        },
+        {
+          id: 70,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/YOGA_PILATES/250620%20yoga%201%20ps.png",
+          title: "Yoga Pilates",
+          description: "Yoga 1",
+          category: "yoga_pilates",
+        },
+        {
+          id: 71,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/YOGA_PILATES/pilates.png",
+          title: "Yoga Pilates",
+          description: "Pilates",
+          category: "yoga_pilates",
+        },
+        {
+          id: 72,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/YOGA_PILATES/pilates%201.png",
+          title: "Yoga Pilates",
+          description: "Pilates 1",
+          category: "yoga_pilates",
+        },
+        {
+          id: 73,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/YOGA_PILATES/Scene%2012_2.png",
+          title: "Yoga Pilates",
+          description: "Scene 12",
+          category: "yoga_pilates",
+        },
+        {
+          id: 74,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/YOGA_PILATES/Scene%2013_1.png",
+          title: "Yoga Pilates",
+          description: "Scene 13",
+          category: "yoga_pilates",
+        },
+        {
+          id: 75,
+          src: "https://3dscanning.vn/360/skyzenv2/gallery/YOGA_PILATES/Scene%2015_1.png",
+          title: "Yoga Pilates",
+          description: "Scene 15",
+          category: "yoga_pilates",
         },
       ];
-
       // Sample video data
       const videoData = [
         {
@@ -605,40 +1117,131 @@
       let filteredData = [...galleryData];
       let currentTab = "images";
       let isVideoMode = false;
+      let observer;
 
-      // Initialize gallery
+      let currentDisplayCount = 10;
+      const loadMoreStep = 5;
+
+      // Initialize gallery with virtualization
       function initGallery() {
-        renderGallery(galleryData);
+        renderVirtualizedGallery(galleryData);
         renderVideoGallery(videoData);
         setupEventListeners();
       }
 
-      // Render gallery items
-      function renderGallery(data) {
+      // Virtualized gallery renderer
+      function renderVirtualizedGallery(data) {
         const galleryGrid = document.getElementById("galleryGrid");
         galleryGrid.innerHTML = "";
 
-        data.forEach((item, index) => {
-          const galleryItem = document.createElement("div");
-          galleryItem.className = "gallery-item group";
-          galleryItem.innerHTML = `
-                    <img src="${item.src}" alt="${item.title}" loading="lazy">
-                    <div class="gallery-overlay">
-                        <div class="transition-all duration-300">
-                            <h3 class="text-white text-xl font-bold">${item.title}</h3>
-                        </div>
-                        <button class="view-btn" onclick="openFullscreen(${index}, false)">Xem ảnh</button>
-                    </div>
-                    <div class="gallery-info group-hover:opacity-0 group-hover:invisible transition-all duration-300">
-                        <h3>${item.title}</h3>
-                    </div>
-                `;
-          galleryGrid.appendChild(galleryItem);
+        const displayData = data.slice(0, currentDisplayCount);
+
+        // Create placeholder elements for all items
+        displayData.forEach((item, index) => {
+          const placeholder = document.createElement("div");
+          placeholder.className = "gallery-item group";
+          placeholder.style.minHeight = "250px";
+          placeholder.dataset.index = index;
+          placeholder.innerHTML = `
+            <div class="image-placeholder"></div>
+          `;
+          galleryGrid.appendChild(placeholder);
         });
 
-        if (currentTab === "images") {
-          filteredData = data;
+        // Add Load More button if there are more items
+        if (currentDisplayCount < data.length) {
+          const loadMoreBtn = document.createElement("div");
+          loadMoreBtn.className = "col-span-full flex justify-center mt-8";
+          loadMoreBtn.innerHTML = `
+              <button onclick="loadMoreItems()" class="btn-custom bg-primary text-white px-8 py-3 rounded-lg hover:bg-hover transition-all duration-300">
+                Xem thêm (${Math.min(
+                  loadMoreStep,
+                  data.length - currentDisplayCount
+                )} ảnh)
+              </button>
+            `;
+          galleryGrid.appendChild(loadMoreBtn);
         }
+
+        // Set up intersection observer cho items đã hiển thị
+        if (observer) {
+          observer.disconnect();
+        }
+
+        // Set up intersection observer
+        observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const index = parseInt(entry.target.dataset.index);
+                loadGalleryItem(index);
+              } else {
+                const index = parseInt(entry.target.dataset.index);
+                unloadGalleryItem(index);
+              }
+            });
+          },
+          {
+            rootMargin: "200px 0px",
+            threshold: 0.01,
+          }
+        );
+
+        // Observe all placeholders
+        document.querySelectorAll(".gallery-item").forEach((item) => {
+          observer.observe(item);
+        });
+
+        filteredData = data;
+      }
+
+      function loadMoreItems() {
+        currentDisplayCount += loadMoreStep;
+        if (currentTab === "images") {
+          renderVirtualizedGallery(galleryData);
+        } else if (currentTab === "videos") {
+          renderVideoGallery(videoData);
+        }
+      }
+
+      // Load actual gallery item when it comes into view
+      function loadGalleryItem(index) {
+        const item = filteredData[index];
+        const placeholder = document.querySelector(
+          `.gallery-item[data-index="${index}"]`
+        );
+
+        if (!placeholder || placeholder.classList.contains("loaded")) return;
+
+        placeholder.innerHTML = `
+          <img src="${item.src}" 
+               alt="${item.title}" 
+               loading="lazy">
+          <div class="gallery-overlay">
+              <div class="transition-all duration-300">
+                  <h3 class="text-white text-xl font-bold">${item.title}</h3>
+              </div>
+              <button class="view-btn" onclick="openFullscreen(${index}, false)">Xem ảnh</button>
+          </div>
+          <div class="gallery-info group-hover:opacity-0 group-hover:invisible transition-all duration-300">
+              <h3 class="px-2 backdrop-blur-sm">${item.title}</h3>
+          </div>
+        `;
+        placeholder.classList.add("loaded");
+      }
+
+      // Unload gallery item when it leaves viewport
+      function unloadGalleryItem(index) {
+        const placeholder = document.querySelector(
+          `.gallery-item[data-index="${index}"]`
+        );
+        if (!placeholder || !placeholder.classList.contains("loaded")) return;
+
+        // Keep the loaded class to prevent flickering
+        placeholder.innerHTML = `
+          <div class="image-placeholder"></div>
+        `;
+        placeholder.classList.remove("loaded");
       }
 
       // Render video gallery items
@@ -646,20 +1249,42 @@
         const videoGrid = document.getElementById("videoGrid");
         videoGrid.innerHTML = "";
 
-        data.forEach((item, index) => {
+        const displayData = data.slice(0, currentDisplayCount);
+
+        displayData.forEach((item, index) => {
           const videoItem = document.createElement("div");
           videoItem.className = "video-item";
           videoItem.innerHTML = `
-                    <div class="video-thumbnail">
-                        <img src="${item.thumbnail}" alt="${item.title}" loading="lazy">
-                        <div class="play-button"></div>
-                    </div>
-                    <div class="video-overlay">
-                        <button class="view-btn" onclick="openFullscreen(${index}, true)">Xem video</button>
-                    </div>
-                `;
+      <div class="video-thumbnail">
+          <img src="${item.thumbnail}" alt="${item.title}" loading="lazy">
+          <div class="play-button"></div>
+          <span class="video-duration">${item.duration}</span>
+      </div>
+      <div class="video-overlay">
+          <button class="view-btn" onclick="openFullscreen(${index}, true)">Xem video</button>
+      </div>
+      <div class="p-4">
+          <h3 class="font-bold text-lg mb-1">${item.title}</h3>
+          <p class="text-gray-600 text-sm">${item.description}</p>
+      </div>
+    `;
           videoGrid.appendChild(videoItem);
         });
+
+        // Add Load More button for videos
+        if (currentDisplayCount < data.length) {
+          const loadMoreBtn = document.createElement("div");
+          loadMoreBtn.className = "col-span-full flex justify-center mt-8";
+          loadMoreBtn.innerHTML = `
+      <button onclick="loadMoreItems()" class="btn-custom bg-primary text-white px-8 py-3 rounded-lg hover:bg-hover transition-all duration-300">
+        Xem thêm (${Math.min(
+          loadMoreStep,
+          data.length - currentDisplayCount
+        )} video)
+      </button>
+    `;
+          videoGrid.appendChild(loadMoreBtn);
+        }
 
         if (currentTab === "videos") {
           filteredData = data;
@@ -674,38 +1299,6 @@
           btn.addEventListener("click", () => {
             const tabName = btn.getAttribute("data-tab");
             switchTab(tabName);
-          });
-        });
-
-        // Filter buttons
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        filterBtns.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const parentFilter = btn.closest(".tab-content");
-            const buttonsInSameTab =
-              parentFilter.querySelectorAll(".filter-btn");
-
-            // Remove active class from buttons in the same tab
-            buttonsInSameTab.forEach((b) => b.classList.remove("active"));
-            // Add active class to clicked button
-            btn.classList.add("active");
-
-            const filter = btn.getAttribute("data-filter");
-            const isVideoFilter = btn.getAttribute("data-target") === "video";
-
-            if (isVideoFilter) {
-              const filteredData =
-                filter === "all"
-                  ? videoData
-                  : videoData.filter((item) => item.category === filter);
-              renderVideoGallery(filteredData);
-            } else {
-              const filteredData =
-                filter === "all"
-                  ? galleryData
-                  : galleryData.filter((item) => item.category === filter);
-              renderGallery(filteredData);
-            }
           });
         });
 
@@ -754,6 +1347,7 @@
       // Switch between tabs
       function switchTab(tabName) {
         currentTab = tabName;
+        currentDisplayCount = 10; // Reset về 10 items khi chuyển tab
 
         // Update tab buttons
         const tabBtns = document.querySelectorAll(".tab-btn");
@@ -773,9 +1367,14 @@
         if (tabName === "images") {
           document.getElementById("imagesTab").classList.add("active");
           filteredData = [...galleryData];
+          if (observer) {
+            observer.disconnect();
+          }
+          renderVirtualizedGallery(galleryData);
         } else if (tabName === "videos") {
           document.getElementById("videosTab").classList.add("active");
           filteredData = [...videoData];
+          renderVideoGallery(videoData);
         }
       }
 
@@ -798,11 +1397,10 @@
         } else {
           modalVideo.style.display = "none";
           modalImage.style.display = "block";
-          modalImage.src = currentItem.src || currentItem.thumbnail;
+          modalImage.src = currentItem.src;
         }
 
         modalTitle.textContent = currentItem.title;
-
         modal.classList.add("active");
         document.body.style.overflow = "hidden";
       }
@@ -826,22 +1424,30 @@
       function showPrevImage() {
         currentImageIndex =
           (currentImageIndex - 1 + filteredData.length) % filteredData.length;
-        updateModalImage();
+        updateModalContent();
       }
 
       // Show next image
       function showNextImage() {
         currentImageIndex = (currentImageIndex + 1) % filteredData.length;
-        updateModalImage();
+        updateModalContent();
       }
 
-      // Update modal image
-      function updateModalImage() {
+      // Update modal content
+      function updateModalContent() {
         const modalImage = document.getElementById("modalImage");
+        const modalVideo = document.getElementById("modalVideo");
         const modalTitle = document.getElementById("modalTitle");
 
         const currentItem = filteredData[currentImageIndex];
-        modalImage.src = currentItem.src;
+
+        if (isVideoMode) {
+          modalVideo.src = currentItem.src;
+          modalVideo.load();
+        } else {
+          modalImage.src = currentItem.src;
+        }
+
         modalTitle.textContent = currentItem.title;
       }
 
