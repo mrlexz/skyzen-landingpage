@@ -1,0 +1,528 @@
+<krpano>
+<include url="webvr.xml"/>	
+<include url="%SWFPATH%/skin/settings.xml"/>	
+<style name="btnsCtrls" keep="true" zorder="1" smoothing="true" width="100" height="100"/>
+<style name="btnsActive" ondown="" onup=" "/>
+<style name="thumbstyle" bgroundedge="30" onover="tween(layer[get(name)].x,-5,.2);"  onout="tween(layer[get(name)].x,0,.2);"/>
+	
+ <style name="button_set" url="%SWFPATH%/plugins/textfield.swf" 
+			background="true" backgroundcolor="0xf2d38f" backgroundalpha="0.0" css="get:skin_settings.design_menu_css_set" width="90%" 
+			height="auto" hcenter="true"   padding="0" x="0"  interactivecontent="true" wordwrap="true" align="center"
+		    onhover="   "
+		   	onout="  "
+		
+			/>
+		
+<style name="sidebarbt" url="base.png" scale=".5" align="lefttop"  />
+<style name="helpstyle"  scale=".4" />
+<style name="button_toolbar" 
+	  
+	   onhover="tween(layer[hint].y,get(y),.1);tween(layer[hint].alpha,1,.2);set(layer[hint].html,get(hint));tween(scale,1.1,0.1);"
+	   onout="tween(layer[hint].alpha,0,.1);set(layer[hint].html,);tween(scale,1.0,0.3);"
+	   
+	   />	
+<style name="text" url="%SWFPATH%/plugins/textfield.swf"
+	   		  align="bottomcenter"  x="0" y="0" 
+	    	  width="100%" height="20"
+	    	  backgroundcolor="0x0071a6" backgroundalpha="0.6"
+	    	  roundedge="0"
+	    	  vcenter="true" padding="0"
+	    	  css="calc:skin_settings.design_text_css + 'font-weight:regular; text-align:center; font-size:10px;'" />		
+<plugin name="radar"
+        url.flash="radar.swf"
+        url.html5="radar.js"
+        parent="map"
+        align="lefttop"
+        edge="center"
+        x="100" y="50"
+        scale="5.0"
+        heading="0.0"
+        headingoffset="90.0"
+        fillcolor="0xFFFFFF"
+        fillalpha="0.5"
+        linewidth="0.0"
+        linecolor="0xFFFFFF"
+        linealpha="0.3"
+        invert="false"
+        />	
+	
+
+
+	
+	
+<layer name="skin_map_container" parent="root_layer" bgalpha=".8" bgcolor="0xf9f6f1" keep="true" type="container" align="center" x="0" y="-5000" width="60%" height="70%" bgroundedge="20" 	 
+		   maskchildren="true">
+	
+	<layer name="mapboder" parent="skin_map_container"  keep="true" type="container" align="center" x="0" y="0" width="97%" height="97%" bgroundedge="20" 	 
+		   maskchildren="true">
+	
+<layer name="skin_map" state="closed" html="" visible="false" align="lefttop" width="100%" height="100%" x="0" y="10"  zorder="1" lat="0" lng="0" zoom="15" bgalpha="1" maptype="Satellite" onmapready="skin_addmapspots();">
+			<maptypecontrol visible="false" align="lefttop" x="10" y="-100" buttonalign="H" buttontexts="Map|Satellite" scale=".0"/>
+			<radar visible="true" headingoffset="1" scale=".2"/>
+			<spotstyle name="DEFAULT" url="images/spot_normal.png" overurl="images/spot_over.png" activeurl="images/spot_active.png" edge="bottom" x="-5" y="-12" scale="0.3"    />
+			
+			<layer name="skin_map_close"  url="images/btn_x.png"  align="righttop" x="12" y="12" scale="0.6" zorder="2" ondown="skin_showmap(false) ;" />
+		</layer>
+		
+		</layer>
+</layer>
+
+<!--
+<layer name="skin_info_container" parent="layer_root" bgalpha=".8" bgcolor="0xf9f6f1" keep="true" type="container" align="rightop" x="-5000" y="140" width="500" height="70%" bgroundedge="20" 	 bgborder="1 0xFFFFFF 0.5" 
+		   maskchildren="false">
+	 
+	<layer name="info_close"  url="images/btn_x.png"  align="righttop" x="-10" y="-10" scale="0.5" zorder="2" ondown="close_info()" />
+	<layer name="html_div"
+	       type="container" parent="layer_root"
+	       align="center" width.normal="95%" width.mobile="50%" height.normal="95%" height.mobile="400" x="10" y="0"
+	       bgcolor="0xffffff" bgalpha="0.0"
+	       bgcapture="true" capture="true" handcursor="false" bgroundedge="20"
+	       onloaded="add_html_code(get(data[html_example_code].content), 10);"
+	       />
+	
+</layer>
+-->
+
+<layer name="skin_info_container" parent="layer_root" bgalpha="1.0" bgcolor="0xf9f6f1" keep="true" type="container" align="center" x="-6660" y="0" width="70%" height="70%" bgroundedge="20" 	 bgborder="1 0xFFFFFF 0.5" 
+		   maskchildren="false">
+	 
+	<layer name="info_close"  url="images/btn_x.png"  align="righttop" x="-10" y="-10" scale="0.5" zorder="2" ondown="close_info()" />
+	<layer name="html_div"
+	       type="container" parent="layer_root"
+	       align="center" width.normal="100%" width.mobile="50%" height.normal="95%" height.mobile="400" x="10" y="0"
+	       bgcolor="0xffffff" bgalpha="0.0"
+	       bgcapture="true" capture="true" handcursor="false" bgroundedge="20"
+	       onloaded="add_html_code(get(data[code_1].content), 10);"
+	       />
+	
+</layer>
+
+
+	
+<layer name="layer_root" keep="true" type="container" align="top" parent="root_layer" zorder="50"
+		   width="100%" height="100%" bgcolor="calc:skin_settings.menu_bg" bgalpha="calc:skin_settings.menu_bg_alpha" vcenter="true" maskchildren="false"  >
+	
+	
+	<layer name="showmenu_box" type="container" align="bottomcenter" x="0" y="-50" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="1"  scalechildren="true" scale="1.0" keep="true" >
+				<layer name="showmenu_bt" style="sidebarbt" crop="0|320|64|64"  align="center" y="0" 
+						onhover="tween(layer[showmenu_box].scale,1.2,.1);
+								 if(language==vi, showtext(Hiện menu, STYLE4),showtext(Show menu, STYLE4));" 
+						onout="tween(layer[showmenu_box].scale,1,.1);"	 
+					    onclick="open_menu();tween(layer[toolbar_container].y,0,0.5);tween(layer[menu_container].x,0,0.5);tween(layer[showmenu_box].y,-50,0.5);"/>
+	</layer>
+		
+	
+		
+
+		<layer name="toolbar_container" type="container" bgalpha="0" bgcolor="0x054a4b" align="bottom" x="0" y="5" width="0"  height="0" maskchildren="true" bgroundedge="10"  bgcapture="true">
+			
+			
+		
+		
+<!--	rightside	-->
+	
+	
+			
+		</layer>
+	
+			
+		
+	
+	<layer name="sound_l" keep="true" parent="layer_root" type="container" align="right" width="150" height="250" bgcolor="0xffffff" x="60" bgroundedge="20"  y="90" bgalpha="0.3" state="hide" visible="0">
+<layer name="scrollarea" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" align="top" width="150" height="250" direction="v" onloaded="setcenter(0,-150)" y="0">
+<layer name="sound1" style="button_set" html="sound1" align="top" edge="center" y="50" width="90%" onclick="playsound(bgsound, %SWFPATH%/media/sounds/bgsound.mp3, 1); "/>
+<layer name="sound2" style="button_set"  html="sound2" align="top" edge="center" y="100" onclick="playsound(bgsound, %SWFPATH%/media/sounds/bgsound_1.mp3, 1); "/>
+<layer name="sound3" style="button_set"  html="sound3" align="top" edge="center" y="150" onclick="playsound(bgsound, %SWFPATH%/media/sounds/bgsound_2.mp3, 1); "/>
+<layer name="sound4" style="button_set"  html="sound4" align="top" edge="center" y="200" onclick="playsound(bgsound, %SWFPATH%/media/sounds/bgsound_3.mp3, 1); "/>
+
+</layer>
+</layer>
+	
+	
+<layer name="matbang_set" keep="true" parent="layer_root" type="container" align="bottomcenter" width="250" height="110" bgcolor="0x0f2c6d" x="-150" bgroundedge="5"  y="60" bgalpha="0.3" state="hide" visible="0" maskchildren="true">
+
+<layer name="scrollarea1" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" align="top" width="220" height="350" direction="v" onloaded="setcenter(0,-150)" y="180">
+	
+<layer name="mbs1" style="button_set" html="○ MẶT BẰNG PHÂN KHU BT2" align="top" edge="center" y="30" width="95%" onclick="loadscene(scene_s2!bt2); "/>
+<layer name="mbs2" style="button_set" html="○ MẶT BẰNG PHÂN KHU BT5" align="top" edge="center" y="70" width="95%" onclick="loadscene(scene_s3!bt5); "/>
+
+
+
+
+</layer>
+	
+</layer>		
+<layer name="tienich_set" keep="true" parent="layer_root" type="container" align="bottomcenter" width="220" height="170" bgcolor="0x054a4b" x="120" bgroundedge="5"  y="60" bgalpha="0.3" state="hide" visible="0" maskchildren="true">
+
+<layer name="scrollarea1S" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" align="top" width="180" height="450" direction="v" onloaded="setcenter(0,-150)" y="180">
+<layer name="mbs1S" style="button_set" html="○ LA PALMA" align="top" edge="center" y="30" width="95%" onclick="plugin[easy_html_lightbox].open_url('https://online.fliphtml5.com/zigog/vkvt/',90%,90%,'LA PALMA',true); close_matbang();"/>
+<layer name="mbs2S" style="button_set" html="○ LA RIVA" align="top" edge="center" y="80" width="95%" onclick="plugin[easy_html_lightbox].open_url('https://online.fliphtml5.com/zigog/iyeg/',90%,90%,'LA RIVA',true); close_matbang();"/>
+<layer name="mbs3S" style="button_set" html="○ LA SUNA" align="top" edge="center" y="130" width="95%" onclick="plugin[easy_html_lightbox].open_url('https://online.fliphtml5.com/zigog/kjia/#p=1',90%,90%,'LA SUNA',true); close_matbang();"/>
+
+
+</layer>
+	
+</layer>
+
+	
+<layer name="phoicanh_set" keep="true" parent="layer_root" type="container" align="bottomcenter" width="150" height="120" bgcolor="0x054a4b" x="-80" bgroundedge="5"  y="60" bgalpha="0.4" state="hide" visible="0" maskchildren="true">
+
+<layer name="scrollarea2" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" align="top" width="130" height="150" direction="v" onloaded="setcenter(0,-150)" y="180">
+
+<layer name="pc2" style="button_set" html="○ PHỐI CẢNH 1" align="top" edge="center" y="30" width="95%" onclick="loadscene(scene_s11!pc1);"/>
+<layer name="pc3" style="button_set" html="○ PHỐI CẢNH 2" align="top" edge="center" y="80" width="95%" onclick="loadscene(scene_s12!pc2); "/>
+
+</layer>
+
+	</layer>
+
+	
+<layer name="video_set" keep="true" parent="layer_root" type="container" align="bottomcenter" width="120"  height="200" bgcolor="0xf2d38f" x="380" bgroundedge="5"  y="60" bgalpha="0.3" state="hide" visible="0" maskchildren="true">
+
+<layer name="scrollareaa2" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" align="top" width="200" height="160" direction="v" onloaded="setcenter(0,-150)" y="180">
+    
+    
+<layer name="pc1s" style="button_set" html="○ VIDEO 1" align="top" edge="center" y="30" width="55%" onclick="plugin[easy_html_lightbox].play_video(https://vimeo.com/649934971',640,360);;pausesound(bgsound);close_video();"/>
+     
+<layer name="pc2s" style="button_set" html="○ VIDEO 2" align="top" edge="center" y="80" width="55%" onclick="plugin[easy_html_lightbox].play_video('https://www.youtube.com/watch?v=Jr-tuaeZqHs',640,360);"/>
+     
+<layer name="pc3s" style="button_set" html="○ VIDEO 3" align="top" edge="center" y="130" width="55%" onclick="plugin[easy_html_lightbox].play_video('https://www.youtube.com/watch?v=ndvHWrLeUnI',640,360);;pausesound(bgsound);close_video();"/>
+    
+    
+    
+</layer>
+</layer>
+	
+	
+	
+	
+	
+	
+
+	
+	
+		<!--
+
+
+
+
+		<layer name="toolbar_container1" type="container" bgalpha=".8" bgcolor="calc:skin_settings.maincolor" align="bottom" x="0" y="5" width="50%"  height="40" maskchildren="true" bgroundedge="20">
+				
+			
+			<layer name="bgsound_box" type="container" align="center" x="-80" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0"  scalechildren="true" scale="1.0" keep="true" >
+				<layer name="bgsound_bt" style="sidebarbt" crop="0|192|64|64"  align="center" y="0" 
+						onhover="tween(layer[bgsound_box].bgalpha,.8,0);
+								 if(language==vi, showtext(Bật/Tắt Nhạc nền, STYLE4),showtext(On/Off Background music, STYLE4));" 
+						onout="tween(layer[bgsound_box].bgalpha,0,.8);"	 
+					    onclick="if(layer[bgsound_bt].crop == '0|192|64|64',js(pauseAudio());  set(layer[bgsound_bt].crop, 64|192|64|64);, js(playAudio()); set(layer[bgsound_bt].crop, 0|192|64|64););"/>
+			</layer>
+			
+			
+			<layer name="a360_box" type="container" align="center" x="-40" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0" scalechildren="true" scale="1.0" keep="true" >
+				<layer name="a360_bt" style="sidebarbt" crop="64|832|64|64" align="center" y="0" 
+					   onhover="tween(layer[a360_box].bgalpha,.8,0);if(language==vi, showtext(Chế độ xem 360, STYLE4),showtext(Little planet mode, STYLE4));" 
+						onout="tween(layer[a360_box].bgalpha,0,.8);"	 
+					   onclick="skin_view_littleplanet();" />
+			</layer>
+			
+			<layer name="info_box" type="container" align="center" x="0" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0"  scalechildren="true" scale="1.0" keep="true" >
+				<layer name="info_bt" style="sidebarbt" crop="0|512|64|64"  align="center" y="0" 
+					   onhover="tween(layer[info_box].bgalpha,.8,0);if(language==vi, showtext(Hiện thông tin, STYLE4),showtext(Show infomation, STYLE4));" 
+						onout="tween(layer[info_box].bgalpha,0,.8);"
+					   
+					   	onclick="if(layer[skin_info_container].y==-1200,tween(layer[skin_info_container].y,0,.30);,tween(layer[skin_info_container].y,-1200,.30););skin_showmap(false) ; "/>
+			</layer>
+			<layer name="autorotate_box" type="container" align="center" x="40" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0" scalechildren="true" scale="1.0" keep="true" >
+				<layer name="autorotate_bt" style="sidebarbt" crop="0|448|64|64"  align="center" y="0" 
+						onhover="tween(layer[autorotate_box].bgalpha,.8,0);
+								 if(language==vi, showtext(Bật/Tắt Xoay Tự Động, STYLE4),showtext(Start/Stop Auto Rotate, STYLE4));" 
+						onout="tween(layer[autorotate_box].bgalpha,0,.8);"	 
+					    onclick="if(layer[autorotate_bt].crop == '0|448|64|64', switch(autorotate.enabled); set(layer[autorotate_bt].crop, 64|448|64|64);, switch(autorotate.enabled); set(layer[autorotate_bt].crop, 0|448|64|64););"/>
+				
+			</layer>
+			
+			
+			<layer name="fullscreen_box" type="container" align="center" x="80" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0" scalechildren="true" scale="1.0" keep="true" >
+				<layer name="fullscreen_bt" style="sidebarbt" crop="0|64|64|64"  align="center" y="0" 
+					   onhover="tween(layer[fullscreen_box].bgalpha,.8,0);if(language==vi, showtext(Xem Toàn Màn Hình, STYLE4),showtext(Fullscreen, STYLE4));" 
+						onout="tween(layer[fullscreen_box].bgalpha,0,.8);"
+					   
+					   	onclick="if(layer[fullscreen_bt].crop == '0|64|64|64', switch(fullscreen); set(layer[fullscreen_bt].crop, 64|64|64|64);, switch(fullscreen);set(layer[fullscreen_bt].crop, 0|64|64|64););"/>
+			</layer>
+			
+			
+			<layer name="mb_box" type="container" align="center" x="120" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0" scalechildren="true" scale="1.0" keep="true" >
+				<layer name="mb_bt" style="sidebarbt" crop="64|896|64|64"  align="center" y="0" 
+					   onhover="tween(layer[mb_box].bgalpha,.8,0);if(language==vi, showtext(Hiển Thị Bản Đồ Quy Hoạch, STYLE4),showtext(mb, STYLE4));" 
+						onout="tween(layer[mb_box].bgalpha,0,.8);"
+					   
+					   	onclick="showgallery(quyhoach);"/>
+			</layer>
+			
+
+			<layer name="next_box" type="container" align="rightcenter" x="5" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0" scalechildren="true" scale="1.0" keep="true" >
+				<layer name="next_bt" style="sidebarbt" crop="64|768|64|64"  align="center" y="0" 
+					   	onhover="tween(layer[next_box].bgalpha,.8,0);
+								 if(language==vi, showtext(Chuyển cảnh tiếp theo, STYLE4),
+								 showtext(Next, STYLE4));" 
+						onout="tween(layer[next_box].bgalpha,0,.8);"
+					   
+					   	onclick="skin_nextscene_loop(+1);"/>
+			</layer>
+			
+			<layer name="menu_box" type="container" align="rightcenter" x="43" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0"  scalechildren="true" scale="1.0" keep="true" >
+				<layer name="menu_bt" style="sidebarbt" crop="0|832|64|64"  align="center" y="0" 
+						onhover="tween(layer[menu_box].bgalpha,.8,0);
+								 if(language==vi, showtext(Tắt Menu, STYLE4),
+								 showtext(Hide Menu, STYLE4));" 
+						onout="tween(layer[menu_box].bgalpha,0,.8);"	 
+					    onclick="tween(layer[skin_info_container].x,-500,.5); 
+								 
+								 tween(layer[toolbar_container].y,-50,0.5);
+								 if(layer[menu_container].x==0,open_menu(),);	
+								 tween(layer[showmenu_box].y,5,0.5);"/>
+			</layer>
+			
+			
+
+			<layer name="back_box" type="container" align="leftcenter" x="5" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0" scalechildren="true" scale="1.0" keep="true" >
+				<layer name="back_bt" style="sidebarbt" crop="0|768|64|64"  align="center" y="0" 
+					   	onhover="tween(layer[back_box].bgalpha,.8,0);
+								 if(language==vi, showtext(Quay lại Cảnh Trước, STYLE4),
+								 showtext(Back, STYLE4));" 
+						onout="tween(layer[back_box].bgalpha,0,.8);"	
+					   
+					   	onclick="skin_nextscene_loop(-1)"/>
+			</layer>
+			
+					
+			<layer name="map_box" type="container" align="leftcenter" x="43" y="0" width="32" height="32" bgcolor="0x008503" visible="true" bgroundedge="50" bgalpha="0" scalechildren="true" scale="1.0" keep="true" >
+				<layer name="map_bt" style="sidebarbt" crop="64|0|64|64"  align="center" y="0" 
+					   	onhover="tween(layer[map_box].bgalpha,.8,.2);if(language==vi, showtext(Bản Đồ, STYLE4),showtext(Maps, STYLE4));" 
+						onout="tween(layer[map_box].bgalpha,0,.2);"
+					   
+					   	onclick="skin_showmap();tween(layer[skin_info_container].y, -1200, .1);"/>
+			</layer>	
+			
+			
+			
+		</layer>
+		
+		-->
+		
+		
+		
+		
+		
+		<!--<layer name="menu_container" type="container" bgcolor="0x00CCFF"   visible="true" bgalpha="0.3"  align="right" x="10" x.touch="-400" y="0" width="135"  height="80%" y.touch="0" maskchildren="true">
+	
+			
+			<layer name="menu_container_1" type="container" bgroundedge="2" bgcolor="0x00CCFF"  visible="true" bgalpha="0"  align="center" x="0" x.touch="0" y="0" width="130"  height="98%" y.touch="0" maskchildren="false">
+				
+			
+			
+			<layer name="skin_thumbs" state="closed" url.flash="%SWFPATH%/plugins/scrollarea.swf"  url.html5="%SWFPATH%/plugins/scrollarea.js" direction="v" align="righttop" x="0" width="100%" height="1920" zorder="1" onhover_autoscrolling="false"   overscroll="2.0" >
+			<layer name="menuthumb1" url="%SWFPATH%/projects/gigapixel/panos/thumb/s1.JPG"  align="top" y="0" onclick="skin_gotoscene(s1);"/>
+			<layer name="menuthumb2" url="%SWFPATH%/projects/gigapixel/panos/thumb/s2.JPG"  align="top" y="63" onclick="skin_gotoscene(s2);"/>	
+			<layer name="menuthumb2" url="%SWFPATH%/projects/gigapixel/panos/thumb/s2.JPG"  align="top" y="63" onclick="skin_gotoscene(s2);"/>	
+			<layer name="menuthumb3" url="%SWFPATH%/projects/gigapixel/panos/thumb/s3.JPG"  align="top" y="126" onclick="skin_gotoscene(s3);"/>	
+			<layer name="menuthumb4" url="%SWFPATH%/projects/gigapixel/panos/thumb/s4.JPG"  align="top" y="189" onclick="skin_gotoscene(s4);"/>	
+			<layer name="menuthumb5" url="%SWFPATH%/projects/gigapixel/panos/thumb/s5.JPG"  align="top" y="252" onclick="skin_gotoscene(s5);"/>	
+			<layer name="menuthumb6" url="%SWFPATH%/projects/gigapixel/panos/thumb/s6.JPG"  align="top" y="315" onclick="skin_gotoscene(s6);"/>	
+			<layer name="menuthumb7" url="%SWFPATH%/projects/gigapixel/panos/thumb/s7.JPG"  align="top" y="378" onclick="skin_gotoscene(s7);"/>	
+			<layer name="menuthumb8" url="%SWFPATH%/projects/gigapixel/panos/thumb/s8.JPG"  align="top" y="441" onclick="skin_gotoscene(s8);"/>	
+			<layer name="menuthumb9" url="%SWFPATH%/projects/gigapixel/panos/thumb/s9.JPG"  align="top" y="504" onclick="skin_gotoscene(s9);"/>	
+			<layer name="menuthumb10" url="%SWFPATH%/projects/gigapixel/panos/thumb/s10.JPG"  align="top" y="567" onclick="skin_gotoscene(s10);"/>	
+			
+			
+			
+				
+			</layer>
+		
+		
+		</layer>
+		
+		
+		</layer>-->
+			
+		
+	</layer>
+	
+	
+<action name="close_matbang">
+	if(layer[matbang_set].visible==1,set(layer[matbang_set].visible,0);set(layer[matbang_set].state,hide);) ;
+	
+	</action>	
+		
+<action name="close_video">
+	if(layer[video_set].visible==1,set(layer[video_set].visible,0);set(layer[video_set].state,hide);) ;
+	
+	</action>	
+	
+	<action name="close_phoicanh">
+	if(layer[phoicanh_set].visible==1,set(layer[phoicanh_set].visible,0);set(layer[phoicanh_set].state,hide);) ;
+	
+	</action>	
+	
+	
+	<action name="close_tienich">
+	if(layer[tienich_set].visible==1,set(layer[tienich_set].visible,0);set(layer[tienich_set].state,hide);) ;
+	
+	</action>	
+	
+	
+	
+	
+	
+
+<action name="skin_addmapspots">
+		for(set(i,0), i LT scene.count, inc(i),
+			if(scene[get(i)].lat,
+				txtadd(spotname, get(scene[get(i)].name));
+	
+				txtadd(spotclickevent, 'activatespot(',get(spotname),');pantospot(get(name));skin_loadscene(', get(scene[get(i)].name), ',get(skin_settings.loadscene_blend));  delayedcall(1.0,tween(layer[toolbar_container].y,0,.5); );');
+				copy(scene[get(i)].mapspotname, spotname);
+	trace('xxx :',get(spotname));
+	
+				addspot(get(spotname), get(scene[get(i)].lat), get(scene[get(i)].lng), get(scene[get(i)].heading), active, get(spotclickevent),null,null  );
+				set(spot[get(spotname)].onhover,showtext(get(scene[get(name)].title),STYLE4));
+				set(spotname,);
+	
+				
+			  );
+	
+		  );
+
+		if(scene[0].lat != null,
+			layer[skin_map].activatespot(get(scene[get(xml.scene)].name));
+		  ,
+			activatespot(spot1);
+		  );
+
+	zoomtospotsextent();
+	</action>	
+	
+	
+	<action name="skin_showmap">
+			
+		
+			if(skin_settings.maps == true,
+		
+			if(device.flash,
+				set(layer[skin_map].url, '%SWFPATH%/plugins/bingmaps.swf');
+				copy(layer[skin_map].key, skin_settings.maps_bing_api_key);
+			  ,
+				if(skin_settings.maps_type == 'bing',
+					set(layer[skin_map].url, '%SWFPATH%/plugins/bingmaps.js');
+					copy(layer[skin_map].key, skin_settings.maps_bing_api_key);
+				  ,
+					set(layer[skin_map].url, '%SWFPATH%/plugins/googlemaps.js');
+					copy(layer[skin_map].key, skin_settings.maps_google_api_key);
+					if(scene[get(xml.scene)].lng,set(layer[skin_map].lat,get(scene[get(xml.scene)].lat));
+		
+					set(layer[skin_map].lng,get(scene[get(xml.scene)].lng));,
+		
+					set(layer[skin_map].lat,get(scene[0].lat));
+					set(layer[skin_map].lng,get(scene[0].lng));
+		
+					setcenter(get(scene[get(xml.scene)].lat),get(scene[get(xml.scene)].lng));
+					
+		
+						
+					);
+					
+				  );
+			  );
+		  );
+		
+		if(%1 == null, if(layer[skin_map].state == 'closed', set(show,true), set(show,false)); , set(show,%1); );
+		if(show,
+			tween(layer[skin_map_container].y, 0, 0.5, easeOutQuint,);
+			set(layer[skin_map].visible, true);
+			tween(layer[skin_map].alpha, 1.0, 0.25);
+			set(layer[skin_map].state, 'opened');
+		  ,
+		  	if(layer[skin_map].state != 'closed',
+		  		
+				set(layer[skin_map].state, 'closed');
+				tween(layer[skin_map].alpha, 0.0, 0.5, easeOutQuint);
+				tween(layer[skin_map_container].y, -1000, 0.5, easeOutQuint, set(layer[skin_map].visible,false) );
+			  );
+		  );
+		
+		
+	
+		
+		
+	</action>
+	
+	
+	<action name="show_only">
+	if (%1==menu,tween(layer[menu_container].x,0,0.5); 
+		
+		if(layer[skin_map_container].x==0,	
+			tween(layer[skin_map_container].y,-1000,.5);));
+	
+	
+	
+	
+	</action>
+	
+	<action name="set_info">
+	if(language==vi,
+		copy(layer[text].html,data[get(scene[get(xml.scene)].info)].content);
+		set(layer[text_h].html,[h2 align='left' ][font color='black']GIỚI THIỆU [/h2][hr])
+		
+		,copy(layer[text].html,data[get(scene[get(xml.scene)].info_en)].content);set(layer[text_h].html,[h2 align='left' ][font color='black']INFOMATION [/h2][hr]));
+	</action>
+	
+	<action name="close_info">
+	tween(layer[skin_info_container].x,-5000,.2);
+	
+	</action>
+	<action name="open_info">
+	tween(layer[skin_info_container].x,50,.2);
+	
+	</action>
+	<!-- arguments: 1=htmlcode, 2=padding (optional) -->
+	<action name="add_html_code" type="Javascript"><![CDATA[
+	
+		var div = document.createElement("div");
+		
+		// basic styles to fit into the layer size and allow scrolling:
+		div.style.width = "100%";
+		div.style.height = "100%";
+		div.style.overflow = "auto";
+		div.style.boxSizing = "border-box";
+		div.style.padding = args[2] ? (args[2] + "px") : "0";
+		
+
+		// allow text selection (optional):
+		div.style.webkitUserSelect =
+		div.style.MozUserSelect =
+		div.style.msUserSelect =
+		div.style.userSelect = "text";
+
+		
+		// hacks for browsed-based mouse-wheel and touch-scrolling support:
+		div.addEventListener("mousewheel", function(event){ event.stopPropagation(); }, true);
+		div.addEventListener("DOMMouseScroll", function(event){ event.stopPropagation(); }, true);
+		div.addEventListener("touchstart", function(event){ if(krpano.device.ios && window.innerHeight == krpano.display.htmltarget.offsetHeight){ /* avoid the iOS 'overscrolling' for fullpage viewers */ var bs = document.body.parentNode.style; bs.position="fixed"; bs.top=0; bs.left=0; bs.right=0; bs.bottom=0; } krpano.control.preventTouchEvents = false; event.stopPropagation(); }, true);
+		div.addEventListener("touchend", function(event){ krpano.control.preventTouchEvents = true; event.stopPropagation(); }, true);
+		div.addEventListener("gesturestart", function(event){ event.preventDefault(); }, true);
+		
+		// add some html code:
+		div.innerHTML = args[1];
+	
+		// add the div to the layer element:
+		caller.sprite.appendChild(div);
+	
+	]]></action>
+	
+<events name="hiddfe" keep="true"   onloadcomplete="set_info();layer[skin_map].activatespot(get(scene[get(xml.scene)].name));"    />
+	
+	
+	
+	
+	
+</krpano>

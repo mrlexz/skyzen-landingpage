@@ -1,0 +1,46 @@
+Drop the "compassSM" folder in the "plugin" folder.
+
+Connection:
+<include url = "plugins / compassSM / compassSM.xml" />
+
+Edit mode key "R"
+
+Move the scale according to the risk in accordance with the direction of the light.
+
+From the console, insert the number of corrections "-110" in the onstart scene.
+Example:
+<scene name = "scene_1" onstart = "korrect_comp (-110);" ...
+
+File compassSM_2.xml - the ability to edit the background, risks, text, compass button, etc.
+
+-----------------------------------------
+
+Закинуть папку "compassSM" в папку "plugin".
+
+Подключение:
+<include url="plugins/compassSM/compassSM.xml" />
+
+Режим редактирования клавиша "R" 
+
+Двигаем шкалу по риске в соответствии с направлением света.
+
+Из консоли вставляем число корректировки "-110" в onstart сцены.
+Пример:
+<scene name="scene_1" onstart="korrect_comp(-110);" ...
+
+Файл compassSM_2.xml - возможность редактировать фон, риски, текст, кнопку компаса и т.д.
+
+
+Для авто подключения 
+
+Поместить папку с плагином "compassSM" в 
+krpano-1.19-pr16/templates/xml/plugins/
+
+прописать
+krpano-1.19-pr16/templates/xml/vtour.xml
+<include url="plugins/compassSM/compassSM.xml" />
+
+ в krpano-1.19-pr16/templates/vtourskin119.skin прописать
+xmltemplate_additional_file=xml/plugins/compassSM/Compass.png
+xmltemplate_additional_file=xml/plugins/compassSM/compassSM.xml
+xmltemplate_additional_file=xml/plugins/compassSM/compassSM_2.xml

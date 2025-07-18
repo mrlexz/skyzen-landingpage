@@ -1,0 +1,166 @@
+<krpano i="1">
+
+	<include url="core/showtext.xml" />
+	<include url="%SWFPATH%/module/placehotspot/placehotspot.xml" />
+	<action name="display_sphere_coor">
+		copy(cur_vlookat,view.vlookat);			 
+			roundval(cur_vlookat,2);	
+		
+			copy(cur_hlookat,view.hlookat);			 
+			roundval(cur_hlookat,2);	
+			copy(cur_fov,view.fov);			 
+			roundval(cur_fov,2);	
+		screentosphere(mouse.stagex*1/3, mouse.stagey, ath, atv);
+		roundval(ath,3);
+		roundval(atv,3);
+		add(ath,360);
+		txtadd(sphere_coor,'(ath=', get(ath),',',atv=,get(atv),')');
+		showtext(get(sphere_coor));
+		
+		delayedcall(0.01, display_sphere_coor());
+	</action>
+	<events name="debug" keep="true"
+			onmousedown="
+						 
+	        display_sphere_coor();
+				trace('');		 
+			 trace('Cảnh : ',get(scene[get(xml.scene)].name));	
+						 
+			trace('create_hs_back(novaworldhotram!toancanh!,hotspot1,',calc(roundval(get(cur_hlookat),3)),',',calc(roundval(get(cur_vlookat),3)),',0);');
+			trace('create_hs_back(novaworldhotram!matdat !beboi,hotspot1,',calc(roundval(get(cur_hlookat),3)),',',calc(roundval(get(cur_vlookat),3)),',0);');
+			trace('create_tienich(tmshome!tienich!,hotspot2,',calc(roundval(get(cur_hlookat),3)),',',calc(roundval(get(cur_vlookat),3)),',0);');
+				 
+						 
+			trace('name=&#34;s',get(scene[get(xml.scene)].name),'&#34; ','ath=&#34;',get(cur_hlookat),'&#34;',' atv=&#34;',get(cur_vlookat),'&#34;',' scene=&#34;',get(scene[get(xml.scene)].name),'&#34;' ); 			 
+				trace(''); 
+						
+						 trace('create_hs_m(w',get(i),',red,',get(ath),',',get(atv),',0,.2);');
+			inc(i);	
+						 trace('hlookat =&#34;',get(cur_hlookat),'&#34;',' vlookat =&#34;',get(cur_vlookat),'&#34; fovtype=&#34;MFOV&#34; fov=&#34;',get(cur_fov),'&#34;' );	 
+			trace(''); 	
+			trace('create_hs(s,ahead,',get(ath),',',get(atv),',0);'); 		
+			trace(''); 		
+			
+	
+            showlog();
+						 
+	        "
+	/>
+
+
+<!--
+						for(set(i,15),i LT 45, inc(i),
+ 			trace('&lt;thumbs name=&#34;',get(scene[get(i)].name), '&#34; /&gt;');
+						);	 
+						 
+				trace('name=&#34;s',calc(roundval(get(ath),0)),'&#34; ','ath=&#34;',get(ath),'&#34;',' atv=&#34;',get(atv),'&#34;',' scence=&#34;',get(scene[get(xml.scene)].name),'&#34;' ); 
+				trace('');   		 
+						 
+						 
+			 	trace('ath=&#34;',calc(roundval(get(ath),3)),'&#34;  atv=&#34;',calc(roundval(get(atv),3)),'&#34; '); 	trace('');  	
+			trace('hlookat =&#34;',get(cur_hlookat),'&#34;',' vlookat =&#34;',get(cur_vlookat),'&#34; fovtype=&#34;MFOV&#34; fov=&#34;',get(cur_fov),'&#34;' );	 
+			trace(''); 			 
+			
+			trace(''); 	
+trace('create_hs(Đài,hotspot_ani_white,',get(ath),',',get(atv),',0,s);');
+			trace('&lt;point ath=&#34;',get(ath),'&#34;  atv=&#34;',get(atv),'&#34; /&gt;');
+			trace('ath=&#34;',get(ath),'&#34;  atv=&#34;',get(atv),'&#34; '); 
+			trace('Cảnh : ',get(scene[get(xml.scene)].name));	
+				trace('name=&#34;',get(scene[get(xml.scene)].name),'&#34; ','ath=&#34;',get(ath),'&#34;',' atv=&#34;',get(atv),'&#34;',' scene=&#34;',get(scene[get(xml.scene)].name),'&#34;' ); 
+			 	trace('ath=&#34;',calc(roundval(get(ath),3)),'&#34;  atv=&#34;',calc(roundval(get(atv),3)),'&#34; '); 	trace('create_hs_back(s,hotspot1,',calc(roundval(get(ath),3)),',',calc(roundval(get(atv),3)),',0);');	
+			trace('hlookat =&#34;',get(cur_hlookat),'&#34;',' vlookat =&#34;',get(cur_vlookat),'&#34; fovtype=&#34;MFOV&#34; fov=&#34;',get(cur_fov),'&#34;' );			 		 	
+trace('create_hs(scene_s,left,',get(ath),',',get(atv),',0,s2,Vị Trí 1);'); 
+	trace('create_hs(s1,hotspot_ani_white,',get(ath),',',get(atv),',0);'); 
+trace('t_ath=&#34;',get(ath),'&#34;  t_atv=&#34;',get(atv),'&#34; '); 
+
+			trace('create_hs(s1,hotspot_ani_white,',get(ath),',',get(atv),',0);');
+			trace('t_ath=&#34;',get(ath),'&#34;  t_atv=&#34;',get(atv),'&#34; '); 
+			trace('hlookat = ',view.hlookat);
+	        trace('vlookat = ',view.vlookat);
+			trace('fov = ',view.fov);
+			trace(get(ath),' ',get(atv));			 
+			trace('',get(scene[get(xml.scene)].name));	        
+ 			t_ath="-70.70756424188585 " 
+				 ="0.5267850066581582" 
+	      
+			trace('',get(scene[get(xml.scene)].name)); 
+			trace('hlookat = ',view.hlookat);
+	        trace('vlookat = ',view.vlookat);
+			trace('fov = ',view.fov);
+			trace(get(ath),' ',get(atv));			 
+			trace('');
+			trace('create_hs(s1,hotspot_ani_white,',get(ath),',',get(atv),',0);');			 
+			trace('hlookat =&#34;',view.hlookat,'&#34;',' vlookat =&#34;',view.vlookat,'&#34;' );		
+			 trace('',get(scene[get(xml.scene)].title));				 
+			trace('',get(scene[get(xml.scene)].name));	
+ 
+			trace('fov = ',view.fov);
+			trace('',get(scene[get(xml.scene)].name)); 	
+			trace('windowsize = ', stagewidth, 'x', stageheight);
+  trace('areasize = ', area.pixelwidth, 'x', area.pixelheight);	
+			
+			trace('ath=&#34;',get(ath),'&#34;  atv=&#34;',get(atv),'&#34; '); 
+			trace('create_hs(s,hotspot_ani_white,',get(ath),',',get(atv),',0);');			 
+				for(set(i,0),i LT scene.count, inc(i),
+ 	trace('Cảnh : ',get(scene[get(i)].name),'-',get(scene[get(i)].title));
+    
+    );			 
+			
+	    -->
+	
+	
+	
+<!--  // Lấy list Menu
+
+		for(set(i,0),i LT scene.count, inc(i),
+ 			trace('&lt;menu name=&#34;menu_',get(i),'&#34; main=&#34;2&#34; group=&#34;2&#34; scenename=&#34;',get(scene[get(i)].name),'&#34; titlev=&#34;',get(scene[get(i)].title),'&#34; titleen=&#34;&#34;/&gt;');
+						);	
+			for(set(i,0),i LT 29, inc(i),
+ 			trace('&lt;thumb name=&#34;thumb_',get(i), '&#34; imgurl=&#34; %SWFPATH%/editsoure/pc3d/img', get(i) , '.jpeg&#34; title=&#34;&#34;/&gt;');
+						);	
+					for(set(i,0),i LT scene.count, inc(i),
+ 			trace('&lt;thumbs name=&#34;',get(scene[get(i)].name, '&#34; /&gt;');
+						);	
+						 					 		
+
+	    -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</krpano>
+

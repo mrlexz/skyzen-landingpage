@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html><head>
+	<title> CASAMIA BALANCA 360&deg;</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<link rel="icon" href="https://i.postimg.cc/k4dCNQhb/logo.png" sizes="32x32">
+<link rel="shortcut icon" href="https://i.postimg.cc/k4dCNQhb/logo.png" />
+<link rel="apple-touch-icon" href="https://i.postimg.cc/k4dCNQhb/logo.png">	
+<meta property="og:url"                content="" />
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="CASAMIA BALANCA 360&deg;
+Giải Pháp Công Nghệ Hình Ảnh Số" />
+<meta property="og:description"        content="Một Hội An cân bằng của của ngày mai – nơi thanh yên của thiên nhiên nguyên bản và riêng tư tĩnh tại tương giao nhịp sống phố thị rực rỡ đa chiều, nơi mỗi ô cửa đón nguồn sinh khí yên bình nối liền chân trời phóng khoáng đậm chất sống hiện đại. “Thanh yên mỗi sớm mai thức dậy – Rực rỡ vui đêm hội phồn hoa” – Casamia Balanca Hoi An gửi gắm triết lý về một nơi kiến tạo cuộc sống cân bằng theo cách riêng qua từng lớp không gian sinh thái đủ riêng tư, đủ an yên và đủ rộng mở." />
+<meta property="og:image"              content="https://i.imgur.com/lTdzuMk.jpeg" />	<style>
+		@-ms-viewport { width:device-width; }
+		@media only screen and (min-device-width:800px) { html { overflow:hidden; } }
+		html { height:100%; }
+		body { height:100%; overflow:hidden; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#FFFFFF; background-color:#000000; }
+		
+	@font-face {
+   font-family: menufont;
+  src: url("data/font/SVN-Segoe UI.ttf")
+}	
+	@font-face {
+   font-family: menufont1;
+   src: url( "data/font/Roboto-Bold.ttf");
+}
+		
+		
+	</style>
+	
+<style>
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 1);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #D05F61;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+	color: red;
+	z-index: 450;
+}
+
+@media screen and (max-width: 700px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 50px;
+  top: 0px;
+  right: 0px;
+	color: red;
+  }
+}
+	
+
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 20px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(4, 153, 225, 0.8) /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: 92%;
+ 
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  color: red;
+  font-size: 60px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+    height: auto;
+	padding-top: 30%; /* Location of the box */  
+  }
+}	
+	
+	
+	
+	
+	
+</style>
+<style>
+/* Container holding the image and the text */
+.container-1 {
+  position: relative;
+	  background-color:#0e9096;
+}
+
+/* Bottom right text */
+
+.text-block {
+	font-family:menu-bold;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+width:30%;
+  background-color:#0e9096;
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+}
+
+.text-block-1 {
+	font-family:menu-bold;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+width:30%;
+  background-color:#0e9096;
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+}
+
+p {
+font-size:14px;
+text-align:justify;
+}
+
+@media only screen and (max-width:1370px) {
+  /* For mobile phones: */
+ 
+.container {
+  position: static;
+	  background-color:#0e9096;
+}
+
+img{
+display: block;
+
+}
+.text-block{
+ position: static;
+ display: block;
+width:90%;
+font-family:menu-bold;
+
+  background-color:hsla(0, 0%, 0%, 0.49);
+  color: white;
+ 
+
+}
+.text-block-1{
+ position: static;
+ display: block;
+ width:90%;
+ background-color:hsla(0, 0%, 0%, 0.49);
+ color: white;
+ font-family:menu-bold;
+
+}
+
+}
+	#demo {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+	}
+	
+	#demos {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+		top: 80px;
+		left: 80px;
+	}
+	
+	
+</style>
+		
+	<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NR5TFWCH');</script>
+<!-- End Google Tag Manager -->
+
+
+
+Additionally, paste this code immediately after the opening body tag:
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NR5TFWCH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y9QN9NJP3Y');
+</script>
+
+	
+</head>
+<body>
+
+<script>
+
+/* Get the documentElement (<html>) to display the page in fullscreen */
+var elem = document.documentElement;
+
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
+}
+
+/* Close fullscreen */
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) { /* Firefox */
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE/Edge */
+    document.msExitFullscreen();
+  }
+}
+	
+
+	
+</script>	
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var modalImg1 = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+	
+function showLo(src){
+  var srcx="data/editsoure/matbangduan/"+src+".jpeg";
+
+  modal.style.display = "block";
+  modalImg.src = srcx;
+ 
+ 
+}
+	
+function showmb(src,mb){
+  var srcx="data/editsoure/infomb/"+src+".jpg";
+  modal.style.display = "block";
+  modalImg.src = srcx;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+<script src="data/tour.js"></script>
+	
+<div id="pano" style="width:100%;height:100%;">
+	<noscript><table style="width:100%;height:100%;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+	<script>
+	
+		embedpano({swf:"data/tour.swf", xml:"data/projects/gigapixel/tour.xml", target:"pano", html5:"auto", mobilescale:1.0, passQueryParameters:true,initvars:{urlimg:"https://i.imgur.com/lDWleA4.png"}});
+	</script>
+</div>
+
+<div id="matbang" class="overlay" >
+  <a href="javascript:void(0)" class="closebtn" onclick="closematbang()">&times;</a>
+ <iframe id="link-pdf" src="https://lechamp.vn/cuisine.html" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+</div>
+
+<script>
+function openmatbang(src_pdf) {
+document.getElementById("link-pdf").src = src_pdf;	
+  document.getElementById("matbang").style.width = "100%";
+}
+
+function closematbang() {
+  document.getElementById("matbang").style.width = "0%";
+}
+</script>
+     			
+	
+<div id="info" class="overlay" >
+  <a href="javascript:void(0)" class="closebtn" onclick="closeinfo()">&times;</a>
+ 
+<iframe id="srcs" src="Flipbook/index.html" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+</div>
+
+<div id="info2" class="overlay" >
+  <a href="javascript:void(0)" class="closebtn" onclick="closeinfo2()">&times;</a>
+ 
+<iframe id="srcs2" src="Flipbook2/index.html" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+</div>
+
+<div id="info3" class="overlay" >
+  <a href="javascript:void(0)" class="closebtn" onclick="closeinfo3()">&times;</a>
+ 
+<iframe id="srcs3" src="Flipbook3/index.html" style="width: 100%; height: 100%;" frameborder="0"></iframe>
+</div>
+
+
+<script>
+function openinfo() {
+
+  document.getElementById("info").style.width = "100%";
+}
+
+function closeinfo() {
+  document.getElementById("info").style.width = "0%";
+}
+</script>
+     			
+<script>
+function openinfo2() {
+
+  document.getElementById("info2").style.width = "100%";
+}
+
+function closeinfo2() {
+  document.getElementById("info2").style.width = "0%";
+}
+</script>
+	
+  <script>
+function openinfo3() {
+
+  document.getElementById("info3").style.width = "100%";
+}
+
+function closeinfo3() {
+  document.getElementById("info3").style.width = "0%";
+}
+</script>
+     			
+		
+<div id="map" class="overlay" >
+  <a href="javascript:void(0)" class="closebtn" onclick="closemap()">&times;</a>
+ 
+<iframe src="" width="100%" height="960" style="border:0;" align="center" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<script>
+	
+function openmap() {
+
+  document.getElementById("map").style.width = "40%";
+}
+	
+function openmapmobile() {
+
+  document.getElementById("map").style.width = "100%";
+}
+
+function closemap() {
+  document.getElementById("map").style.width = "0%";
+}
+</script>
+     			
+	
+	
+
+</body>
+</html>

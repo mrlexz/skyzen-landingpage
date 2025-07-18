@@ -1,0 +1,73 @@
+<krpano prev_intro_sound="">
+    <plugin name="soundinterface"
+        url.html5="%SWFPATH%/plugins/soundinterface.js"
+        preload="true"
+        rootpath="%SWFPATH%"
+        volume="3.0"
+        mute="false"
+        />
+    <action name="play_intro_sound">
+        if(%1 == null, if(layer[voice_bt].crop == '0|256|64|64', set(show,false), set(show,true)); , set(show,%1); );
+        if(show,
+            stopsound(intro_sound);
+          ,
+		if(language==vi, playsound(intro_sound, get(scene[get(xml.scene)].voice), 1,play_intro_sound(true););   ,playsound(intro_sound, get(scene[get(xml.scene)].voice_en), 1,play_intro_sound(true);););
+        
+		
+         
+          );
+      
+    </action>    
+
+ <action name="play_bgsound">
+        if(%1 == null, if(layer[sound_bt].state == on, set(show,false), set(show,true)); , set(show,%1); );
+        if(show,
+            stopsound(bgsound);
+          ,
+		if(language==vi, playsound(bgsound, %SWFPATH%/media/sounds/bgsound_3.m4a, 1,.1,play_bgsound(true););   ,playsound(intro_sound, get(scene[get(xml.scene)].bgsound), 1,.1,play_bgsound(true);););
+        
+		
+         
+          );
+      
+    </action>    
+
+
+    <events name="intro_sound" keep="true"
+            onxmlcomplete="
+               "
+
+            onloadcomplete="
+					if(language==en,
+							
+							if(scene[get(xml.scene)].voice_en,
+
+                    if(prev_intro_sound == scene[get(xml.scene)].voice_en,,play_intro_sound(false); delayedcall(0.01, playsound(intro_sound, get(scene[get(xml.scene)].voice_en), 1,play_intro_sound(true);)));
+                   );
+                   copy(prev_intro_sound, scene[get(xml.scene)].voice_en);
+							
+							
+							
+							
+							);		
+							
+                   if(language==vi,
+							
+							if(scene[get(xml.scene)].voice,
+
+                    if(prev_intro_sound == scene[get(xml.scene)].voice,,play_intro_sound(false); delayedcall(0.01, playsound(intro_sound, get(scene[get(xml.scene)].voice), 1,play_intro_sound(true);)));
+                   );
+                   copy(prev_intro_sound, scene[get(xml.scene)].voice);
+							
+							
+							
+							
+							);	
+							
+							
+
+
+    "/>
+
+</krpano>
+

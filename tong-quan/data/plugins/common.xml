@@ -1,0 +1,226 @@
+<krpano default_demo_speed="5" autotour_running="false">
+    <layer 
+        name="root_layer" 
+        keep="true" 
+        type="container" 
+        width="100%" 
+        height="100%" 
+        bgalpha="0"
+        alpha="1"
+        visible="false"
+    />
+
+    <!-- Gọi đến ảnh khác su dung loadpano -->
+	<action name="call_scene">
+		txtadd(gotoscene,'scene/',%1,'.xml');
+		loadpano(get(gotoscene),%2,%3,%4);
+	</action>
+
+	<!-- quay ve diem dau-->
+    <action name = "go_home">
+        adjusthlookat(get(save_hlookat));
+        tween(view.hlookat,get(save_hlookat),1);
+        tween(view.vlookat,get(save_vlookat),1);
+        tween(view.fov,get(save_fov),1);
+        tween(view.fovmax,get(save_fovmax),1);
+        tween(view.fisheye,get(save_fisheye),1);
+        tween(view.architectural,get(save_architectural),1);
+    </action>
+    
+    <!--luu thong tin ban dau cua moi scene-->
+    <action name = "save_info_scene">
+        copy(save_hlookat,view.hlookat);
+        copy(save_vlookat,view.vlookat);
+        copy(save_fov,view.fov);
+        copy(save_fovmax,view.fovmax);
+        copy(save_fisheye,view.fisheye);
+        copy(save_architectural,view.architectural);
+    </action>
+
+	<action name="hide_hs">
+		for(set(i,0),i LT hotspot.count,inc(i),
+			if(hotspot[get(i)].distorted,,
+				tween(hotspot[get(i)].alpha, 0.0, 0.5, default, set(hotspot[get(i)].visible,false));
+			);
+		);
+	</action>
+
+	<action name="hide_all">
+		if(layer[root_layer], tween(layer[root_layer].alpha, 0.0, 0.5, default, set(layer[root_layer].visible,false)); );
+		for(set(i,0),i LT hotspot.count,inc(i),
+			if(hotspot[get(i)].distorted,,
+				tween(hotspot[get(i)].alpha, 0.0, 0.5, default, set(hotspot[get(i)].visible,false));
+			);
+		);
+	</action>
+
+	<action name="show_hs">
+		for(set(i,0),i LT hotspot.count,inc(i),
+			if(hotspot[get(i)].distorted,,
+				set(hotspot[get(i)].visible,true); tween(hotspot[get(i)].alpha, 1.0);
+			);
+		);
+		
+	</action>
+
+	<action name="show_all">
+		if(layer[root_layer], set(layer[root_layer].visible,true); tween(layer[root_layer].alpha, 1.0,1); );
+		for(set(i,0),i LT hotspot.count,inc(i),
+			if(hotspot[get(i)].distorted,,
+				set(hotspot[get(i)].visible,true); tween(hotspot[get(i)].alpha, 1.0);
+			);
+		);
+		
+	</action>
+
+    <!-- Xoay/Ngừng xoay ảnh -->
+    <action name="play_autorotate">
+        if(%1 == null, if(layer[skin_btn_rotate].state == 'closed', set(show,true), set(show,false)); , set(show,%1); );
+        if(show,
+            set(layer[skin_btn_rotate].state, 'opened');
+            autorotate.stop();
+            set(layer[skin_btn_rotate].tooltip_vi, 'Xoay ảnh');
+            set(layer[skin_btn_rotate].tooltip_en, 'Rotate on');
+            if(clang == 'vi',
+                    copy(layer[skin_btn_rotate].tooltip, layer[skin_btn_rotate].tooltip_vi);
+                    ,
+                    copy(layer[skin_btn_rotate].tooltip, layer[skin_btn_rotate].tooltip_en);    
+                );
+          ,
+            if(layer[skin_btn_rotate].state != 'closed',
+                set(layer[skin_btn_rotate].state, 'closed');
+                autorotate.start();
+                set(layer[skin_btn_rotate].tooltip_vi, 'Ngừng xoay');
+                set(layer[skin_btn_rotate].tooltip_en, 'Rotate off');
+                if(clang == 'vi',
+                    copy(layer[skin_btn_rotate].tooltip, layer[skin_btn_rotate].tooltip_vi);
+                    ,
+                    copy(layer[skin_btn_rotate].tooltip, layer[skin_btn_rotate].tooltip_en);    
+                );
+              );
+          );
+     
+    </action>
+
+	<action name="skin_changecontrolmode">
+		switch(control.mouse, moveto, drag);
+		switch(control.touch, moveto, drag);
+	</action>
+
+	<action name="skin_view_look_straight">
+		if(view.vlookat LT -80 OR view.vlookat GT +80,
+			tween(view.vlookat, 0.0, 1.0, easeInOutSine);
+			tween(view.fov,     100, distance(150,0.8));
+		  );
+		skin_deeplinking_update_url(1.0);
+	</action>
+
+	<action name="skin_view_normal">
+		skin_view_look_straight();
+		tween(view.architectural, 0.0, distance(1.0,0.5));
+		tween(view.pannini,       0.0, distance(1.0,0.5));
+		tween(view.distortion,    0.0, distance(1.0,0.5));
+	</action>
+
+	<action name="skin_view_fisheye">
+		skin_view_look_straight();
+		tween(view.architectural, 0.0,  distance(1.0,0.5));
+		tween(view.pannini,       0.0,  distance(1.0,0.5));
+		tween(view.distortion,    0.35, distance(1.0,0.5));
+	</action>
+
+	<action name="skin_view_architectural">
+		skin_view_look_straight();
+		tween(view.architectural, 1.0, distance(1.0,0.5));
+		tween(view.pannini,       0.0, distance(1.0,0.5));
+		tween(view.distortion,    0.0, distance(1.0,0.5));
+	</action>
+
+	<action name="skin_view_stereographic">
+		skin_view_look_straight();
+		tween(view.architectural, 0.0, distance(1.0,0.5));
+		tween(view.pannini,       0.0, distance(1.0,0.5));
+		tween(view.distortion,    1.0, distance(1.0,0.8));
+	</action>
+
+	<action name="skin_view_pannini">
+		skin_view_look_straight();
+		tween(view.architectural, 0.0, distance(1.0,0.5));
+		tween(view.pannini,       1.0, distance(1.0,0.8));
+		if(view.distortion LT 0.1,
+			tween(view.distortion, 1.0, distance(1.0,0.8));
+		  );
+	</action>
+
+	<action name="skin_view_littleplanet">
+		if(layer[skin_btn_360].step == 0,
+			set(v_hlookat, 90);	
+			tween(view.architectural, 0.0, distance(1.0,0.5));
+			tween(view.pannini,       0.0, distance(1.0,0.5));
+			tween(view.distortion,    1.0, distance(1.0,0.8));
+			tween(view.fov,           150, distance(150,0.8));
+			tween(view.vlookat, get(v_hlookat), distance(100,0.8));
+
+			add(new_hlookat, view.hlookat, 123.0);
+			tween(view.hlookat, get(new_hlookat), distance(100,0.8));
+			set(layer[skin_btn_360].step,1);
+			,
+			if(layer[skin_btn_360].step == 1,
+				set(v_hlookat, -90);
+				tween(view.architectural, 0.0, distance(1.0,0.5));
+				tween(view.pannini,       0.0, distance(1.0,0.5));
+				tween(view.distortion,    1.0, distance(1.0,0.8));
+				tween(view.fov,           150, distance(150,0.8));
+				tween(view.vlookat, get(v_hlookat), distance(100,0.8));
+
+				add(new_hlookat, view.hlookat, 123.0);
+				tween(view.hlookat, get(new_hlookat), distance(100,0.8));
+				set(layer[skin_btn_360].step,2);
+				,
+				go_home();
+				set(layer[skin_btn_360].step,0);
+			);
+		);
+		
+	</action>
+
+	<action name="autotour_start">
+        set(autotour_running, true);
+        hide_all();
+        
+        go_home();
+        add(ath_target, view.hlookat, 360);
+        if(layer[scene].demo_speed,
+            copy(final_speed, layer[scene].demo_speed), copy(final_speed, default_demo_speed)
+        );
+        oninterrupt(autotour_stop);
+        lookto(get(ath_target), get(view.vlookat), get(view.fov), linear(get(final_speed)), false);
+        skin_nextscene(+1);
+    </action>
+     
+    <action name="autotour_stop">
+        set(autotour_running, false);
+        go_home();
+        show_all();
+        
+    </action>
+     
+    <events name="autotour" keep="true"
+             onloadcomplete="if(autotour_running, delayedcall(0.01, autotour_start()));
+      "
+    />
+
+    <events name="save_view_param" keep="true"
+        onxmlcomplete="
+        	play_autorotate(true);
+        	hide_all();
+            save_info_scene();
+            "
+        onloadcomplete="
+        	play_autorotate(false);
+        	show_all();
+        	"
+    />
+
+</krpano>
+

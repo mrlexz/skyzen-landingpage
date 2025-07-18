@@ -1,0 +1,344 @@
+<krpano sh="1">
+  <layer name="menu_container_settings" state="closed" parent="root_layer" keep="true" type="container" bgalpha=".8" bgcolor="0x0e9096" align="right"  width="0"   height="0"   x="80" y="0" bgroundedge="20" boder="true"  maskchildren="true" bgshadow="0 0 10 0xFFFFFF 0.6">
+	  <layer name="scroll_1" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" align="top" width="200" height="600" direction="v" onloaded="setcenter(0,-10)" y="-10">
+    <layer name="menu_1" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="0" bgcolor="0x6b1fff" align="topcenter"  width="250"   height="40" height.touch="35"  x="0" y="0" bgroundedge="0" maskchildren="true" onover="">
+      <layer name="menu_1_1"
+       type="text"
+       align="center" x="0" y="5" 
+       html="Settings"
+       css="font-family:Arial;text-align:center; font-size:18px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onautosized=""
+       />
+    </layer>
+    <layer name="menu_2" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="1" bgcolor="0x00b2a1" align="topcenter"  width="250"   height="30" height.touch="35"  x="0" y="50" bgroundedge="0" maskchildren="true" onover="">
+      <layer name="MouseMode"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Mouse mode"
+       css="font-family:Arial;text-align:center; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onautosized=""
+       />
+    </layer>
+    <layer name="menu_2_1" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="1" bgcolor="0x32CD32" align="topcenter"  width="220"   height="30" height.touch="35"  x="0" y="85" bgroundedge="15" maskchildren="true" onover="">
+      <layer name="MouseMode_drag"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Mouse drag"
+       css="font-family:Arial;text-align:left; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onover="tween(layer[menu_2_1].x,-8,1);"
+       onout="tween(layer[menu_2_1].x,0,1);"
+	   onclick="set(control, mouse=drag, touch=drag);tween(layer[menu_2_1].bgalpha,1,1); tween(layer[menu_2_2].bgalpha,0,1);"   
+       />
+    </layer>
+    <layer name="menu_2_2" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="0" bgcolor="0x32CD32" align="topcenter"  width="220"   height="30" height.touch="35"  x="0" y="120" bgroundedge="15" maskchildren="true" onover="">
+      <layer name="MouseMode_move"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Mouse move"
+       css="font-family:Arial;text-align:lef; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onover="tween(layer[menu_2_2].x,-8,1);"
+       onout="tween(layer[menu_2_2].x,0,1);"
+	   onclick="set(control, mouse=moveto, touch=moveto); tween(layer[menu_2_2].bgalpha,1,1); tween(layer[menu_2_1].bgalpha,0,1); "     
+       />
+    </layer>
+    <layer name="menu_3" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="1" bgcolor="0x00b2a1" align="topcenter"  width="250"   height="30" height.touch="35"  x="0" y="155" bgroundedge="0" maskchildren="true" onover="">
+      <layer name="project"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Background Music"
+       css="font-family:Arial;text-align:center; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onautosized=""
+       />
+    </layer>
+    <layer name="menu_3_1" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="1" bgcolor="0x32CD32" align="topcenter"  width="220"   height="30" height.touch="35"  x="0" y="190" bgroundedge="15" maskchildren="true" onover="">
+      <layer name="normal"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Music 1"
+       css="font-family:Arial;text-align:left; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onover="tween(layer[menu_3_1].x,-8,1);"
+       onout="tween(layer[menu_3_1].x,0,1);"
+	   onclick="playsound(bgsound, %SWFPATH%/media/sounds/bgsound_1.mp3, 1);
+				tween(layer[menu_3_1].bgalpha,1,1); 
+				tween(layer[menu_3_2].bgalpha,0,1);
+				tween(layer[menu_3_3].bgalpha,0,1);
+				tween(layer[menu_3_4].bgalpha,0,1);
+				tween(layer[menu_3_5].bgalpha,0,1);
+				tween(layer[menu_3_6].bgalpha,0,1);
+				tween(layer[menu_3_7].bgalpha,0,1);
+				
+				tween(layer[menu_3_8].bgalpha,0,1);
+				
+				
+				"   
+       />
+    </layer>
+    <layer name="menu_3_2" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="0" bgcolor="0x32CD32" align="topcenter"  width="220"   height="30" height.touch="35"  x="0" y="230" bgroundedge="15" maskchildren="true" onover="">
+      <layer name="architectural"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Music 2"
+       css="font-family:Arial;text-align:lef; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onover="tween(layer[menu_3_2].x,-8,1);"
+       onout="tween(layer[menu_3_2].x,0,1);"
+	   onclick="playsound(bgsound, %SWFPATH%/media/sounds/bgsound_2.mp3, 1);
+				tween(layer[menu_3_1].bgalpha,0,1); 
+				tween(layer[menu_3_2].bgalpha,2,1);
+				tween(layer[menu_3_3].bgalpha,0,1);
+				tween(layer[menu_3_4].bgalpha,0,1);
+				tween(layer[menu_3_5].bgalpha,0,1);
+				tween(layer[menu_3_6].bgalpha,0,1);
+				tween(layer[menu_3_7].bgalpha,0,1);
+				
+				tween(layer[menu_3_8].bgalpha,0,1);
+				
+				
+				"     
+       />
+    </layer>
+    <layer name="menu_3_3" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="0" bgcolor="0x32CD32" align="topcenter"  width="220"   height="30" height.touch="35"  x="0" y="270" bgroundedge="15" maskchildren="true" onover="">
+      <layer name="fisheye"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Music 3"
+       css="font-family:Arial;text-align:lef; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onover="tween(layer[menu_3_3].x,-8,1);"
+       onout="tween(layer[menu_3_3].x,0,1);"
+	   onclick="playsound(bgsound, %SWFPATH%/media/sounds/bgsound_3.mp3, 1);
+				tween(layer[menu_3_1].bgalpha,0,1); 
+				tween(layer[menu_3_2].bgalpha,0,1);
+				tween(layer[menu_3_3].bgalpha,1,1);
+				
+				"     
+       />
+    </layer>
+	<layer name="menu_4" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="1" bgcolor="0x00b2a1" align="topcenter"  width="250"   height="30" height.touch="35"  x="0" y="320" bgroundedge="0" maskchildren="true" onover="">
+      <layer name="autorota"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Auto Rotate"
+       css="font-family:Arial;text-align:center; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onautosized=""
+       />
+    </layer>
+    <layer name="menu_4_1" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="1" bgcolor="0x32CD32" align="topcenter"  width="220"   height="30" height.touch="35"  x="0" y="370" bgroundedge="15" maskchildren="true" onover="">
+      <layer name="Autorotate ON"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Autorotate ON"
+       css="font-family:Arial;text-align:left; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onover="tween(layer[menu_3_1].x,-8,1);"
+       onout="tween(layer[menu_3_1].x,0,1);"
+	   onclick="set(autorotate.speed,1);
+				tween(layer[menu_4_2].bgalpha,0,1);
+				tween(layer[menu_4_1].bgalpha,1,1);
+				
+				
+				
+				"   
+       />
+    </layer>
+    <layer name="menu_4_2" state="closed" parent="menu_container_settings" keep="true" type="container" bgalpha="0" bgcolor="0x32CD32" align="topcenter"  width="220"   height="30" height.touch="35"  x="0" y="420" bgroundedge="15" maskchildren="true" onover="">
+      <layer name="AutorotateOFF"
+       type="text"
+       align="center" x="0" y="0" 
+       html="Autorotate OFF"
+       css="font-family:Arial;text-align:lef; font-size:14px; color:#FFFFFF;"
+       vcenter="false"
+       padding="10"
+       wordwrap="true"
+       bg="true"
+       bgcolor=""
+       bgalpha="0.0"
+       bgborder="0"
+       bgroundedge="20"
+       mergedalpha="true"
+       interactivecontent="false"
+       onover="tween(layer[menu_3_2].x,-8,1);"
+       onout="tween(layer[menu_3_2].x,0,1);"
+	   onclick="set(autorotate.speed,0);
+				tween(layer[menu_4_1].bgalpha,0,1); 
+				tween(layer[menu_4_2].bgalpha,1,1); 
+				
+				
+				
+				"     
+       />
+    </layer>	  
+		  
+		  
+		  
+		  
+		  
+    </layer>
+		  
+  </layer>
+  <events name="setting_events" keep="true"
+			onmousedown="tween(layer[menu_container_settings].width,0.1,.25);
+ 	  delayedcall(1.2,tween(layer[menu_container_settings].height,0,.5););"
+			ondoubleclick="if(sh==1,js(hide_menu());set(sh,0);,js(show_menu());set(sh,1););"
+			/>
+	
+	
+  <action name="open_settings">
+	  if(layer[menu_container_settings].height==450,
+	  tween(layer[menu_container_settings].width,0.1,.5);
+ 	   tween(layer[menu_container_settings].height,0,.6);
+	  ,
+	  set(layer[menu_container_settings].height,450);
+      tween(layer[menu_container_settings].width,230,.5););
+	</action>
+		
+  <action name="open_settings_mobile">
+	  if(layer[menu_container_settings].height==450,
+	  tween(layer[menu_container_settings].width,0.1,.5);
+ 	   tween(layer[menu_container_settings].height,0,.6);
+	  ,
+	  set(layer[menu_container_settings].height,450);
+      tween(layer[menu_container_settings].width,230,.5););
+	  set( layer[menu_container_settings].align,center);
+	  set(layer[menu_container_settings].x,0);
+	</action>
+	
+	
+  <action name="setlang_settings">if(%1==vi,
+    
+    set(layer[menu_1_1].html,Cài Đặt);
+    set(layer[MouseMode].html,Chế Độ Chuột);
+    set(layer[MouseMode_move].html,Di Chuyển);
+    set(layer[MouseMode_drag].html,Kéo Thả);
+    set(layer[project].html,Nhạc Nền);
+    set(layer[normal].html,Nhạc nền 1);
+    set(layer[architectural].html,Nhạc nền 2);
+    set(layer[fisheye].html,Nhạc nền 3);
+    
+    
+    );
+    
+    if(%1==cn,
+    
+    set(layer[menu_1_1].html,設置);
+    set(layer[MouseMode].html,滑鼠模式);
+    set(layer[MouseMode_move].html,移動);
+    set(layer[MouseMode_drag].html,拖放);
+    set(layer[project].html,可視角度);
+    set(layer[normal].html,通常);
+    set(layer[architectural].html,建築);
+    set(layer[fisheye].html,魚眼);
+    set(layer[stereographic].html,立體派);
+    set(layer[littleplanet].html,微型地面);
+    set(layer[littlesky].html,微型天空);
+    );
+    if(%1==en,
+    
+    set(layer[menu_1_1].html,Settings);
+    set(layer[MouseMode].html,Mouse mode);
+    set(layer[MouseMode_move].html,Drag);
+    set(layer[MouseMode_drag].html,Move);
+    set(layer[project].html,Background Music);
+    set(layer[normal].html,Music 1);
+    set(layer[architectural].html,Music 2);
+    set(layer[fisheye].html,Music 3);
+  
+    );</action>
+</krpano>

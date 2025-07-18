@@ -1,0 +1,286 @@
+﻿<krpano version="1.19" title="Virtual Tour" showerrors="true" logkey="true" onstart="startup();">
+
+	<plugin name="blur"  devices="desktop" url="%SWFPATH%/plugins/postprocessing_multipass_blur.js" keep="true" blur="0" onloaded="" />
+	<!-- add this code at the beginning of the XML file to activate the plugin.  -->
+	<plugin name="easy_html_lightbox" url="plugins/easy_html_lightbox.js?3"
+			keep="true"
+			devices="html5"
+			include_jquery="true"
+			include_lightbox="true"
+			theme="dark"
+			background_color="#1e1e1e" 
+	/>
+	
+	<view hlookat="0" vlookat="0" fovtype="MFOV" fov="135" maxpixelzoom="2.0" fovmin="60" fovmax="150" limitview="auto" />
+
+	<preview url="../../demo_image/lake_01.tiles/preview.jpg" />
+
+	<image type="CUBE" multires="true" tilesize="512">
+		<level tiledimagewidth="2304" tiledimageheight="2304">
+			<cube url="../../demo_image/lake_01.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" />
+		</level>
+		<level tiledimagewidth="1152" tiledimageheight="1152">
+			<cube url="../../demo_image/lake_01.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+		</level>
+		<level tiledimagewidth="640" tiledimageheight="640">
+			<cube url="../../demo_image/lake_01.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+		</level>
+	</image>
+
+	
+	<hotspot name="spot_1" style="skin_hotspotstyle" ath="0" atv="0" onclick="plugin[easy_html_lightbox].open_url('https://responsivedesign.is/examples/');" />
+	<hotspot name="spot_2" style="skin_hotspotstyle" ath="0" atv="15" onclick="plugin[easy_html_lightbox].open_url('https://responsivedesign.is/examples/',640,360,'Test Title',true);" />
+	<hotspot name="spot_22" style="skin_hotspotstyle" ath="0" atv="-15" onclick="plugin[easy_html_lightbox].open_url('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf','','','',true);" />
+	
+	<hotspot name="spot_3" style="skin_hotspotstyle" ath="25" atv="0" onclick="plugin[easy_html_lightbox].play_video('demo_files/demo.mp4','','','',true);" />
+	<!-- <hotspot name="spot_4" style="skin_hotspotstyle" ath="25" atv="0" onclick="plugin[easy_html_lightbox].play_video('demo_files/demo.mp4','','','Test Title');" /> -->
+	<hotspot name="spot_5" style="skin_hotspotstyle" ath="25" atv="15" onclick="plugin[easy_html_lightbox].play_video('demo_files/demo.mp4',640,360,'Test Title');" />
+	<hotspot name="spot_6" style="skin_hotspotstyle" ath="25" atv="-15" onclick="plugin[easy_html_lightbox].play_video('https://www.youtube.com/watch?v=fJcl6Gw1D8k',640,360);" />
+
+	<hotspot name="spot_7" style="skin_hotspotstyle" ath="-25" atv="0" onclick="plugin[easy_html_lightbox].open_image('demo_files/demo-1.jpg');" />
+	<hotspot name="spot_8" style="skin_hotspotstyle" ath="-25" atv="15" onclick="plugin[easy_html_lightbox].open_image('demo_files/demo-1.jpg',640,360,'Test Title',true);" />
+	<hotspot name="spot_9" style="skin_hotspotstyle" ath="-25" atv="-15" onclick="plugin[easy_html_lightbox].open_image('demo_files/demo-1.jpg;demo_files/demo-1.jpg;demo_files/demo-1.jpg;demo_files/demo-1.jpg');" />
+
+	<hotspot name="spot_10" style="skin_hotspotstyle" ath="50" atv="0" onclick="plugin[easy_html_lightbox].open_inline('sample-content',640,360,'Test Title',true);" />
+	<hotspot name="spot_11" style="skin_hotspotstyle" ath="50" atv="15" onclick="plugin[easy_html_lightbox].open_inline('sample-content','','','',true);" />
+	<hotspot name="spot_11" style="skin_hotspotstyle" ath="50" atv="15" onclick="plugin[easy_html_lightbox].open_inline('sample-content');" />
+
+	<!-- the title and info texts -->
+	<layer name="text1" style="text" align="centertop" y="25"  zorder="1" alpha="0" html="Easy HTML Lightbox Plugin" css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:26px; font-weight:bold; font-style:italic;" />
+	<layer name="text2" style="text" align="centertop" y="62"  zorder="1" alpha="0" html="view this example in fullscreen" css="text-align:center; color:#FFFFFF; font-family:Arial; font-size:14px;" />
+
+	<!-- the 'from left sliding' button container -->
+	<layer name="bg1" type="container" align="lefttop" width="50%" height="390" x="-55%" y="110" bgcolor="0x000000" bgalpha="0.20" zorder="0">
+		<layer name="bsp01"  style="button"           align="centertop" x="0" y="50"  width="80%" height="30" html="Open URL"										onclick="plugin[easy_html_lightbox].open_url('https://responsivedesign.is/examples/');" />
+		<!-- <layer name="bsp02"  style="button"           align="centertop" x="0" y="90" width="80%" height="30"  html="Open URL Width Title and Width and Height"		onclick="plugin[easy_html_lightbox].open_url('https://responsivedesign.is/examples/',640,360,'Test Title');" /> -->
+		<!-- <layer name="bsp02"  style="button"           align="centertop" x="0" y="90" width="80%" height="30"  html="Open Panorama"									onclick="plugin[easy_html_lightbox].open_url('https://krpano.com/plugins/userplugins/advancedcombobox/example/example.html',1280,720);" /> -->
+		<layer name="bsp02"  style="button"           align="centertop" x="0" y="90" width="80%" height="30"  html="Open Panorama Width Title and Width and Height"		onclick="plugin[easy_html_lightbox].open_url('https://panotools.eu/demo/advancedcombobox',640,360,'Test Title');" />
+		<layer name="bsp03"  style="button"           align="centertop" x="0" y="130" width="80%" height="30" html="Open URL Width Postprocessing Plugin"			onclick="plugin[easy_html_lightbox].open_url('https://responsivedesign.is/examples/',640,360,'Test Title',true);" />
+		<layer name="bsp04"  style="button"           align="centertop" x="0" y="170" width="80%" height="30" html="Open PDF"										onclick="plugin[easy_html_lightbox].open_url('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf');" />
+		
+		<layer name="bsp58" style="button|empty"     align="centertop" x="0" y="210" width="80%" height="10"   html=""												onclick="" />
+		<layer name="bsp21" style="button"           align="centertop" x="0"  y="230"  width="80%" height="30" html="Open Image"										onclick="plugin[easy_html_lightbox].open_image('demo_files/demo-1.jpg');" />
+		<layer name="bsp22" style="button"           align="centertop" x="0"  y="270" width="80%" height="30"  html="Open Image Width Postprocessing Plugin"			onclick="plugin[easy_html_lightbox].open_image('demo_files/demo-2.jpg',640,360,'Test Title',true);" />
+		<layer name="bsp23" style="button"			 align="centertop" x="0"  y="310" width="80%" height="30"  html="Open Gallery"									onclick="plugin[easy_html_lightbox].open_image('demo_files/demo-3.jpg;demo_files/demo-4.jpg;demo_files/demo-2.jpg;demo_files/demo-1.jpg');" />
+	</layer>
+
+	<!-- the 'from right sliding' button container -->
+	<layer name="bg2" type="container" align="righttop" width="50%" height="390" x="-55%" y="110" bgcolor="0x000000" bgalpha="0.20" zorder="0">
+		<layer name="bsp05"  style="button"           align="centertop" x="0" y="50" width="80%" height="30"  html="Open Local Video"								onclick="plugin[easy_html_lightbox].play_video('demo_files/demo.mp4');" />
+		<layer name="bsp06"  style="button"           align="centertop" x="0" y="90" width="80%" height="30"  html="Open Local Video Width Postprocessing Plugin"	onclick="plugin[easy_html_lightbox].play_video('demo_files/demo.mp4','','','',true);" />
+		<layer name="bsp07"  style="button"           align="centertop" x="0" y="130" width="80%" height="30" html="Open Local Video Width Title and Width and Height"	onclick="plugin[easy_html_lightbox].play_video('demo_files/demo.mp4',640,360,'Test Title');" />
+		<layer name="bsp08"  style="button"           align="centertop" x="0" y="170" width="80%" height="30" html="Open Youtube Video"								onclick="plugin[easy_html_lightbox].play_video(https://www.youtube.com/watch?v=fJcl6Gw1D8k',640,360);" />
+		<layer name="bsp09"  style="button"           align="centertop" x="0" y="210" width="80%" height="30" html="Open Vimeo Video"								onclick="plugin[easy_html_lightbox].play_video(https://vimeo.com/279629299',640,360);" />
+		
+		<layer name="bsp24" style="button|empty"     align="centertop" x="0" y="250" width="80%" height="10"  html=""												onclick="" />
+		<layer name="bsp25" style="button"			 align="centertop" x="0"  y="270" width="80%" height="30" html="Open Inline HTML"								onclick="plugin[easy_html_lightbox].open_inline(sample-content);" />
+		<layer name="bsp26" style="button"			 align="centertop" x="0"  y="310" width="80%" height="30" html="Open Inline HTML Width Title and Width and Height"	onclick="plugin[easy_html_lightbox].open_inline('sample-content',640,360,'Test Title',true);" />
+	</layer>
+	<!-- the 'from center sliding' button container -->
+	<layer name="bg0" type="container" align="lefttop" width="100%" height="20" x="0" y="90" bgcolor="0x000000" bgalpha="0.20" zorder="0">
+		<layer name="bsp00"  style="button|red"        align="centertop" x="0" y="25"  width="90%" height="30" html="Fullscreen"										onclick="switch(fullscreen);" />
+	</layer>
+
+
+
+	<!-- skin_hotspotstyle - style for the hotspots -->
+	<style name="skin_hotspotstyle" url="skin/vtourskin_hotspot.png" scale="0.5" edge="top" distorted="true"
+	       tooltip=""
+	       linkedscene=""
+	       linkedscene_lookat=""
+	       onclick="skin_hotspotstyle_click();"
+	       onover="tween(scale,0.55);"
+	       onout="tween(scale,0.5);"
+	       onloaded="if(linkedscene AND skin_settings.tooltips_hotspots, copy(tooltip,scene[get(linkedscene)].title); loadstyle(skin_tooltips); );"
+	       />
+
+	<action name="skin_hotspotstyle_click" scope="local">
+		if(caller.linkedscene,
+			copy(hs_linkedscene, caller.linkedscene);
+			if(caller.linkedscene_lookat, txtsplit(caller.linkedscene_lookat, ',', hs_lookat_h, hs_lookat_v, hs_lookat_fov); );
+			set(caller.enabled, false);
+			skin_hidetooltips();
+			tween(caller.depth|caller.alpha|caller.oy|caller.rx, 4000|0.0|-50|-60, 0.5, default,
+				skin_loadscene(get(hs_linkedscene), get(skin_settings.loadscene_blend));
+				if(hs_lookat_h !== null, skin_lookat(get(hs_lookat_h), get(hs_lookat_v), get(hs_lookat_fov)); );
+				skin_updatescroll();
+			);
+		);
+	</action>
+	<!-- define a button style -->
+	<style name="button"
+		type="text"
+		children="false"
+		css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:10px;line-height: 26px;"
+		vcenter="true"
+		backgroundcolor="0x000000" backgroundalpha="0.667" roundedge="10" border="false"
+		shadow="0.1" shadowrange="8" shadowcolor="0xFFFFFF"
+		/>
+	<style name="red"
+		type="text"
+		children="false"
+		css="text-align:center; color:red; font-family:Arial; font-weight:bold; font-size:13px;line-height: 26px;"
+		vcenter="true"
+		backgroundcolor="0x000000" backgroundalpha="0.667" roundedge="10" border="false"
+		shadow="0.1" shadowrange="8" shadowcolor="0xFFFFFF"
+		/>
+	<style name="empty"
+		type="text"
+		children="false"
+		css="text-align:center; color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:10px;line-height: 26px;"
+		vcenter="true"
+		backgroundcolor="0x000000" backgroundalpha="0.2" roundedge="10" border="false"
+		shadow="0.0" shadowrange="8" shadowcolor="0xFFFFFF"
+		/>
+
+
+
+	<!-- define a simple text style -->
+	<style name="text"
+		type="text"
+		children="false"
+		background="false"
+		border="false"
+		enabled="false"
+		/>
+
+	<!-- add a shadow to the text style, but only for HTML5, the Flash text rendering with shadows doesn't look good -->
+	<style name="text" devices="html5"
+		textshadow="0.1"
+		textshadowrange="4"
+		textshadowcolor="0x000000"
+		textshadowalpha="1.0"
+		/>
+
+
+	<!-- no default loading bar -->
+	<progress showload="false" showwait="false" />
+
+	<!-- resize the left and right containers manually to avoid overlappings because of rounding errors -->
+	<events name="exampleevents" onresize="mul(w1,stagewidth,0.5); roundval(w1); sub(w2,stagewidth,w1); copy(layer[bg1].width,w1); copy(layer[bg2].width,w2);" />
+
+
+	<action name="startup">
+
+		
+		delayedcall(0.5, slide_in_examples() );
+	</action>
+
+
+	<action name="loadexample">
+		<!-- clear the ondown, onclick events from the caller (to avoid double clicking) -->
+		set(ondown,null);
+		set(onclick,null);
+
+		<!-- first slide out the example button containers to left and to right -->
+		slide_out_examples();
+
+		<!-- then add an 'back' button with keep=true for returning to the start xml -->
+		add_back_button();
+
+		<!-- and finally load the given example (a bit delayed to see the slide out animation) -->
+		delayedcall(0.7, loadpano(%1, null, MERGE, BLEND(0.5)) );
+	</action>
+
+
+	<action name="slide_in_examples">
+		tween(layer[bg1].x, 0%, 0.5, easeOutQuint);
+		tween(layer[bg2].x, 0%, 0.5, easeOutQuint);
+		delayedcall(0.5,
+			tween(layer[text1].alpha, 1.0, 0.5, easeOutQuint);
+			tween(layer[text2].alpha, 1.0, 0.5, easeOutQuint);
+		  );
+	</action>
+
+	<action name="slide_out_examples">
+		tween(layer[bg1].x, -55%, 0.75, easeOutCubic);
+		tween(layer[bg2].x, -55%, 0.75, easeOutCubic);
+		tween(layer[bg1].alpha, 0, 0.75, easeOutCubic);
+		tween(layer[bg2].alpha, 0, 0.75, easeOutCubic);
+		tween(layer[text1].alpha, 0.0, 0.75, easeOutQuint);
+		tween(layer[text2].alpha, 0.0, 0.75, easeOutQuint);
+	</action>
+
+	<action name="add_back_button">
+		addlayer(backbutton);
+		layer[backbutton].loadstyle('button');
+		set(layer[backbutton].style, null);
+		set(layer[backbutton].keep, true);
+		set(layer[backbutton].html, 'BACK');
+		set(layer[backbutton].align, 'rightbottom');
+		set(layer[backbutton].x, 32);
+		set(layer[backbutton].y, 32);
+		set(layer[backbutton].width, 70);
+		set(layer[backbutton].height, 50);
+		set(layer[backbutton].roundedge, 20);
+		set(layer[backbutton].zorder, 99999);
+		set(layer[backbutton].alpha, 0.0);
+		set(layer[backbutton].onloaded, delayedcall(1.0,tween(alpha,1.0)); );
+		set(layer[backbutton].ondown, 'set(ondown,null); resetkrpano(); loadpano(%SWFPATH%/krpano.xml,null,IGNOREKEEP,BLEND(1));' );
+	</action>
+
+
+	<action name="resetkrpano">
+		<!-- reset/clear everything from a previous example -->
+
+		<!-- remove all scene/data/action/events/style elements -->
+		set(scene.count, 0);
+		set(data.count, 0);
+		set(action.count, 0);
+		set(events.count, 0);
+		set(style.count, 0);
+
+		<!-- stop all timers/tweens -->
+		breakall();
+
+		<!-- if there is a soundinterface - stop all sounds -->
+		if(stopallsounds !== null, stopallsounds() );
+
+		<!-- remove all events -->
+		set(onstart, null);
+		set(events.onenterfullscreen, null);
+		set(events.onexitfullscreen, null);
+		set(events.onxmlcomplete, null);
+		set(events.onpreviewcomplete, null);
+		set(events.onloadcomplete, null);
+		set(events.onloaderror, null);
+		set(events.onnewpano, null);
+		set(events.onremovepano, null);
+		set(events.onkeydown, null);
+		set(events.onkeyup, null);
+		set(events.onviewchange, null);
+		set(events.onclick, null);
+		set(events.onmousedown, null);
+		set(events.onmouseup, null);
+		set(events.onmousewheel, null);
+		set(events.onidle, null);
+		set(events.onresize, null);
+
+		<!-- remove contextmenu items -->
+		set(contextmenu.item.count, 0);
+
+		<!-- remove custom cursors -->
+		set(cursors.url, null);
+		
+		<!-- set default control settings -->
+		set(control.mousetype, moveto);
+		set(control.touchtype, drag2d);
+
+		<!-- disable autorotate -->
+		set(autorotate.enabled, false);
+
+		<!-- reset area -->
+		set(area.x, 0);
+		set(area.y, 0);
+		set(area.width, 100%);
+		set(area.height, 100%);
+
+		<!-- enable flash10 -->
+		set(display.flash10, on);
+		
+		<!-- if defined delete the 'startscene' variable (used by many tours as startup setting) -->
+		delete(startscene);
+	</action>
+
+
+</krpano>

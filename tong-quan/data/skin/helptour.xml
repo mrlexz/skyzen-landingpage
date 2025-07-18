@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<krpano>
+    <!-- Hướng dẫn sử dụng Tour -->
+    <layer name="intro_vt_container"  keep="true" type="container" zorder="99" bgalpha="1" bgcolor="0x0e9096" visible="true" align="center" x="0" y="0" width="100%" height="100%" enabled="true" bgcapture="true" onclick="showhidehelp();">
+	
+        <layer name="img_help" visible="true" url="intro.jpeg" url.mobile="intro_mobile.jpeg"  align="center" scale="1" scale.mobile=".55" y="0" y.mobile="0"  onclick="showhidehelp();" />
+		
+		
+    </layer>
+	
+	
+		
+	<action name="showhidehelp">
+		
+		set(layer[intro_vt_container].enabled,true);
+		
+		
+		
+		tween(layer[img_help].y,-1640,0.7);
+		tween(layer[sxs].y,1640,0.7);
+	
+		
+		tween(layer[intro_vt_container].bgalpha,0,1);
+	delayedcall(.5,set(layer[intro_vt_container].visible,false));	
+		
+		
+		
+		
+		
+		
+	</action>
+	<action name="sethelptitle">
+		
+		
+		
+		for(set(i,1), i LT 15, inc(i),
+		if(language==vi,
+		txtadd(tempurl,'%SWFPATH%/skin/skin_phone/img/h',get(i),'.png'); set(layer[img_help].url,%SWFPATH%/media/images/help.png);,
+		txtadd(tempurl,'%SWFPATH%/skin/skin_phone/img/h',get(i),'e.png');
+		set(layer[img_help].url,%SWFPATH%/media/images/helpe.png);
+		);
+		txtadd(layerx,'h',get(i),'_box');
+		set(layer[get(layerx)].url,get(tempurl));
+		trace('dfaddasf',get(layerx));
+		); 
+		
+		
+		
+	
+	
+	
+	
+	</action>
+
+</krpano>

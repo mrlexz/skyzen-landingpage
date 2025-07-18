@@ -1,0 +1,66 @@
+<krpano prev_bgsound="">
+    <!--  load the soundinterface plugin  -->
+    <layer name="soundinterface"
+            url="%SWFPATH%/plugins/soundinterface.swf"
+            alturl="%SWFPATH%/plugins/soundinterface.js" 
+            rootpath="%SWFPATH%/media/sound/bgsounds.mp3" 
+            preload="true" 
+            keep="true"
+    />
+    <!-- Bật/Tắt âm thanh -->
+    <action name="play_music">
+        if(%1 == null, if(layer[skin_btn_left].state == 'closed', set(show,true), set(show,false)); , set(show,%1); );
+        if(show,
+            pausesound(bgsounds);
+            set(layer[skin_btn_left].crop, '64|646|64|64');
+            set(layer[skin_btn_left].state, 'opened');
+            
+            set(layer[skin_btn_left].tooltip_vi, 'Bật nhạc nền');
+			set(layer[soundinterface].enable,true);
+            set(layer[skin_btn_left].tooltip_en, 'Sound on');
+            if(clang == 'vi',
+                    copy(layer[skin_btn_left].tooltip, layer[skin_btn_left].tooltip_vi);
+                    ,
+                    copy(layer[skin_btn_left].tooltip, layer[skin_btn_left].tooltip_en); 
+                );
+
+          ,
+            resumesound(bgsounds);
+            if(layer[skin_btn_left].state != 'closed',
+                set(layer[skin_btn_left].state, 'closed');
+                set(layer[skin_btn_left].crop, '0|192|64|64');
+                set(layer[skin_btn_left].tooltip_vi, 'Tắt nhạc nền');
+                set(layer[skin_btn_left].tooltip_en, 'Sound off'); 
+                if(clang == 'vi',
+                    copy(layer[skin_btn_left].tooltip, layer[skin_btn_left].tooltip_vi);
+
+                    ,
+                    copy(layer[skin_btn_left].tooltip, layer[skin_btn_left].tooltip_en); 
+                );
+              );
+          );
+        layer[skin_btn_left].onover();
+    </action>    
+
+
+    <events name="bgsound" keep="true"
+            onxmlcomplete="
+               if(prev_bgsound != scene[get(xml.scene)].bgsound, stopsound(bgsounds)); 
+               if(scene[get(xml.scene)].bgsound,
+                    set(layer[skin_btn_left].enabled,true);
+                    set(layer[skin_btn_left].alpha,1);
+                    ,
+                    set(layer[skin_btn_left].enabled,false);
+                    set(layer[skin_btn_left].alpha,0.5);
+                );
+               "
+
+            onloadcomplete="
+                   if(scene[get(xml.scene)].bgsound,
+                    if(prev_bgsound == scene[get(xml.scene)].bgsound,, delayedcall(0.01, playsound(bgsounds, get(scene[get(xml.scene)].bgsound), 1,.5)));
+                   );
+                   copy(prev_bgsound, scene[get(xml.scene)].bgsound);
+    "/>
+
+</krpano>
+

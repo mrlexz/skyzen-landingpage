@@ -1,0 +1,546 @@
+﻿<krpano version="1.19"  onstart="" cnt="1" count_hs="10">
+
+	<include url="%SWFPATH%/skin/skin.xml" />
+	<includse url="menu.xml" devices="desktop|table"/>
+	<includes url="menu_mobile.xml" devices="mobile"/>
+	<include url="ga.xml" />
+	<incclude url="matbang_editor.xml" />
+	<incsldusde url="videospot_editor.xml" />
+	<include url="%SWFPATH%/plugins/video-player.xml"/>
+	<include url="%SWFPATH%/plugins/youtube-player.xml"/>
+	
+	
+	<incclude url="%SWFPATH%/skin/debug.xml"/>
+	<include url="%SWFPATH%/skin/gallery.xml"/>
+	<include url="%SWFPATH%/skin/tooltip.xml"/>
+	<include url="%SWFPATH%/plugins/common.xml"/>
+	<include url="%SWFPATH%/plugins/ios_iframe_fullscreen.xml"/>
+	<include url="mainplace.xml"/>
+	<include url="%SWFPATH%/skin/sound.xml"/>
+	<include url="%SWFPATH%/skin/layout.xml"/>
+	<inclusde url="%SWFPATH%/skin/helptour.xml"/>
+	<include url="%SWFPATH%/module/imghotspot/imghotspot.xml"/>
+	<include url="%SWFPATH%/module/placehotspot/placehotspot.xml"/>
+	<include url="%SWFPATH%/module/lightbox/lightbox.xml"/>
+	<inclsude url="%SWFPATH%/module/thumb/thumb.xml"/>
+	
+	
+	
+	
+	
+	
+	
+
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+<skin_settings maps="true"
+	               maps_type="bing"
+	               maps_bing_api_key="sK9fZro8ewadsOFgseId~8gvTqNMN52jLlA9iML2ymQ~ApjDpy-b-bs8-hGdTjhK6UA_MVEinoom8y0Bv8sVSPNAbTKZGdG-OvXDWod_I58i"
+	               maps_google_api_key="AIzaSyBRyzjxct7YTZSD6indQxZHe5k7TbuU9XA"
+	               maps_zoombuttons="false"
+	               gyro="true"
+	               webvr="true"
+	               webvr_gyro_keeplookingdirection="false"
+	               webvr_prev_next_hotspots="true"
+	               littleplanetintro="false"
+	               title="false"
+	               thumbs="fasle"
+	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_opened="false"
+	               thumbs_text="false"
+	               thumbs_dragging="true"
+	               thumbs_onhoverscrolling="false"
+	               thumbs_scrollbuttons="false"
+	               thumbs_scrollindicator="false"
+	               thumbs_loop="false"
+	               tooltips_buttons="true"
+	               tooltips_thumbs="true"
+	               tooltips_hotspots="true"
+	               tooltips_mapspots="true"
+	               deeplinking="false"
+	               loadscene_flags="MERGE"
+	               loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
+	               loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
+	               loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
+	               loadingtext="loading..."
+	               layout_width="100%"
+	               layout_maxwidth="100%"
+	               design_skin_images="vtourskin.png"
+	               design_bgcolor="0x233f95"
+	               design_bgalpha="0.8"
+	               design_bgborder="0"
+	               design_bgroundedge="20"
+	               design_bgshadow="0 4 10 0xFFFFFF 0.3"
+	               design_thumbborder_bgborder="3 0xFFFFFF 1.0"
+	               design_thumbborder_padding="2"
+	               design_thumbborder_bgroundedge="11"
+			 	   maincolor="0xffffff"
+			   mail=""
+			   zalo="https://zalo.me/"
+			   facebook="https://www.facebook.com/"
+			   youtube="NDZccVx0Zys"
+			   
+			   
+			   
+	               design_text_css="
+									color:#ffebd4; 
+									font-family: &#34;Lato-Light &#34;,	&#34;Lato	&#34;,sans-serif;
+									font-size:9px;
+									text-align:left; 
+										background-color: #0f2c6d;
+									padding:10px;
+									height:auto;
+									line-height: 150%;
+									border-radius: 10px;
+									border:solid 1px #ffebd4;
+									
+									"
+	               design_menu_css_set="
+									color:#ffebd4; 
+									font-family: menufont1;
+									font-size:11px;
+									text-align:left; 
+									background-color: #0f2c6d;
+									padding:10px 22px 10px 22px;
+									height:auto;
+									border-radius: 10px;
+									border:solid 1px 0x0f2c6d;
+									
+									"
+			      design_text_css_hint="
+									color:#ffebd4; 
+									font-family: &#34;Lato-Light &#34;,	&#34;Lato	&#34;,sans-serif;
+									font-size:15px;
+									text-align:center; 
+										background-color: #0f2c6d;
+									padding:5px;
+									height:auto;
+									border-radius: 25px;
+									
+									
+									"
+			   
+			    design_menu_css="
+									color:#ffebd4; 
+									font-family: &#34;Lato-Light &#34;,	&#34;Lato	&#34;,sans-serif;
+									font-size:12px;
+								 display:block;
+									text-align:center ; 
+									 	background-color: #0f2c6d;
+									padding-top:15px;
+									padding-bottom:2px;
+									height:30px;
+									border-radius: 20px;
+									border:solid 0px black;
+									align-content: center;
+									"
+			    design_sub_css="
+									color:white; 
+									font-family: &#34;Lato-Light &#34;,	&#34;Lato	&#34;,sans-serif;
+									font-size:11px;
+									text-align:center; 
+										background-color: #0f2c6d;
+									padding:15px 20px 15px 20px;
+									height:autopx;
+									border-radius: 0px;
+									border:solid 1px white;
+									align-content: center;
+									"
+			   
+			   
+			   
+			   
+			    design_settings_css="
+									color:#FFFFFF; 
+									font-family: &#34;Lato-Light &#34;,	&#34;Lato	&#34;,sans-serif;
+									font-size:16px;
+									text-align:center; 
+									background: linear-gradient(to right,#9b682c,#bfb282);
+									padding:10px 22px 10px 22px;
+									height:60px;
+									width:220px; 
+									border-radius: 25px;
+									border:solid 1px white;
+									
+									"
+			   
+			    design_layer_css="
+									color:#FFFFFF; 
+									text-align:center; 
+									background: linear-gradient(to right,#ee9ca7,#ffdde1);
+									padding:8px;
+									height:auto;
+									border-radius: 25px;
+									border:solid 1px white;
+									width:300px;
+									"
+			   
+	               design_text_css2="font-weight: bold;font-size: 11px;text-align:left; color:#ffffff; font-family: menufont1; "
+	               design_text_css2_mobile="font-weight: bold;font-size: 8px;text-align:left; color:#ffffff; font-family: menufont1; "
+	               design_text_css_hotspot="font-weight: bold;font-size: 14px;text-align:center; color:#000000; font-family: menufont; "
+	               design_text_css_h="font-weight: bold;font-size: 14px;text-align:center; color:#ffffff; font-family: menufont; "
+	               design_text_css5="font-weight: bold;font-size: 11.5px;text-align:left; color:#ffffff; font-family: menufont1; "
+	               design_text_css5_mobile="font-weight: bold;font-size: 8px;text-align:left; color:#ffffff; font-family: menufont1; "
+				    design_text_css_3="font-weight: bold;font-size: 12px;text-align:left; color:#003300; font-family: menufont1; "
+				    design_text_css_sub="font-weight: bold;font-size: 12px;text-align:left; color:#003300; font-family: menufont1; "
+				    design_text_css4="font-weight: bold;font-size: 14px;text-align:center; color:#a46e1b; font-family: menufont; "
+				    design_text_css6="font-weight: bold;font-size: 25px;text-align:center; color:#ffffff; font-family: menufont; "
+				    design_text_css7="font-weight: bold;font-size: 18px;text-align:center; color:#fffff; font-family: menufont; "
+				   
+				   design_text_css1="color:#613E19; font-family:Arial;"
+	               design_text_shadow="1"
+	               />
+
+	
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+		
+	</action>
+                
+<layer name="hs_matbang_container"  keep="true" zorder="100"
+       type="container" width="120" height="100" visible="false"
+       y="10" x="0" maskchildren="false" capture="false"
+	  parent=""
+       bgcolor="calc:skin_settings.design_bgcolor" bgroundedge="10"
+       bgalpha="1" align="bottom">
+	 <layer name="triangle" url="%SWFPATH%/plugins/textfield.swf" zorder="5000"
+   		  align="bottomcenter"  x="0" y="-20"
+		  width="auto" height="auto" html="▼"
+    	  backgroundcolor="0x019680" backgroundalpha=".0" bgshadow="1"
+    	  roundedge="5" 
+		  onclick="tween(layer[hs_matbang_container].alpha,0,.2);wait(1);tween(layer[hs_matbang_container].visible,0);" 
+		   
+    	  css="						color:#019680; 
+									font-family: &#34;Lato-Light &#34;,	&#34;Lato	&#34;,sans-serif;
+									font-size:15px;
+									text-align:center; 
+									background-color: hsla(204, 100%, 50%, 0);
+			   						
+									padding:5px 10px 5px 10px;
+									border-radius: 50px;
+									border:solid 0px white;"
+    /> 
+	
+	
+	
+    <layer name="text_header" url="%SWFPATH%/plugins/textfield.swf" zorder="5"
+   		  align="bottomcenter"  x="0" y="-20"
+		  width="auto" height="auto" html="▼"
+    	  backgroundcolor="0x019680" backgroundalpha=".0" bgshadow="1"
+    	  roundedge="5"
+    	  vcenter="true"  
+    	  css="						color:#233f95; 
+									font-family: &#34;Lato-Light &#34;,	&#34;Lato	&#34;,sans-serif;
+									font-size:15px;
+									text-align:center; 
+									background-color: hsla(204, 100%, 50%, 0);
+			   						
+									padding:5px 10px 5px 10px;
+									border-radius: 50px;
+									border:solid 0px white;"
+		   
+    /> 
+ <layer name="text_info" url="%SWFPATH%/plugins/textfield.swf" zorder="5"
+   		  align="center"  x="0" y="10"
+		  width="auto" height="auto" html="Mã Lô: xxx-d34[br]Diện Tích: 129m2[br]Phân Loại: Liền Kề 	"
+    	  backgroundcolor="0x019680" backgroundalpha=".0" bgshadow="1"
+    	  roundedge="5" capture="false"
+    	  vcenter="true"  
+    	  css="						color:#FFFFFF; 
+									font-family: &#34;Lato-Light &#34;,	&#34;Lato	&#34;,sans-serif;
+									font-size:10px;
+									text-align:left; 
+									background-color: hsla(204, 100%, 50%, 0);
+									padding:10px ;
+									border-radius: 10px;
+			   						line-height:150%;
+									border:solid 0px white;"
+		   
+    /> 
+
+    <layer name="text_close" url="%SWFPATH%/plugins/textfield.swf" zorder="5"
+   		  align="topright"  x="0" y="0"
+		  width="auto" height="auto" html="X"
+    	  backgroundcolor="0x019680" backgroundalpha=".0" bgshadow="1"
+    	  roundedge="5" 
+		  onclick="tween(layer[hs_matbang_container].alpha,0,.2);wait(1);tween(layer[hs_matbang_container].visible,0);" 
+		   
+    	  css="						color:#FFFFFF; 
+									font-family: &#34;Lato-Light &#34;,	&#34;Lato	&#34;,sans-serif;
+									font-size:8px;
+									text-align:center; 
+									background-color: red;
+									padding:5px 8px 5px 8px;
+									border-radius: 50px;
+									border:solid 0px white;"
+    /> 
+ 
+
+</layer>
+	
+<hotspot name="hs_aos" keep="true" url="duong.png"
+	   scale="0.001" alpha="1" ath="0" atv="0"
+	   />
+
+
+
+		<style name="sodo"
+           handcursor="true"  background="true" backgroundcolor="0xFF0000" backgroundalpha=".6"
+           fillcolor="0x233f95" fillalpha="0.0"  capture="false"
+           bordercolor="0x006666" borderalpha=".0" borderwidth="2"  bgshadow="2 2 0x000000 0.6" 
+        
+		   onover="tween(borderalpha, .2,.4); tween(fillalpha,1,0);autorotate.pause"
+           onout="tween(borderalpha, 0, .25); tween(fillalpha,.0,0.7);"
+            ondown.mobile=" asyncloop(pressed,onhover() );"
+           onup.mobile="onout()"
+           onclick="
+					hotspot[get(name)].getcenter(athx,atvy);
+					set(hotspot[hs_aos].ath,get(athx));
+	   			    set(hotspot[hs_aos].atv,get(atvy)); 
+					txtadd(layer[hs_matbang_container].parent,'hotspot[hs_aos]');txtadd(textss,'Lô:  ',get(name),'[br]Diện tích: ',get(dientich),'[br]LOẠI: ',get(title),'[br]Hướng: ',get(huong)); toupper(textss);
+					set(layer[text_info].html,get(textss));
+					set(layer[hs_matbang_container].visible,1);
+					tween(layer[hs_matbang_container].alpha,1,.2);
+					looktohotspot(get(name), 40, smooth(100,50,20));
+					
+					"
+	   	
+           />
+	
+	
+	
+	<style name="highway"
+           handcursor="false"  background="true" backgroundcolor="0xFF0000" backgroundalpha=".6"
+           fillcolor="0xffcc54" fillalpha="0.0" 
+           bordercolor="0xffcc54" borderalpha=".0" borderwidth="2"  bgshadow="2 2 0x000000 0.6" 
+        onloaded="animation();"	 
+		 animation="tween(fillalpha, calc(.8 - fillalpha), get(time), easeinoutquint,animation())"
+		  
+          
+	   	
+           />
+	
+	
+		<style name="khub"
+           handcursor="false"  background="true" backgroundcolor="0xFF0000" backgroundalpha=".6"
+           fillcolor="0x233f95" fillalpha="0.0" 
+           bordercolor="0x006666" borderalpha=".8" borderwidth="2"  bgshadow="2 2 0x000000 0.6" 
+        
+		   onhover="tween(borderalpha, 1,.4); tween(fillalpha,1,0);txtadd(texts,'THÔNG TIN LÔ[br] ',get(name)); toupper(texts); showtext(get(texts),STYLE4); autorotate.pause"
+           onout="tween(borderalpha, 1, .25); tween(fillalpha,.0,0.7);"
+            ondown.touch=" asyncloop(pressed,onhover() );"
+           onup.touch="onout()"
+           onclick=";
+					
+					js(alert(Đang Cập Nhật));
+					"
+	   	
+           />
+	
+		<style name="daban"
+           handcursor="false"  background="true" backgroundcolor="0xFF0000" backgroundalpha=".6"
+           fillcolor="0xFF0000" fillalpha="0.5" 
+           bordercolor="0xFF0000" borderalpha=".8" borderwidth="2"  bgshadow="2 2 0x000000 0.6" 
+        
+		   onhover="tween(borderalpha, 1,.4); tween(fillalpha,1,0);txtadd(texts,'LÔ[br] ',get(name),' ĐÃ BÁN'); toupper(texts); showtext(get(texts),STYLE4); autorotate.pause"
+           onout="tween(borderalpha, .8, .25); tween(fillalpha,.5,0.7);"
+            ondown.touch=" asyncloop(pressed,onhover() );"
+           onup.touch="onout()"
+           onclick=";
+					"
+	   	
+           />
+	
+	
+		<style name="phankhu"
+           handcursor="false"  background="true" backgroundcolor="0x9b682c" backgroundalpha=".6"
+           fillcolor="0xFF0000" fillalpha="0.0" 
+           bordercolor="0xFF0000" borderalpha=".8" borderwidth="2"  bgshadow="2 2 0x000000 0.6" 
+        
+		   onhover="tween(borderalpha, 1,.4); tween(fillalpha,1,0);txtadd(texts,'CHI TIẾT KHU[br] ',get(name)); toupper(texts); showtext(get(texts),STYLE4); autorotate.pause"
+           onout="tween(borderalpha, .8, .25); tween(fillalpha,.0,0.7);"
+            ondown.touch=" asyncloop(pressed,onhover() );"
+           onup.touch="onout()"
+           onclick="looktohotspot(get(name));set(hotspot[get(name)].visible,0);"
+	   	
+           />
+	
+	
+	
+	<style name="hotspot_ga" type="image"
+         url="%SWFPATH%/module/imghotspot/hs/gallery.png"
+        
+         edge="bottom"
+         scale=".8"
+         scale.mobile=".6"
+         rotate="0.0"
+         alpha="1.0"
+         onhover="showtext(Mở Gallery Ảnh,STYLE4)"
+	   	 onover="tween(hotspot[get(name)].scale,1.0,1);"
+         onout="tween(hotspot[get(name)].scale,0.8,1);"
+         
+         
+         />
+	<events name="menu" keep="true"
+		onmousedown="
+					closegallery();tween(layer[menu].rotate,-360,0.5);tween(layer[link1].y,0);tween(layer[link2].y,0); tween(layer[link4].y,0);tween(layer[link5].y,0);  set(layer[menu_container3].visible,false);"
+		 
+	/>	 
+  <style name="letter"
+           capture="false" handcursor="true" show="true"  background="true" backgroundcolor="calc:skin_settings.design_bgcolor" backgroundalpha=".6" 
+           fillcolor="0xfff000" fillalpha="0.0"
+           bordercolor="0xfff000" borderalpha="1" borderwidth="2"  bgshadow="2 2 0x000000 0.6" 
+           onhover="tween(borderalpha, 1,.4); tween(fillalpha,.5,0); showtext(get(title),STYLE4);"
+           onout="tween(borderalpha, 1, .25); tween(fillalpha,.0,0.7);"
+           ondown.touch="onover(); asyncloop(pressed, onhover(); );"
+           onup.touch="onout();"
+		   onclick="	"
+	   	
+           />
+	
+	  <style name="letters"
+           capture="false"  handcursor="false"  background="true" backgroundcolor="calc:skin_settings.design_bgcolor" backgroundalpha=".6" enabled="true"
+           fillcolor="0x00ff00" fillalpha="0.0" 
+           bordercolor="0xfff000" borderalpha=".8" borderwidth="2"  bgshadow="2 2 0x000000 0.6" 
+           onover="tween(borderalpha, 1,.4); "
+           onout="tween(borderalpha, .8, .25); "
+            ondown.touch=" asyncloop(pressed,onhover() );"
+           onup.touch="onout()"
+	   	
+           />
+		  <style name="letterss"
+           capture="false"  handcursor="false"  background="true" backgroundcolor="calc:skin_settings.design_bgcolor" backgroundalpha=".6" enabled="true"
+           fillcolor="0x00ff00" fillalpha="0.0" 
+           bordercolor="0x00ff00" borderalpha=".8" borderwidth="2"  bgshadow="2 2 0x000000 0.6" 
+           onover="tween(borderalpha, 1,.4); "
+           onout="tween(borderalpha, .8, .25); "
+            ondown.touch=" asyncloop(pressed,onhover() );"
+           onup.touch="onout()"
+	   	
+           />
+	
+	
+	<style name="letterv"
+           capture="true" handcursor="true" show="true"  background="true" backgroundcolor="calc:skin_settings.design_bgcolor" backgroundalpha=".6"
+           fillcolor="0xfff000" fillalpha="0.0"
+           bordercolor="0xfff000" borderalpha="0" borderwidth="2"  bgshadow="2 2 0x000000 0.6" 
+           onover="tween(borderalpha, 1,.4); tween(fillalpha,1,0);"
+           onout="tween(borderalpha, 0, .25); tween(fillalpha,.0,0.7);"
+           ondown.touch="onover(); asyncloop(pressed, onhover(); );"
+           onup.touch="onout();"
+		   onclick="showgallery(a6);"
+	   	
+           />
+	<style name="lettere"
+           capture="true" handcursor="true" show="true"  background="true" backgroundcolor="calc:skin_settings.design_bgcolor" backgroundalpha=".6"
+           fillcolor="0xfff000" fillalpha="0.3"
+           bordercolor="0x00FF00" borderalpha="1" borderwidth="1"  bgshadow="2 2 0x000000 0.6" 
+           onover="tween(borderalpha, 1,.4); tween(fillalpha,1,0);"
+           onout="tween(borderalpha, 1, .25); tween(fillalpha,.3,0.7);"
+           ondown.touch="onover(); asyncloop(pressed, onhover(); );"
+           onup.touch="onout();"
+		   onclick=""
+	   	
+           />
+
+  <textstyle name="STYLE4"
+               fontsize.no-mobile="14" fontsize.mobile="14" bold="false"
+               background="true" backgroundcolor="0X006699" backgroundalpha=".0"
+               border="true" borderwidth="1" bordercolor="0xffffff" roundedge="5"  
+              
+               yoffset.no-touch="-16"
+               yoffset.touch="-40"
+			 css="get:skin_settings.design_text_css"
+    />
+
+  <action name="calc_pos_from_hfov_yaw_pitch_roll">
+	  calc(deg2rad, Math.PI / 180.0);
+    
+    <!-- calc the hotspot size -->
+    calc(hfov, 0.5 * (%1) * deg2rad);
+    Math.tan(hfov);
+    set(width, calc(hfov * 1000));
+    set(height, 'prop');
+    
+    <!-- calc the ath, atv and rotate settings -->
+    calc(yaw, -(%2) * deg2rad);
+    calc(pitch, (%3) * deg2rad);
+    calc(roll, -(%4) * deg2rad);
+    Math.cos(ch, yaw);
+    Math.sin(sh, yaw);
+    Math.cos(ca, pitch);
+    Math.sin(sa, pitch);
+    Math.cos(cb, roll);
+    Math.sin(sb, roll);
+    Math.atan2(yaw,  calc(cb*sh - sb*sa*ch), calc(ca*ch));
+    Math.atan2(roll, calc(sb*ch - cb*sa*sh), calc(cb*ca));
+    Math.asin(pitch, calc(cb*sa*ch + sb*sh));
+    calc(ath, yaw / deg2rad);
+    calc(atv, pitch / deg2rad);
+    calc(rotate, roll / deg2rad);</action>
+
+<events name="menu" keep="true"
+		
+ 	onmousedown="  close_matbang();
+					 close_phoicanh();
+					 close_tienich();
+					 
+					 tween(layer[hint_1].y,-50,.2); tween(layer[hint_1].alpha,0,.3);
+					 if(layer[sound_bt].state==on,play_bgsound();set(layer[sound_bt].state,playing));closegallery();tween(layer[menu].rotate,-360,0.5);tween(layer[link1].y,0);tween(layer[link2].y,0); tween(layer[link4].y,0);tween(layer[link5].y,0);  set(layer[menu_container3].visible,false);"
+		 
+	ondoubleclick="
+					 switch(cnt,1,0);
+					   if(cnt==1,hide_el(),show_el());
+					 
+				   
+		
+					   "
+		
+		onviewchange=" adjusthlookat(180);"
+	/>	 	
+	<!--onviewchange="    adjusthlookat(180);
+					  for(set(i,0),i LT hotspot.count, inc(i),
+					  if( (hotspot[get(i)].hstype=='callout') AND (hotspot[get(i)].ath LT calc(view.hlookat+30)) AND (hotspot[get(i)].ath GT calc(view.hlookat-30)),tween(hotspot[get(hotspot[get(i)].name)].alpha,1,.5);tween(hotspot[get(hotspot[get(i)].name)].height,get(hotspot[get(hotspot[get(i)].name)].n_height),.2,easeoutsine); ,if(hotspot[get(i)].hstype==callout  ,tween(hotspot[get(hotspot[get(i)].name)].alpha,0,.2);tween(hotspot[get(hotspot[get(i)].name)].height,0,.2); ));
+						);	
+					
+					   "-->
+	
+
+	
+
+<action name="hide_el">
+tween(layer[toolbar_container].y,-50,0.5);
+tween(layer[backtohome].visible,0);					   
+tween(layer[showtitle].visible,0);					   
+for(set(i,0),i LT hotspot.count, inc(i),
+tween(hotspot[get(i)].visible,0,0););
+tween(layer[showmenu_box].y,0,0.5);				   
+				   
+
+</action>	
+	
+<action name="count_hs_callout">
+	set(count_hs,0);
+	for(set(i,0),i LT hotspot.count, inc(i),
+					   if(hotspot[get(i)].hstype==callout, inc(count_hs); 
+						);				   
+		);
+
+</action>	
+	
+<action name="show_el">
+tween(layer[toolbar_container].y,0,0.5);
+tween(layer[backtohome].visible,1);					   
+for(set(i,0),i LT hotspot.count, inc(i),
+		 			   tween(hotspot[get(i)].visible,1,0);
+	
+	);
+					   
+tween(hotspot[webvr_prev_scene].visible,0);					   
+tween(hotspot[webvr_next_scene].visible,0);					   
+tween(layer[showtitle].visible,1);					   
+tween(layer[showmenu_box].y,-50,0.5);
+</action>	
+</krpano>

@@ -1,0 +1,182 @@
+<krpano newz="0">
+	
+
+	<hotspot name="hs_ao_ma" keep="true" url="ql2a.png"
+	   scale="0.001" alpha="1" ath="161" atv="63"
+	   /> 
+<!-- The new hotspots need your style name for the ouput code. -->	
+<phe_settings
+	malo="lk23-"
+	style_name="sodo" 
+	dientich="85.0m2"
+	trangthai="Liền Kề"		  
+/>			  
+
+<!-- the style for your hotspot ..ONLY THE NAME WILL BE USED IN THE OUTPUT CODE!!!! -->	
+<style name="newpoly" fillcolor="0xff0000" fillalpha="0.2" borderwidth="1.0" captured="false" enable="false" bordercolor="0xff0000" borderalpha="1.0"  onclick="showlog();" hancursor="false"/>
+	
+<!-- editor button style -->	
+<style name="phe_btn" type="text" align="top" width="-20" height="30"  bgroundedge="10" vcenter="true" mipmapping="true" oversampling="2" css="data:css_phebtn"  />	
+	
+	
+<!-- the editor -->	
+<!--<layer name="phe_box" parent="hotspot[hs_ao_ma]" type="container" edge="bottom" keep="true" align="center" x="0" y="0" width="140" height="180" bgcolor="0xFFB6C1" bgalpha=".8" bgroundedge="10" onloaded="set(hs, 0);" >
+	<layer name="phe_btntit" type="text" enabled="false" align="top" width="-20" height="40"  y="10" vcenter="true" mipmapping="true" oversampling="2" css="data:css_phetit" bgcolor="0x726FA3" html="TRÌNH GẮN LÔ" />
+	<layer name="phe_btn1" style="phe_btn" y="60" html="TẠO LÔ MỚI" onclick="startdraw();" />
+	<layer name="phe_btn2" style="phe_btn" y="100" html="HIỂN THỊ CODE" onclick="Print();" />
+	<layer name="phe_btn3" style="phe_btn" y="140" html="CÁCH SỬ DỤNG" onclick="ShowPheHelp" />
+	<layer name="phe_help_box" type="container" keep="true" align="righttop" edge="lefttop" width="0" height="100%" bgcolor="0x222222" bgalpha="0" maskchildren="true" >
+		<layer name="phe_help" type="text" align="lefttop" height="200" width="400" padding="10" css="data:css_phehelp" html="data:html_phehelp" mipmapping="true" oversampling="2" onclick="ShowPheHelp" />
+	</layer>	
+</layer>	-->
+	
+	
+<!-- Show / Hide the usersmanual or help -->	
+<action name="ShowPheHelp">
+	if(layer[phe_help_box].width GT 0,
+		tween(layer[phe_help_box].width,0);
+	,
+		tween(layer[phe_help_box].width,400);
+	);
+	</action>
+	
+	
+<!-- CSS -->	
+<data name="css_phetit">
+	font-family:Helvetica; font-size:12px; color:#ffffff; text-align:center; line-height:14px;
+</data>
+<data name="css_phebtn">
+	font-family:Helvetica; font-size:10px; color:#222222; text-align:center; line-height:10px;
+</data>
+<data name="css_phehelp">ß
+	font-family:Helvetica; font-size:13px; color:#222222; text-align:left; line-height:13px;
+</data>
+	
+	
+<!-- HELP TEXT -->
+<data name="html_phehelp">
+	• Bấm 'C' để tạo lô mới, c là cái nút chữ C ở cạnh dưới bàn phím.
+	[br][br]
+	• Khoanh xong lô để hoàn thành, bấm  DẤU CÁCH!
+	[br][br]
+	* Bấm C để tiếp tục tô thêm lô mới.
+	[br][br][br]
+	***
+	Khi đã khoanh hết lô bấm G để hiển thị code sau đó copy dán vào scene	
+</data>
+	
+<!--
+ ***************** THE ENGINE ***********
+-->
+	
+<events 
+	onkeydown="if(keycode == 67, startdraw());
+			   if(keycode == 32, stopdraw(get(hsname)));   
+			   if(keycode == 71, Print());"
+	onclick="if(drawing == true, addpoint());"
+/>
+	
+<action name="startdraw" >
+	if(newz==0,
+	inc(hs);
+	set(drawing, true);
+	
+	if(hs GT 9,
+	txtadd(hsname,get(phe_settings.malo), get(hs));,
+	
+	txtadd(hsname,get(phe_settings.malo),'0', get(hs)););
+	
+	if(hs==3,txtadd(hsname,get(phe_settings.malo),get(hs),a););
+	if(hs==4,txtadd(hsname,get(phe_settings.malo),calc(hs-1),b););
+	if(hs==6,txtadd(hsname,get(phe_settings.malo),6a););
+	if(hs==7,txtadd(hsname,get(phe_settings.malo),6b););
+	if(hs==12,txtadd(hsname,get(phe_settings.malo),12a););
+	if(hs==13,txtadd(hsname,get(phe_settings.malo),12b););
+	if(hs==14,txtadd(hsname,get(phe_settings.malo),15a););
+	if(hs==15,txtadd(hsname,get(phe_settings.malo),15b););
+	if(hs==16,txtadd(hsname,get(phe_settings.malo),16a););
+	if(hs==17,txtadd(hsname,get(phe_settings.malo),16b););
+	if(hs==16,txtadd(hsname,get(phe_settings.malo),16a););
+	if(hs==17,txtadd(hsname,get(phe_settings.malo),16b););
+	if(hs==23,txtadd(hsname,get(phe_settings.malo),23a););
+	if(hs==24,txtadd(hsname,get(phe_settings.malo),23b););
+	if(hs==26,txtadd(hsname,get(phe_settings.malo),26a););
+	if(hs==27,txtadd(hsname,get(phe_settings.malo),26b););
+	if(hs==33,txtadd(hsname,get(phe_settings.malo),get(hs),a););
+	if(hs==34,txtadd(hsname,get(phe_settings.malo),calc(hs-1),b););
+	if(hs==36,txtadd(hsname,get(phe_settings.malo),get(hs),a););
+	if(hs==37,txtadd(hsname,get(phe_settings.malo),calc(hs-1),b););
+	if(hs==43,txtadd(hsname,get(phe_settings.malo),get(hs),a););
+	if(hs==44,txtadd(hsname,get(phe_settings.malo),calc(hs-1),b););
+	
+	
+	addhotspot(get(hsname));
+	hotspot[get(hsname)].loadstyle(newpoly);
+	set(hotspot[get(hsname)].enabled, false);
+	set(pid, 0);
+	);
+	set(newz,1);
+</action>
+	
+<action name="stopdraw">
+	if(newz==1,
+	set(drawing, false);
+	MakeCode(%1););
+	set(newz,0);
+</action>
+	
+<action name="addpoint">
+	screentosphere(mouse.x, mouse.y, toh, tov);
+	set(hotspot[get(hsname)],point[get(pid)].ath=get(toh),point[get(pid)].atv=get(tov));
+	if(_points,
+		set(_points, calc:_points + '&#xA;&#09;' + data[html_point].content + 'ath="' + toh + '" atv="' + tov + '"' + data[html_/exit].content);
+	,
+		set(_points, calc:'&#09;' + data[html_point].content + 'ath="' + toh + '" atv="' + tov + '"' + data[html_/exit].content);
+	);
+	updatescreen();
+	mousemove();
+	inc(pid);
+</action>
+	
+<action name="mousemove">
+	screentosphere(mouse.x, mouse.y, toh, tov);
+	set(hotspot[get(hsname)].point[get(pid)].ath, get(toh));
+	set(hotspot[get(hsname)].point[get(pid)].atv, get(tov));
+	updatescreen();
+	if(drawing == true, delayedcall(0.0, mousemove()));
+</action>
+
+<action name="MakeCode">
+	set(_phestyle, calc:phe_settings.style_name);
+	set(_dientich, calc:phe_settings.dientich);
+	set(_trangthai, calc:phe_settings.trangthai);
+
+	if(_toprint,
+		set(_toprint, calc:_toprint + '&#xA;&#xA;' + data[html_hotspot].content + ' name="%1" style="' + _phestyle+ '"' +' dientich="'+ _dientich+'"'+' title="'+ _trangthai+'"' + data[html_/close].content + '&#xA;' + _points + '&#xA;' + data[html_hotspotend].content);
+	,
+		set(_toprint, calc:data[html_quoteopen].content + data[html_quote].content +  data[html_quoteend].content + '&#xA;&#xA;' + data[html_hotspot].content + ' name="%1" style="' + _phestyle + '"' +' dientich="'+ _dientich+'"'  +' title="'+ _trangthai+'"' + data[html_/close].content + '&#xA;' + _points + '&#xA;' + data[html_hotspotend].content);
+	);
+	
+	set(hotspot[%1].enabled, true);
+	set(_points, );
+</action>
+
+<data name="html_point"><![CDATA[<point ]]></data>
+<data name="html_/close"><![CDATA[ >]]></data>
+<data name="html_/exit"><![CDATA[ />]]></data>	
+<data name="html_hotspot"><![CDATA[<hotspot ]]></data>
+<data name="html_hotspotend"><![CDATA[</hotspot>]]></data>
+<data name="html_quoteopen"><![CDATA[<!-- ]]></data>
+<data name="html_quoteend"><![CDATA[ -->]]></data>	
+<data name="html_quote">Copy this code in your scene or xml. Make sure there is a hotspot style definition. Simple and Free  Polygonal Hotspot editor by Virtual Tuur</data>
+	
+<action name="Print">
+	trace(_toprint);
+	showlog();
+</action>
+	
+	
+
+
+	
+</krpano>	

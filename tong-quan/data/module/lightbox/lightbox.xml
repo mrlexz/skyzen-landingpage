@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<krpano>
+<plugin name="easy_html_lightbox" url="easy_html_lightbox.js" keep="true" devices="html5" include_jquery="true" include_lightbox="true" theme="" background_color="#f2f7f7" background_alpha="0"/>
+<plugin name="blur" devices="desktop" url="%SWFPATH%/plugins/postprocessing_multipass_blur.js" keep="true" blur="0" onloaded=""/>
+<!--  add this code at the beginning of the XML file to activate the plugin.   -->
+
+
+
+</krpano>

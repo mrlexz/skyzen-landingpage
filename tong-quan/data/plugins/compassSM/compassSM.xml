@@ -1,0 +1,41 @@
+﻿<krpano >
+
+	<include url="compassSM_2.xml" />
+	
+	<!-- Для активасии редактирования нажать "С" -->
+		
+<textstyle name="STYLE1"
+               fontsize.no-mobile="12" fontsize.mobile="18" bold="false"
+               background="true" backgroundcolor="calc:skin_settings.design_bgcolor" backgroundalpha=".7"
+               border="true" borderwidth="1" bordercolor="0xFFFFFF" roundedge="5"
+               textcolor="0xFFFFFF"
+               padding="6"
+               textalign="left"
+               yoffset.no-touch="-9"
+               xoffset.no-touch="-60"
+               yoffset.touch="-40"
+    />
+		
+   	<!-- Стиль текста1 -->         		   
+
+       
+    <!-- Показать-спрятать полосу -->
+	
+	<!-- Кнопка компас -->
+  <layer name="compass_button"   keep="true" align="righttop"  x="50" x.touch="30" y="50" y.touch="60" url="Compass1.png" scale="0.6" scale.touch=".4" alpha="1.0" zorder="92"  edge="center" rotate="90"
+		 onover="set(alpha,1); " onhover="" onout="set(alpha,0.8);"
+		 onclick="if(layer[background_scale].height == 0,tween(layer[background_scale].height,30); tween(layer[background_scale].alpha,1);
+													,
+													 tween(layer[background_scale].height,0); tween(layer[background_scale].alpha,0);
+					   ); if(url=='Compass1.png',set(url,Compass.png);,set(url,Compass1.png);"
+		/> 
+	
+		
+		
+	<!-- новая сцена -->	
+	<events  onviewchange="update_compass();set(layer[compass_button].rotate,get(view.hlookat));" />	
+	
+</krpano>
+
+
+

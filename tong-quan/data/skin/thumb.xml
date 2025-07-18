@@ -1,0 +1,435 @@
+<krpano prev_thumb="">
+<layer name="layer_root1" keep="true" type="container" align="top" parent="root_layer" zorder="50"
+		   width="100%" height="100%" bgcolor="calc:skin_settings.menu_bg" bgalpha="calc:skin_settings.menu_bg_alpha" vcenter="true" maskchildren="false"  >
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		<layer name="menu_thumb_container" type="container" bgcolor="0x00CCFF"   visible="false" bgalpha="0.3"  align="right" x="10" x.touch="-400" y="0" width="135"  height="80%" y.touch="0" maskchildren="true">
+	
+			
+			<layer name="menu_container_1" type="container" bgroundedge="2" bgcolor="0x00CCFF"  visible="true" bgalpha="0"  align="center" x="0" x.touch="0" y="0" width="130"  height="98%" y.touch="0" maskchildren="false">
+				
+			
+			
+			<layer name="skin_thumbs" state="closed" url.flash="%SWFPATH%/plugins/scrollarea.swf"  url.html5="%SWFPATH%/plugins/scrollarea.js" direction="v" align="righttop" x="0" width="100%" height="1920" zorder="1" onhover_autoscrolling="false"   overscroll="2.0" >
+			
+			</layer>
+		
+		
+		</layer>
+		
+		
+		</layer>
+	
+	</layer>
+	
+		<action name="create_thumb">
+		
+	if(%2==false,set(layer[menu_thumb_container].visible,false);,
+	
+			
+	
+	set(layer[menu_thumb_container].visible,true);
+	set(temp,0);
+	
+	for(set(i,0), i LT %1.thumb.count, inc(i),
+			
+	inc(temp);		
+	txtadd(layertemp,,get(%1.thumb[get(i)].name));
+			
+	txtadd(texttemp,get(%1.thumb[get(i)].name),'_text');
+			
+	addlayer(get(layertemp));
+	addlayer(get(texttemp));
+	layer[get(texttemp)].loadstyle(text);
+	set(layer[get(texttemp)].parent,get(layertemp));
+			
+	if(language==vi,txtadd(titleadd,get(temp),'. ',get(%1.thumb[get(i)].title));,txtadd(titleadd,get(temp),'. ',get(scene[get(i)].title_en)););
+	
+		
+	set(layer[get(texttemp)].html,get(titleadd));
+	
+	
+	
+	txtadd(tempurl,get(%1.thumb[get(i)].urls));
+	
+	set(layer[get(layertemp)].url,get(tempurl));
+	
+	set(layer[get(layertemp)].parent,skin_thumbs);
+	set(layer[get(layertemp)].align,topcenter);
+	set(layer[get(layertemp)].width,120);
+	set(layer[get(layertemp)].height,prop);
+	
+	txtadd(oncltemp,'skin_gotoscene(', get(layertemp),');');
+	
+	
+	set(layer[get(layertemp)].onclick,get(oncltemp));
+	layer[get(layertemp)].loadstyle(thumbstyle);
+	set(layer[get(layertemp)].shadow,1);
+	
+	
+	set(layer[get(layertemp)].onhover,get(onovertemp));
+
+	set(layer[get(texttemp)].onclick,get(oncltemp));
+	
+	set(layer[get(layertemp)].y,calc(3+i*65));
+	
+	);
+	set(layer[skin_thumbs].height,calc(temp*65+100));
+	txtadd(active,get(scene[get(xml.scene)].name),'_text');
+	set(layer[get(active)].backgroundcolor,0x39ff14);
+	
+	);
+	
+</action>	
+		
+	<group1>
+	<thumb 	name="s2" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s1.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en="Aerial Panorama"/>
+	
+	<thumb 	name="s3" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s2.jpg" 
+		   	title="Cổng Đền"
+		   	title_en="Aerial Panorama"/>
+	
+	<thumb 	name="s4" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s3.jpg" 
+		   	title="Tháp Bút"
+		   	title_en="Aerial Panorama"/>
+	<thumb 	name="s5" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s4.jpg" 
+		   	title="Cổng Long Môn Hổ Bàng"
+		   	title_en="Aerial Panorama"/>
+	<thumb 	name="s6" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s5.jpg" 
+		   	title="Đài Nghiên"
+		   	title_en="Aerial Panorama"/>
+	<thumb 	name="s7" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s6.jpg" 
+		   	title="Cầu Thê Húc"
+		   	title_en="Aerial Panorama"/>
+	<thumb 	name="s8" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s7.jpg" 
+		   	title="Đắc Nguyệt Lâu"
+		   	title_en="Aerial Panorama"/>
+	<thumb 	name="s9" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s8.jpg" 
+		   	title="Tiền Bái"
+		   	title_en="Aerial Panorama"/>
+	<thumb 	name="s10" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s9.jpg" 
+		   	title="Chính Điện"
+		   	title_en="Aerial Panorama"/>
+	<thumb 	name="s11" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s10.jpg" 
+		   	title="Hậu Cung"
+		   	title_en="Aerial Panorama"/>
+	<thumb 	name="s12" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denngocson/thumb/s11.jpg" 
+		   	title="Trấn Ba Đình"
+		   	title_en="Aerial Panorama"/>
+	</group1>
+	
+	<group2>
+	<thumb 	name="s13" 
+			urls="%SWFPATH%/projects/gigapixel/panos/thaprua/thumb/s1.jpg" 
+		   	title="Tháp Rùa - Phía Đông "
+		   	title_en="Rua Tower"/>
+	<thumb 	name="s14" 
+			urls="%SWFPATH%/projects/gigapixel/panos/thaprua/thumb/s2.jpg" 
+		   	title="Tháp Rùa - Phía tây "
+		   	title_en="Rua Tower"/>
+	<thumb 	name="s15" 
+			urls="%SWFPATH%/projects/gigapixel/panos/thaprua/thumb/s3.jpg" 
+		   	title="Tháp Rùa - Phía Nam"
+		   	title_en="Rua Tower"/>
+	<thumb 	name="s16" 
+			urls="%SWFPATH%/projects/gigapixel/panos/thaprua/thumb/s4.jpg" 
+		   	title="Tháp Rùa - Phía Bắc"
+		   	title_en="Rua Tower"/>
+	<thumb 	name="s17" 
+			urls="%SWFPATH%/projects/gigapixel/panos/thaprua/thumb/s5.jpg" 
+		   	title="Tháp Rùa - Bên Trong"
+		   	title_en="Rua Tower"/>
+	
+	</group2>
+	
+	<group3>
+	<thumb 	name="s18" 
+			urls="%SWFPATH%/projects/gigapixel/panos/tuongdaivuale/thumb/s1.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s19" 
+			urls="%SWFPATH%/projects/gigapixel/panos/tuongdaivuale/thumb/s2.jpg" 
+		   	title="Cổng Vào"
+		   	title_en=""/>
+	<thumb 	name="s20" 
+			urls="%SWFPATH%/projects/gigapixel/panos/tuongdaivuale/thumb/s3.jpg" 
+		   	title="Sân Vườn"
+		   	title_en=""/>
+	<thumb 	name="s21" 
+			urls="%SWFPATH%/projects/gigapixel/panos/tuongdaivuale/thumb/s4.jpg" 
+		   	title="Phương Đình"
+		   	title_en="Rua Tower"/>
+	<thumb 	name="s22" 
+			urls="%SWFPATH%/projects/gigapixel/panos/tuongdaivuale/thumb/s5.jpg" 
+		   	title="Tượng Đài Vua Lê"
+		   	title_en="Rua Tower"/>
+	
+	</group3>
+	
+	<group4>
+	<thumb 	name="s24" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s2.jpg" 
+		   	title="Chùa Tây Phương – Trên cao"
+		   	title_en=""/>
+	<thumb 	name="s25" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s3.jpg" 
+		   	title="Tam quan hạ"
+		   	title_en=""/>
+	
+	<thumb 	name="s27" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s5.jpg" 
+		   	title="Sân chùa"
+		   	title_en=""/>
+	<thumb 	name="s28" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s6.jpg" 
+		   	title="Khuôn viên chùa"
+		   	title_en=""/>
+	<thumb 	name="s29" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s7.jpg" 
+		   	title="Chùa Hạ –  Chính điện"
+		   	title_en=""/>
+	<thumb 	name="s30" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s8.jpg" 
+		   	title="Chùa Trung –  Chính điện"
+		   	title_en=""/>
+	<thumb 	name="s31" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s9.jpg" 
+		   	title="Chùa Thượng –  Chính điện"
+		   	title_en=""/>
+	<thumb 	name="s32" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s10.jpg" 
+		   	title="Chùa Thượng –  Chính điện"
+		   	title_en=""/>
+	<thumb 	name="s33" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s11.jpg" 
+		   	title="Nhà Thờ Tổ Mẫu"
+		   	title_en=""/>
+	<thumb 	name="s34" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuatayphuong/thumb/s12.jpg" 
+		   	title="Thủy Đình"
+		   	title_en=""/>
+	
+	
+	</group4>
+	
+	
+		<group5>
+	<thumb 	name="s35" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dinhtrucdong/thumb/s1.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s36" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dinhtrucdong/thumb/s2.jpg" 
+		   	title="Cổng Đình"
+		   	title_en=""/>
+	<thumb 	name="s37" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dinhtrucdong/thumb/s3.jpg" 
+		   	title="Khuôn Viên"
+		   	title_en=""/>
+	<thumb 	name="s38" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dinhtrucdong/thumb/s4.jpg" 
+		   	title="Tiền Tế"
+		   	title_en="Rua Tower"/>
+	<thumb 	name="s39" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dinhtrucdong/thumb/s5.jpg" 
+		   	title="Đại Đình"
+		   	title_en="Rua Tower"/>
+	
+	</group5>	
+	
+	<group6>
+	<thumb 	name="s40" 
+			urls="%SWFPATH%/projects/gigapixel/panos/hoanglongresort/thumb/s1.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s41" 
+			urls="%SWFPATH%/projects/gigapixel/panos/hoanglongresort/thumb/s2.jpg" 
+		   	title="Khách Sạn Mango"
+		   	title_en=""/>
+	<thumb 	name="s42" 
+			urls="%SWFPATH%/projects/gigapixel/panos/hoanglongresort/thumb/s3.jpg" 
+		   	title="Khu Villa 01"
+		   	title_en=""/>
+	
+	</group6>
+	
+	<group7>
+	<thumb 	name="s44" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuathay/thumb/s2.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s45" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuathay/thumb/s3.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s46" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuathay/thumb/s4.jpg" 
+		   	title="Chùa Thượng"
+		   	title_en=""/>
+	<thumb 	name="s47" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuathay/thumb/s5.jpg" 
+		   	title="Chùa Thượng"
+		   	title_en=""/>
+	<thumb 	name="s48" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuathay/thumb/s6.jpg" 
+		   	title="Chùa Trung"
+		   	title_en=""/>
+	<thumb 	name="s49" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuathay/thumb/s7.jpg" 
+		   	title="Chùa Hạ"
+		   	title_en=""/>
+		<thumb 	name="s50" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuathay/thumb/s8.jpg" 
+		   	title="Chùa Cao"
+		   	title_en=""/>
+	
+	</group7>
+	
+	<group8>
+	
+	<thumb 	name="s51" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dinhso/thumb/s1.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s52" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dinhso/thumb/s2.jpg" 
+		   	title="Cổng Đình"
+		   	title_en=""/>
+	<thumb 	name="s53" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dinhso/thumb/s3.jpg" 
+		   	title="Sân Đình"
+		   	title_en=""/>
+	<thumb 	name="s54" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dinhso/thumb/s4.jpg" 
+		   	title="Chính Điện"
+		   	title_en=""/>
+	
+	
+	
+	</group8>
+	<group9>
+	
+	<thumb 	name="s55" 
+			urls="%SWFPATH%/projects/gigapixel/panos/donghoangxa/thumb/s1.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s56" 
+			urls="%SWFPATH%/projects/gigapixel/panos/donghoangxa/thumb/s2.jpg" 
+		   	title="Thủy Đình"
+		   	title_en=""/>
+	<thumb 	name="s57" 
+			urls="%SWFPATH%/projects/gigapixel/panos/donghoangxa/thumb/s3.jpg" 
+		   	title="Cửa Động"
+		   	title_en=""/>
+	<thumb 	name="s58" 
+			urls="%SWFPATH%/projects/gigapixel/panos/donghoangxa/thumb/s4.jpg" 
+		   	title="Bên Trong"
+		   	title_en=""/>
+	
+	
+	
+	</group9>
+	<group10>
+	
+	<thumb 	name="s60" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dengiong/thumb/s2.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s61" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dengiong/thumb/s3.jpg" 
+		   	title="Cổng Đền"
+		   	title_en=""/>
+	<thumb 	name="s62" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dengiong/thumb/s4.jpg" 
+		   	title="Sân Đền"
+		   	title_en=""/>
+	<thumb 	name="s63" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dengiong/thumb/s5.jpg" 
+		   	title="Chính Điện"
+		   	title_en=""/>
+	<thumb 	name="s64" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dengiong/thumb/s6.jpg" 
+		   	title="Chính Điện"
+		   	title_en=""/>
+	<thumb 	name="s65" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dengiong/thumb/s7.jpg" 
+		   	title="Đền Hạ"
+		   	title_en=""/>
+	<thumb 	name="s66" 
+			urls="%SWFPATH%/projects/gigapixel/panos/dengiong/thumb/s8.jpg" 
+		   	title="Đền Hạ"
+		   	title_en=""/>
+	
+	
+	
+	</group10>
+	<group11>
+	
+	<thumb 	name="s67" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denbatam/thumb/s14.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s68" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denbatam/thumb/s15.jpg" 
+		   	title="Quảng Trường"
+		   	title_en=""/>
+	<thumb 	name="s69" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denbatam/thumb/s16.jpg" 
+		   	title="Phía Trước Đền"
+		   	title_en=""/>
+	<thumb 	name="s70" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denbatam/thumb/s47.jpg" 
+		   	title="Khuôn Viên"
+		   	title_en=""/>
+	<thumb 	name="s71" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denbatam/thumb/s58.jpg" 
+		   	title="Chính Điện"
+		   	title_en=""/>
+	<thumb 	name="s72" 
+			urls="%SWFPATH%/projects/gigapixel/panos/denbatam/thumb/s59.jpg" 
+		   	title="Chính Điện"
+		   	title_en=""/>
+	
+	
+	</group11>
+	<group12>
+	
+	<thumb 	name="s73" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuakeo/thumb/s24.jpg" 
+		   	title="Toàn Cảnh Trên Cao"
+		   	title_en=""/>
+	<thumb 	name="s74" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuakeo/thumb/s25.jpg" 
+		   	title="Chính Điện"
+		   	title_en=""/>
+	<thumb 	name="s75" 
+			urls="%SWFPATH%/projects/gigapixel/panos/chuakeo/thumb/s26.jpg" 
+		   	title="Điện Thờ Phật"
+		   	title_en=""/>
+	
+	
+	
+	</group12>
+	
+</krpano>
+	

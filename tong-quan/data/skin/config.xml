@@ -1,0 +1,19 @@
+<krpano>
+	<preview url="%SWFPATH%/tiles/%$layer[scene].sname%/preview.jpg" />
+
+	<image type="CUBE" multires="true" tilesize="512" if="!webvr.isenabled">
+		<level tiledimagewidth="8704" tiledimageheight="8704">
+			<cube url="%SWFPATH%/tiles/%$layer[scene].sname%/l3_%s_%v_%h.jpg" />
+		</level>
+		<level tiledimagewidth="4608" tiledimageheight="4608">
+			<cube url="%SWFPATH%/tiles/%$layer[scene].sname%/l2_%s_%v_%h.jpg" />
+		</level>
+		<level tiledimagewidth="2048" tiledimageheight="2048">
+			<cube url="%SWFPATH%/tiles/%$layer[scene].sname%/l1_%s_%v_%h.jpg" />
+		</level>
+	</image>
+
+	<image if="webvr.isenabled">
+		<cube url="%SWFPATH%/tiles/%$layer[scene].sname%/vr/pano_%s.jpg" />
+	</image>
+</krpano>

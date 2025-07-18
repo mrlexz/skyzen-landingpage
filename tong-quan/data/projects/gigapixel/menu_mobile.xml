@@ -1,0 +1,276 @@
+<krpano prev_menuitem="1" language="vi" prev_item="menu_item_s0">
+  <include url="menu_list.xml"/>
+  <style name="button" url="%SWFPATH%/plugins/textfield.swf" 
+			background="true" backgroundcolor="0xf9f6f1" backgroundalpha="0.0" css="get:skin_settings.design_menu_css" width="90%" 
+			height="auto" hcenter="true"   padding="0" x="0"  interactivecontent="true" wordwrap="true" align="center"
+		    onhover="    "
+		   	onout="  "
+		
+			/>
+	
+	<style name="button_sub" url="%SWFPATH%/plugins/textfield.swf" 
+			background="true" backgroundcolor="0xf9f6f1" backgroundalpha="0.0" css="get:skin_settings.design_sub_css" width="80%" 
+			height="55" vcenter="true"   padding="0" x="0" interactivecontent="true"
+		    onhover=""
+		   	onout=" "
+		
+			/>
+	
+	
+<style name="skin_menu_back"  url="%SWFPATH%/media/images/common/back.png"    align="center"    x="0" y="0" x.touch="10" y.touch="90" rotate="0" scale="0.3"  onclick="" visible="true" onhover="" />
+ 
+  <style name="button_main" url="%SWFPATH%/plugins/textfield.swf" 
+			background="true" backgroundcolor="0x255124" backgroundalpha="0.8" css="get:skin_settings.design_text_css2" width="100%" 
+			height="45" vcenter="true" border="false" bordercolor="0xFFFFFF" padding="10"
+			 onhover=""
+		   	onout="tween(layer[get(name)].x,0);"
+		 
+			/>
+  <layer name="menu_container" state="closed" parent="root_layer" keep="true" type="container" bgalpha=".7" bgcolor="0xffffff" align="center" width="280"   height="70%"   x="-2500" y="0" bgroundedge="40" maskchildren="false" bgcapture="true">
+	  
+	  
+	
+    <layer name="skin_menu_container" type="container" bgalpha="0" align="center" width="100%" height="60%" y="80" bgroundedge="10">
+      <layer name="skin_menu"  url="%SWFPATH%/plugins/scrollarea.js" direction="v" draggable="true" align="topcenter" width="100%" height="338" friction="0.95"   acceleration="0.2"
+       returnacceleration="0.1" onloaded="setcenter(0,0);"
+       momentum="0.8" zorder="1" onscroll="skin_updatemenuscroll();" />
+    </layer>
+    
+ 
+  </layer>
+  <layer name ="logo" parent="menu_container" keep="true" url="%$urlimg%" scale=".7"  align="topcenter" x="0" y="30"  onclick=""  onhover=""  onout=""/>
+	
+<layer name="icom_container" state="closed" parent="root_layer" keep="true" type="container" bgalpha=".0" bgcolor="0xffffff" align="lefttop" width="100%"   height="100%"  >
+	  
+	  
+  <layer name="ico_menu" state="closed"  keep="true" zorder="99" parent="layer_root" url="%SWFPATH%/media/images/sidemenu/icon_menu.png" alpha="1"  align="topleft" x="50" y="50"  scale="0.5" rotate="0 " onhover="showtext(Mở Menu,STYLE4)" onout="" onclick="
+  open_menu();
+  
+ 
+	
+	" edge="center"/>
+    
+    
+  </layer>
+	<layer name="ico_close" keep="true" zorder="99" parent="menu_container" url="%SWFPATH%/media/images/sidemenu/icon_close.png" alpha="1"  align="topleft" x="40" y="40"   scale="0.0" edge="center" rotate="0" onclick="
+	 tween(scale,.6,0.1);
+  delayedcall(.2,tween(scale,.0,0.2));
+  delayedcall(.3,close_menu(););
+	delayedcall(.2,tween(layer[ico_menu].scale,0.5,0.2));
+	
+	" onhover="showtext(Đóng Menu,STYLE4)" onout="" />
+	
+	
+  <!--<action name="create_menu" autorun="onstart" >clean_menu();
+    set(j,0);
+    set(layer[skin_menu_back].visible,0);
+    for(set(i,0), i LT menu.count, inc(i),
+    if(menu[get(i)].main==1,
+    add(xd,j,1);
+    set(ln, calc('menu_item_s'+xd));
+    addlayer(get(ln));
+    
+    set(lin,ln+'a');
+    addlayer(get(lin));
+    
+    copy(lr, layer[get(ln)]);
+    set(lr.parent, skin_menu);
+    set(lr.keep, true);
+    lr.loadstyle(button);
+    lr.loadstyle(button);
+    if(language==vi,copy(lr.html, menu[get(i)].titlev),copy(lr.html, menu[get(i)].titleen););
+    copy(lr.scenename, menu[get(i)].scenename);
+    set(lr.align, top);
+    set(lr.onclick, 'skin_loadscene(get(scenename),get(skin_settings.loadscene_blend_prev));
+    
+    set(txx,get(layer[get(name)].y))	;
+    set(layer[line].y,calc(txx+45));
+    layer[skin_menu].scrolltocenter(0, get(layer[line].y));
+    
+    
+    
+    
+    
+    set(prev_item,get(layer[get(name)].name));
+    ');
+	
+	  
+    copy(lr.group, menu[get(i)].group);
+    set(lr.y, calc(2+j*50));
+    inc(j);
+    )
+    );
+    mul(h,get(j),45);
+    set(layer[skin_menu].height,calc( get(h)+100));</action>-->
+	<action name="create_menu" autorun="onstart" >	
+		clean_menu();
+		set(j,0);
+		
+		for(set(i,0), i LT menu.count, inc(i),
+			if(menu[get(i)].main==1,
+			add(xd,j,1);
+			set(ln, calc('menu_item_s'+xd));
+			addlayer(get(ln));
+			copy(lr, layer[get(ln)]);
+			set(lr.parent, skin_menu);
+			set(lr.keep, true);
+			lr.loadstyle(button);
+			if(language==vi,copy(lr.html, menu[get(i)].titlev);,copy(lr.html, menu[get(i)].titleen););
+			copy(lr.scenename, menu[get(i)].scenename);
+			set(lr.align, topcenter);
+		
+			if(menu[get(i)].sub,set(lr.onclick, create_menu_lv2(get(group)));,set(lr.onclick, 'skin_loadscene(get(scenename),get(skin_settings.loadscene_blend_prev));
+    
+    '););
+		
+			copy(lr.group, menu[get(i)].group);
+			
+			set(lr.y, calc(j*60));
+			
+			inc(j);
+			)
+		  );
+		mul(h,get(j),61);
+		set(layer[skin_menu].height, get(h));
+		
+	
+		
+		
+	</action>
+	
+	
+<action name="create_menu_lv2" >
+	 
+		clean_menu();
+		set(j,0);
+		
+		for(set(i,0), i LT menu.count, inc(i),
+			if(menu[get(i)].group==%1 OR menu[get(i)].main==1,
+			add(xd,j,1);
+			inc(j);
+			set(ln, calc('menu_item_s'+xd));
+			addlayer(get(ln));
+			copy(lr, layer[get(ln)]);
+			set(lr.parent, skin_menu);
+			set(lr.keep, true);
+	
+			if(menu[get(i)].main==1, lr.loadstyle(button);set(lr.onclick,);,lr.loadstyle(button_sub););
+	
+	
+			if(language==vi,copy(lr.html, menu[get(i)].titlev),copy(lr.html, menu[get(i)].titleen););
+			copy(lr.scenename, menu[get(i)].scenename);
+			copy(lr.group,menu[get(i)].group);
+			set(lr.align,topcenter);
+	
+			if(menu[get(i)].main==1 AND menu[get(i)].sub,set(lr.onclick,create_menu_lv2(get(group));set(prev_menuitem,get(group));layer[skin_menu].scrolltocenter(0, 0);),
+			
+			if(menu[get(i)].main==2 AND menu[get(i)].ga ,set(lr.onclick, calc('showgallery('+ get(menu[get(i)].ga)+')')),
+	
+	set(lr.onclick, 'skin_loadscene(get(scenename),get(skin_settings.loadscene_blend_prev));
+	
+	
+	
+	;');) );
+			set(lr.y, calc(2+j*60-45));
+			
+			)
+		  );
+	
+		mul(h,get(j),61);
+		set(layer[skin_menu].height, get(h));
+		
+	</action>
+	
+	
+	<!--<action name="create_menu_lv2" >
+	 set(layer[line].y,45);
+    set(layer[line].visible,1);
+		clean_menu();
+		set(j,0);
+		set(layer[skin_menu_back].visible,true);
+		set(layer[skin_menu_back].onclick,create_menu());
+		for(set(i,0), i LT menu.count, inc(i),
+			if(menu[get(i)].group==%1 ,
+			add(xd,j,1);
+			inc(j);
+
+			set(ln, calc('menu_item_s'+xd));
+			addlayer(get(ln));
+			copy(lr, layer[get(ln)]);
+			set(lr.parent, skin_menu);
+			set(lr.keep, true);
+			if(menu[get(i)].main==1,lr.loadstyle(button_main); set(lr.onclick,);,lr.loadstyle(button););
+			if(language==vi,copy(lr.html, menu[get(i)].titlev),copy(lr.html, menu[get(i)].titleen););
+			copy(lr.scenename, menu[get(i)].scenename);
+			copy(lr.group,menu[get(i)].group);
+			set(lr.align,lefttop);
+	
+			if(menu[get(i)].sub==1,set(lr.onclick,create_menu_lv3(get(scenename));set(prev_menuitem,get(group));),
+			
+			if(menu[get(i)].main==2 AND menu[get(i)].ga ,set(lr.onclick, calc('showgallery('+ get(menu[get(i)].ga)+')')),
+	
+	set(lr.onclick, 'skin_loadscene(get(scenename),get(skin_settings.loadscene_blend_prev));
+	set(txx,get(layer[get(name)].y));
+    set(layer[line].y,calc(txx+45));
+    layer[skin_menu].scrolltocenter(0, get(layer[line].y));
+	
+	
+	');) );
+			set(lr.y, calc(2+j*45-45));
+			
+			)
+		  );
+		mul(h,get(j),45);
+		set(layer[skin_menu].height, get(h));
+		
+	</action>
+	
+	
+	-->
+	
+	
+	
+	
+  <action name="clean_menu">for(set(i,0), i LT menu.count, inc(i),
+    add(xd,i,1);
+    set(ln, calc('menu_item_s'+xd));
+    set(layer[get(ln)].html,);
+    set(layer[get(ln)].background,0);
+    set(layer[get(ln)].background,false);
+    
+    set(layer[get(ln)].border,0);
+    set(layer[get(ln)].onclick,);
+    
+    );</action>
+  <action name="skin_updatemenuscroll">if(toverflow GT 0, set(layer[skin_menu_scrolltop].visible,true),  set(layer[skin_menu_scrolltop].visible,false) );
+    if(boverflow GT 0, set(layer[skin_menu_scrollbottom].visible,true), set(layer[skin_menu_scrollbottom].visible,false) );</action>
+  <action name="open_menu">
+	if(layer[menu_container].state==closed,tween(layer[menu_container].x,0,.2);set(layer[menu_container].state,opened););  
+	 tween(scale,.7,0.2);
+  delayedcall(.2,tween(scale,.0,0.2));
+  delayedcall(.2,tween(layer[ico_close].scale,0.8,0.1));
+  delayedcall(.2,tween(layer[ico_close].scale,0.4,0.2));
+	</action>
+  <action name="hidelogo">
+	  if(layer[menu_container].state == 'closed',set(layer[logo].visible,false);
+    if(layer[menu_container].state == 'opend',set(layer[logo].visible,true);</action>
+  <action name="active_menu">set(layer[line].y,%1);
+    layer[skin_menu].scrolltocenter(0, get(layer[line].y));</action>
+	
+  <action name="close_menu">
+	if(layer[menu_container].state==opened,tween(layer[menu_container].x,-2500,1.5);set(layer[menu_container].state,closed););
+	
+	</action>
+	
+	
+	
+  <events name="menu" keep="true"
+		onmousedown="
+					 if(layer[bgsound_bt].crop == '0|192|64|64',js(playAudio()),js(pauseAudio)); 
+					   
+					 
+					 "
+		  
+		 	
+	/>
+</krpano>

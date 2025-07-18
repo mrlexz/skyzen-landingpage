@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<krpano>
+	
+
+	
+ 
+	
+		
+  	
+  	<menu name="menu_0" main="1" group="" scenename="sollakevillas!duan!toancanh!s0" titlev="Toàn Cảnh Khu Sol Lake Villas" titleen=""/>
+  	<menu name="menu_2" main="1" group="" scenename="sollakevillas!duan!sollakevillas2!s0" titlev="Sol Lake Villas A" titleen=""/>
+	
+	<menu name="menu_1" main="1" group="" scenename="sollakevillas!duan!sollakevillas1!s0" titlev="Sol Lake Villas B" titleen=""/>
+	
+	<menu name="menu_3" main="1" group="" scenename="sollakevillas!duan!sollakevillas3!s0" titlev="Sol Lake Villas Khu A (2)" titleen=""/>
+	
+	<menu name="menu_19" main="1" group="" scenename="sollakevillas!phoicanh!sollakevillas1!s0" titlev="Phối Cảnh Sol Lake Villas 1" titleen=""/>
+    <menu name="menu_20" main="1" group="" scenename="sollakevillas!phoicanh!sollakevillas2!s0" titlev="Phối Cảnh Sol Lake Villas 2" titleen=""/>
+  
+	
+	
+  <menu name="menu_0g" main="1" group="a" sub="1"  titlev="Tiện Ích Xung Quanh" titleen=""/>	
+  <menu name="menu_17" main="2" group="a" scenename="sollakevillas!tienich!benxeyennghia!s0" titlev="Bến Xe Yên Nghĩa" titleen=""/>
+  <menu name="menu_4" main="2" group="a" scenename="sollakevillas!tienich!kdtparkcity!s0" titlev="KDT Park City" titleen=""/>
+  <menu name="menu_5" main="2" group="a" scenename="sollakevillas!tienich!ngatulakhe!s0" titlev="Ngã Tư La Khê" titleen=""/>
+  <menu name="menu_6" main="2" group="a" scenename="sollakevillas!tienich!ngatuletrongtan!s0" titlev="Ngã Tư Lê Trọng Tấn" titleen=""/>
+  <menu name="menu_7" main="2" group="2" scenename="sollakevillas!tienich!truongmamnonlequydon!s0" titlev="Trường mầm non Lê Quý Đôn" titleen=""/>
+  <menu name="menu_8" main="2" group="a" scenename="sollakevillas!tienich!truongphenikaa!s0" titlev="Trường Phenikaa" titleen=""/>
+  <menu name="menu_9" main="2" group="a" scenename="sollakevillas!tienich!truongthptnguyenhue!s0" titlev="Trường THPT Nguyễn Huệ" titleen=""/>
+  <menu name="menu_10" main="2" group="a" scenename="sollakevillas!tienich!truongthlequydon!s0" titlev="Trường tiểu học Lê Quý Đôn" titleen=""/>
+  <menu name="menu_11" main="2" group="a" scenename="sollakevillas!tienich!truongthyennghia!s0" titlev="Trường tiểu học Yên Nghĩa" titleen=""/>
+  <menu name="menu_12" main="2" group="a" scenename="sollakevillas!tienich!aeonmailhadong!s0" titlev="AEON Mail Hà Đông" titleen=""/>
+  <menu name="menu_13" main="2" group="a" scenename="sollakevillas!tienich!kdtanhung!s0" titlev="KDT An Hưng" titleen=""/>
+  <menu name="menu_14" main="2" group="a" scenename="sollakevillas!tienich!truongthcslequydon!s0" titlev="THCS Lê Quý Đôn" titleen=""/>
+  <menu name="menu_15" main="2" group="a" scenename="sollakevillas!tienich!thienduongbaoson!s0" titlev="Thiên Đường Bảo Sơn" titleen=""/>
+  <menu name="menu_16" main="2" group="a" scenename="sollakevillas!tienich!truongptqtvietnam!s0" titlev="Trường Phổ Thông Quốc Tế Việt Nam" titleen=""/>
+	
+	
+	
+	
+ 
+</krpano>

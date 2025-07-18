@@ -1,0 +1,100 @@
+<krpano>
+	<!-- the textfield -->
+	<layer name="bg_container_text_info" keep="true" type="container" parent="root_layer" align="rightcenter" x="100" y="-15" onresize="set(y,100)" width="550" height="82%" alpha="0" zorder="99" visible="false" >
+
+		<!-- the scrolling text -->
+		<layer name="text_info" type="container" bgalpha="0" align="lefttop" x="5" y="5" width="-30" height="-10" maskchildren="true">
+			
+			<layer name="text_info_scroller" url="%SWFPATH%/plugins/scrollarea.swf" alturl="%SWFPATH%/plugins/scrollarea.js" 
+			       mwheel="true" direction="v" overscroll="0" align="lefttop" width="100%" height="100%"
+
+			       onscroll="if(hoverflow GT 0,
+			       				set(layer[text_info_scrollbar].visible,true); 
+			       			    div(yp,toverflow,hoverflow);
+			       			    Math.min(yp,1);Math.max(yp,0); 
+			       			    copy(th,layer[text_info_scrollbar].pixelheight);
+			       			    sub(th,layer[text_info_scrollup].pixelheight);
+			       			    sub(th,layer[text_info_scrolldown].pixelheight);
+			       			    sub(th,layer[text_info_scrollslider].pixelheight); 
+			       			    mul(yp,th);
+			       			    add(yp,layer[text_info_scrollup].pixelheight); 
+			       			    copy(layer[text_info_scrollslider].y,yp);
+			       			    ,
+			       				set(layer[text_info_scrollbar].visible,false);
+			       			);
+			       				
+			       ">
+
+				<layer name="text" url="%SWFPATH%/plugins/textfield.swf" align="lefttop" x="0" y="0" width="100%" autoheight="true" 
+					   background="true" backgroundcolor="calc:skin_settings.design_bgcolor" backgroundalpha="calc:skin_settings.design_bgalpha" 
+					   onautosized="copy(layer[text_info_scroller].height, height);"
+				       padding="10 15"
+				       html="data:info"
+				       css="calc:skin_settings.design_text_css"
+				       onover="set(backgroundalpha,1);"
+				       onout="set(backgroundalpha,get(skin_settings.design_bgalpha))"
+				/>
+
+				<layer name="text_info_close" style="icon"  align="righttop" x="5" y="8">
+					<layer name="text_info_close_icon"  url="%SWFPATH%/media/images/common/close.png" align="center"  scale="0.3" onclick="open_info(false);" />
+				</layer>
+			</layer>
+			
+		</layer>
+		
+
+		<!-- the text_info_scrollbar -->
+		<layer name="text_info_scrollbar" visible="false" type="container" bgcolor="0x000000" bgalpha="0" align="righttop" x="5" y="5" width="19" height="-10">
+			<layer name="text_info_scrollup"     url="%SWFPATH%/media/images/info/dirbutton.png"    align="righttop"    x="19" rotate="-90" crop="0|0|19|19" onovercrop="0|19|19|19" ondowncrop="0|38|19|19" ondown="asyncloop(pressed, layer[text_info_scroller].scrollby(0,+1));" />
+			<layer name="text_info_scrolldown"   url="%SWFPATH%/media/images/info/dirbutton.png"    align="rightbottom" x="19" rotate="+90" crop="0|0|19|19" onovercrop="0|19|19|19" ondowncrop="0|38|19|19" ondown="asyncloop(pressed, layer[text_info_scroller].scrollby(0,-1));" />
+			<layer name="text_info_scrollslider" url="%SWFPATH%/media/images/info/sliderbutton.png" align="righttop"    x="0"  y="19"       crop="0|0|19|19" onovercrop="0|19|19|19" ondowncrop="0|38|19|19" ondown="if(layer[text_info_scroller].hoverflow GT 0, copy(cy,y);copy(sy,mouse.stagey);dragging(); );" dragging="if(pressed, sub(dy,mouse.stagey,sy);add(ny,cy,dy);Math.max(ny,layer[text_info_scrollup].pixelheight); copy(th,layer[text_info_scrollbar].pixelheight);sub(th,layer[text_info_scrolldown].pixelheight);sub(th,layer[text_info_scrollslider].pixelheight);Math.min(ny,th); copy(y,ny); sub(ny,layer[text_info_scrollup].pixelheight);sub(th,layer[text_info_scrollslider].pixelheight);div(ny,th); copy(fh,layer[text_info_scroller].hoverflow); mul(fh,-1); mul(ny,fh); layer[text_info_scroller].stopscrolling(); copy(layer[text_info_scroller].y,ny); delayedcall(0,dragging()); );" />
+		</layer>
+
+	</layer>
+
+	<action name="open_info">
+        if(%1 == null, if(layer[skin_btn_info].state == 'closed', set(show,true), set(show,false)); , set(show,%1); );
+        if(show,
+        	set(layer[skin_btn_info].tooltip_vi, 'Ẩn thông tin');
+        	set(layer[skin_btn_info].tooltip_en, 'Hide info');
+        	if(clang == 'vi',
+                    copy(layer[skin_btn_info].tooltip, layer[skin_btn_info].tooltip_vi);
+                    ,
+                    copy(layer[skin_btn_info].tooltip, layer[skin_btn_info].tooltip_en); 
+                );
+            set(layer[skin_btn_info].state, 'opened');
+            tween(layer[bg_container_text_info].alpha, 1.0, 2, easeOutQuint);
+            tween(layer[bg_container_text_info].visible, 1.0, 0.01, easeOutQuint);
+          ,
+            if(layer[skin_btn_info].state != 'closed',
+                set(layer[skin_btn_info].state, 'closed');
+                tween(layer[bg_container_text_info].alpha, 0.0, 2, easeOutQuint, set(layer[bg_container_text_info].visible,false));
+                set(layer[skin_btn_info].tooltip_vi, 'Hiện thông tin');
+                set(layer[skin_btn_info].tooltip_en, 'Show info');
+                if(clang == 'vi',
+                    copy(layer[skin_btn_info].tooltip, layer[skin_btn_info].tooltip_vi);
+                    ,
+                    copy(layer[skin_btn_info].tooltip, layer[skin_btn_info].tooltip_en);  
+                );
+                
+              );
+          );
+        layer[skin_btn_info].onover();
+    </action>
+
+	<events name="text_info" keep="true"
+		onxmlcomplete="
+			if(layer[scene].info,
+				set(layer[skin_btn_info].enabled,true);
+				set(layer[skin_btn_info].alpha,1);
+				copy(layer[text].html,data[info].content);
+				,
+				set(layer[skin_btn_info].enabled,false);
+				set(layer[skin_btn_info].alpha,0.5);
+				open_info(false);
+			);
+		"
+
+	/>
+
+</krpano>

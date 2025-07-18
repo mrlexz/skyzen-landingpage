@@ -1,0 +1,9 @@
+<krpano>
+	<lensflares name="obj">
+		
+		<item name="flarka7151" ath="-61.783747412476885" atv="-60.863533758329964" scene="scene_s1" typ="blinkstyle6" dust_effect="true"/>
+		<item name="flarka7152" ath="-3.5062829138589677" atv="-64.0183036890799"  scene="scene_s1" typ="blinkstyle6" dust_effect="true"/>
+		<item name="flarka715s" ath="-1.240536901155167" atv="-61.71652775509714" scene="scene_s1" typ="blinkstyle6" dust_effect="true"/>
+		
+	</lensflares>
+</krpano>
