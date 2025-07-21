@@ -11,7 +11,7 @@ import {
 import { floorPlanList } from './floorPlanList.js';
 const houseImg = [
   {
-    name: 'officetel',
+    name: 'Officetel',
     img: [
       './assets/images/house/OFFICETEL_1.png',
       './assets/images/house/OFFICETEL_2.png',
@@ -139,12 +139,24 @@ const createPopup = (container) => {
 
 const updatePopupPosition = (popup, e, container) => {
   const rect = container.getBoundingClientRect();
-  popup.style.left = e.clientX - rect.left + 20 + 'px';
-  popup.style.top = e.clientY - rect.top - 20 + 'px';
+  // popup ở góc trên bên phải của path cho UI v1
+  // popup.style.left = e.clientX - rect.left + 20 + 'px';
+  // popup.style.top = e.clientY - rect.top - 20 + 'px';
+
+  // popup ở góc trên bên phải của path cho UI v2
+  const path = e.target;
+  const pathRect = path.getBoundingClientRect();
+
+  const left = pathRect.right - rect.left + 200;
+  const top = pathRect.top - rect.top + 12;
+
+  popup.style.left = left + 'px';
+  popup.style.top = top + 'px';
+  popup.style.transform = 'translateX(-100%)';
 };
 
-const renderModal = (data, hoverInfo, activePathIds = []) => {
-  console.log('🚀 ~ renderModal ~ hoverInfo:', hoverInfo);
+const renderModal = (data, hoverInfo, activePathIds = [], floor = '') => {
+  console.log('🚀 ~ renderModal ~ data:', data);
   const houseImgUrl = houseImg.find(
     (h) =>
       h.name.toLocaleLowerCase() === data.type.toLowerCase() ||
@@ -169,6 +181,8 @@ const renderModal = (data, hoverInfo, activePathIds = []) => {
     id: data.houseNumber || data.name || '1',
     svg_type: active.svg,
     activePathIds: activePathIds, // Sử dụng activePathIds từ path được click
+    floor,
+    room: data.name || '',
   });
 };
 
@@ -223,14 +237,15 @@ const setupPathEventListeners = (path, container, hoverInfo) => {
 
       updatePopupPosition(popup, e, container);
 
-      const template = await fetch('./assets/templates/popup-hover.html').then(
-        (res) => res.text(),
-      );
+      const template = await fetch(
+        './assets/templates/popup-hover-v2.html',
+      ).then((res) => res.text());
       const processedTemplate = template
         .replace(
           /\{\{icon\}\}/g,
           data.icon || './assets/images/icons/skyzen_icon.webp',
         )
+        .replace(/\{\{type\}\}/g, data.type || '')
         .replace(/\{\{name\}\}/g, data.name || '')
         .replace(/\{\{ll\}\}/g, data.ll || data.area || '')
         .replace(/\{\{tt\}\}/g, data.tt || '')
@@ -265,12 +280,15 @@ const setupPathEventListeners = (path, container, hoverInfo) => {
     path.addEventListener('click', () => {
       const id = path.getAttribute('id');
       const data = hoverInfo[id] || {};
+      const floor = document.querySelector('.legend-title');
+
+      const overlay = document.querySelector('.floor-plan-overlay');
+      overlay.classList.toggle('active');
 
       // Lấy activePathIds dựa trên màu của path được click
       const activePathIds = getActivePathIdsFromClickedPath(path);
-      console.log('Active Path IDs from clicked path:', activePathIds);
 
-      renderModal(data, hoverInfo, activePathIds);
+      renderModal(data, hoverInfo, activePathIds, floor.innerHTML);
     });
   } else {
     // Mobile touch events - chỉ thay đổi flow từ double touch sang click button
@@ -298,13 +316,14 @@ const setupPathEventListeners = (path, container, hoverInfo) => {
         updatePopupPositionForTouch(popup, e, container);
 
         const template = await fetch(
-          './assets/templates/popup-hover.html',
+          './assets/templates/popup-hover-v2.html',
         ).then((res) => res.text());
         const processedTemplate = template
           .replace(
             /\{\{icon\}\}/g,
             data.icon || './assets/images/icons/skyzen_icon.webp',
           )
+          .replace(/\{\{type\}\}/g, data.type || '')
           .replace(/\{\{name\}\}/g, data.name || '')
           .replace(/\{\{ll\}\}/g, data.ll || data.area || '')
           .replace(/\{\{tt\}\}/g, data.tt || '')
@@ -315,6 +334,7 @@ const setupPathEventListeners = (path, container, hoverInfo) => {
           display: 'block',
           background: 'transparent',
           padding: '0',
+          top: '0px',
         });
 
         const popupContent = popup.querySelector('.popup-hover-content');
@@ -339,12 +359,13 @@ const setupPathEventListeners = (path, container, hoverInfo) => {
 
               const id = path.getAttribute('id');
               const data = hoverInfo[id] || {};
+              const floor = document.querySelector('.legend-title');
 
               // Lấy activePathIds dựa trên màu của path được click
               const activePathIds = getActivePathIdsFromClickedPath(path);
               console.log('Active Path IDs from clicked path:', activePathIds);
 
-              renderModal(data, hoverInfo, activePathIds);
+              renderModal(data, hoverInfo, activePathIds, floor.innerHTML);
 
               // Hide popup after opening modal
               path.classList.remove('svg-path-hovered');

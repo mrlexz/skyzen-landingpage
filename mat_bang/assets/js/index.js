@@ -78,22 +78,26 @@ window.handleClickActive = (id) => {
   renderLegend();
 
   // Đóng menu trên mobile sau khi chọn
-  if (window.innerWidth <= 767) {
+  if (window.innerWidth <= 1024) {
     window.closeFloorPlanList();
   }
 };
 
 const renderLegend = () => {
   let legendEl = document.querySelector('.floor-plan-legend');
+
   if (!legendEl) {
     legendEl = document.createElement('div');
-    legendEl.className = 'floor-plan-legend';
+    legendEl.className = 'floor-plan-legend v2';
     document.querySelector('.floor-plan-bg-wrapper').appendChild(legendEl);
   }
   const active = floorPlanList.find(
     (f, idx) => idx + 1 === window.currentActiveId,
   );
-  if (!active) return;
+
+  if (!active) {
+    return;
+  }
   legendEl.innerHTML = `
     <div class="legend-list">
       ${active.legend
@@ -102,9 +106,32 @@ const renderLegend = () => {
             `<div><span style="background:${item.color}"></span>${item.label}</div>`,
         )
         .join('')}
+       <div><span>NFA</span>Diện tích tim tường</div>
+        <div><span>NSA</span>Diện tích thông thuỷ</div>
     </div>
-    <div class="legend-title">${active.title}</div>
+    <div class="legend-title">
+      <div class="legend-title-item">Mặt bằng</div>
+      <div class="legend-title-text legend-title-item">${active.title}</div>
+    </div>
   `;
+
+  console.log(legendEl.offsetHeight);
+
+  const mainImg = document.querySelector('.floor-plan-main-img');
+  if (window.innerWidth <= 1024) {
+    mainImg.style.top = `${legendEl.offsetHeight + 65}px`;
+    window.updateSvgContainerPosition();
+  }
+  window.updateSvgContainerPosition();
+
+  // Animation slide right từng element con
+  const legendTitleItems = legendEl.querySelectorAll('.legend-title-item');
+  legendTitleItems.forEach((el, idx) => {
+    el.classList.remove('slide-in');
+    setTimeout(() => {
+      el.classList.add('slide-in');
+    }, idx * 500);
+  });
 };
 
 window.renderModal = ({
@@ -117,6 +144,8 @@ window.renderModal = ({
   svg_type = '', // Thêm parameter để xác định loại SVG
   activePathIds = [], // Thêm parameter để truyền active paths
   externalId = '', // Thêm parameter để hiển thị ID từ bên ngoài
+  floor,
+  room,
 }) => {
   const modal = document.getElementById('floor-plan-modal');
   modal.classList.remove('hidden');
@@ -127,19 +156,20 @@ window.renderModal = ({
   const subImg = modal.querySelector('.floor-plan-modal-content-sub_img');
 
   detail.innerHTML = `
-            <h2>${name}</h2>
+            <h2>Căn hộ ${name}</h2>
+            <h2 class="room-name">${room}</h2>
             <hr />
             <div class="apartment-info">
-              <div>Căn số: <b>${id}</b></div>
+              <div>Mã căn: <span>${room}</span></div>
               ${
                 externalId
-                  ? `<div>ID bên ngoài: <b>${externalId}</b></div>`
+                  ? `<div>ID bên ngoài: <span>${externalId}</span></div>`
                   : ''
               }
-              <div>Số lượng phòng: <b>${activePathIds.length}</b></div>
-              <div>Diện tích tim tường: <b>${area} m²</b></div>
-              <div>Diện tích thông thuỷ: <b>${area_wall} m²</b></div>
+              <div>Diện tích tim tường: <span>${area} m²</span></div>
+              <div>Diện tích thông thuỷ: <span>${area_wall} m²</span></div>
             </div>
+            <button class="floor-plan-modal-btn" onclick="closeModal()">Quay lại →</button>
   `;
 
   carousel.innerHTML = images
@@ -219,6 +249,8 @@ window.closeModal = () => {
   const modal = document.getElementById('floor-plan-modal');
   modal.classList.add('hidden');
   $('.carousel').slick('unslick');
+  const overlay = document.querySelector('.floor-plan-overlay');
+  overlay.classList.remove('active');
 };
 
 const renderLayout = () => {
@@ -240,6 +272,38 @@ const renderLayout = () => {
 
   let svgContainer = document.createElement('div');
   svgContainer.id = 'svg-container';
+
+  // Cập nhật để svg-container luôn căn giữa mainImg
+  window.updateSvgContainerPosition = () => {
+    const mainImgRect = mainImg.getBoundingClientRect();
+    const wrapperRect = wrapper.getBoundingClientRect();
+    const isMobile = window.innerWidth <= 1024;
+
+    // Tính toán vị trí tương đối của mainImg trong wrapper
+    const mainImgLeft = mainImgRect.left - wrapperRect.left;
+    const mainImgTop = mainImgRect.top - wrapperRect.top;
+    const mainImgWidth = mainImgRect.width;
+    const mainImgHeight = mainImgRect.height;
+
+    // Đặt svg-container có cùng kích thước và vị trí với mainImg
+    svgContainer.style.width = `${mainImgWidth}px`;
+    svgContainer.style.height = `${mainImgHeight}px`;
+    svgContainer.style.position = 'absolute';
+    svgContainer.style.left = `${mainImgLeft}px`;
+    svgContainer.style.top = `${mainImgTop}px `;
+    svgContainer.style.transform = 'none '; // Bỏ transform vì đã dùng left/top
+
+    console.log(
+      `SVG container positioned at: ${mainImgLeft}px, ${mainImgTop}px, size: ${mainImgWidth}x${mainImgHeight}, mobile: ${isMobile}`,
+    );
+  };
+
+  // Cập nhật vị trí khi mainImg load xong
+  mainImg.onload = window.updateSvgContainerPosition;
+
+  // Cập nhật vị trí khi window resize
+  window.addEventListener('resize', window.updateSvgContainerPosition);
+
   wrapper.appendChild(svgContainer);
 
   root.appendChild(wrapper);
@@ -262,12 +326,13 @@ const renderLayout = () => {
   root.appendChild(overlay);
 
   const floorPlanListEl = document.createElement('div');
-  floorPlanListEl.classList.add('floor-plan-list');
+  floorPlanListEl.classList.add('floor-plan-list', 'v2');
+  floorPlanListEl.style.marginTop = '30px'; // Thêm margin-top cho floor-plan-list.v2
 
   const floorList = `
     ${floorPlanList
       .map((item, idx) => {
-        return `<div class="floor-plan-item${
+        return `<div class="floor-plan-item v2${
           idx === 0 ? ' active' : ''
         }" data-id="${idx + 1}" onclick="handleClickActive(${idx + 1})">
         <div class="floor-plan-item-name">${item.name}</div>
@@ -276,10 +341,21 @@ const renderLayout = () => {
       .join('')}
   `;
   floorPlanListEl.innerHTML = floorList;
-  root.appendChild(floorPlanListEl);
-
   updateOverlayImage();
   renderLegend();
+
+  // Thêm floorPlanListEl ngay sau mainImg
+  mainImg.insertAdjacentElement('afterend', floorPlanListEl);
+
+  // Đảm bảo floor-plan-list.v2 nằm sau floor-plan-legend.v2
+  const legendEl = wrapper.querySelector('.floor-plan-legend.v2');
+  if (legendEl) {
+    // Nếu legendEl tồn tại, chèn floorPlanListEl sau legendEl
+    legendEl.insertAdjacentElement('afterend', floorPlanListEl);
+  } else {
+    // Nếu không có legend, append như bình thường
+    wrapper.appendChild(floorPlanListEl);
+  }
   return;
 };
 
@@ -289,7 +365,7 @@ window.toggleFloorPlanList = () => {
   const hamburgerButton = document.querySelector('.hamburger-button');
   const overlay = document.querySelector('.floor-plan-overlay');
 
-  if (window.innerWidth <= 767) {
+  if (window.innerWidth <= 1024) {
     floorPlanList.classList.toggle('active');
     hamburgerButton.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -301,7 +377,7 @@ window.closeFloorPlanList = () => {
   const hamburgerButton = document.querySelector('.hamburger-button');
   const overlay = document.querySelector('.floor-plan-overlay');
 
-  if (window.innerWidth <= 767) {
+  if (window.innerWidth <= 1024) {
     floorPlanList.classList.remove('active');
     hamburgerButton.classList.remove('active');
     overlay.classList.remove('active');

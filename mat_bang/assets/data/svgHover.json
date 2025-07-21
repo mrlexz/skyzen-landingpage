@@ -6,7 +6,7 @@
       "tt": "61.98",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "SHOPHOUSE",
+      "type": "Shophouse",
       "houseNumber": "1"
     },
     "T1-02": {
@@ -15,7 +15,7 @@
       "tt": "60.20",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "SHOPHOUSE",
+      "type": "Shophouse",
       "houseNumber": "2"
     },
     "T1-03": {
@@ -24,7 +24,7 @@
       "tt": "55.25",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "SHOPHOUSE",
+      "type": "Shophouse",
       "houseNumber": "3"
     },
     "T1-04": {
@@ -33,7 +33,7 @@
       "tt": "55.71",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "SHOPHOUSE",
+      "type": "Shophouse",
       "houseNumber": "4"
     }
   },
@@ -44,7 +44,7 @@
       "tt": "29.29",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 02",
+      "type": "Officetel 02",
       "houseNumber": "1"
     },
     "T2-02": {
@@ -53,7 +53,7 @@
       "tt": "28.10",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 01",
+      "type": "Officetel 01",
       "houseNumber": "2"
     },
     "T2-03": {
@@ -62,7 +62,7 @@
       "tt": "27.99",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 01",
+      "type": "Officetel 01",
       "houseNumber": "3"
     },
     "T2-04": {
@@ -71,7 +71,7 @@
       "tt": "27.99",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 01",
+      "type": "Officetel 01",
       "houseNumber": "4"
     },
     "T2-05": {
@@ -80,7 +80,7 @@
       "tt": "27.99",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 01",
+      "type": "Officetel 01",
       "houseNumber": "5"
     },
     "T2-06": {
@@ -89,7 +89,7 @@
       "tt": "27.99",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 01",
+      "type": "Officetel 01",
       "houseNumber": "6"
     },
     "T2-07": {
@@ -98,7 +98,7 @@
       "tt": "28.20",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 01",
+      "type": "Officetel 01",
       "houseNumber": "7"
     },
     "T2-08": {
@@ -107,7 +107,7 @@
       "tt": "28.20",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 01",
+      "type": "Officetel 01",
       "houseNumber": "8"
     },
     "T2-09": {
@@ -116,7 +116,7 @@
       "tt": "27.99",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 01",
+      "type": "Officetel 01",
       "houseNumber": "9"
     },
     "T2-10": {
@@ -125,7 +125,7 @@
       "tt": "29.68",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 02",
+      "type": "Officetel 02",
       "houseNumber": "10"
     },
     "T2-11": {
@@ -134,7 +134,7 @@
       "tt": "29.33",
       "icon": "",
       "button": "Xem chi tiết",
-      "type": "officetel 02",
+      "type": "Officetel 02",
       "houseNumber": "10"
     }
   },

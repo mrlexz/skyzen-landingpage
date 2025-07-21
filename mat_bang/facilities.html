@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkyZen - Chuẩn sống 5* giữa lòng đô thị số</title>
+    <link rel="stylesheet" href="./assets/styles/reset.css" />
+    <link rel="stylesheet" href="./assets/styles/index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="./assets/images/icons/cropped-favicon-32x32.webp"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="./assets/images/icons/cropped-favicon-192x192.webp"
+      sizes="192x192"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @font-face {
+        font-family: 'SVN-Gilroy';
+        src: url('./assets/fonts/SVN-Gilroy Light.otf') format('opentype');
+        font-weight: 300;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'SVN-Gilroy';
+        src: url('./assets/fonts/SVN-Gilroy SemiBold.otf') format('opentype');
+        font-weight: 600;
+        font-style: normal;
+      }
+      body {
+        font-family: 'SVN-Gilroy', 'Inter', sans-serif;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="relative h-[100dvh] w-full flex justify-center items-center overflow-hidden"
+    >
+      <div
+        class="relative max-lg:absolute max-lg:bottom-0"
+        id="facilities-wrapper"
+      >
+        <img
+          alt="Detailed architectural floor plan of a building complex with pink apartment blocks, pool area, roads, trees, and numbered red and white circular labels on various locations"
+          class="bg_img object-contain"
+          src="./assets/images/FloorPlan/T1_facilities.jpg"
+        />
+        <!-- Numbered circles on the floor plan inside relative container -->
+        <div id="facilities-numbers-container"></div>
+      </div>
+      <div
+        class="absolute top-1/2 max-lg:left-0 left-6 -translate-y-1/2 max-lg:top-[300px] max-w-[19.79167rem] bg-transparent rounded-xl p-6 text-white"
+      >
+        <div id="facilities-accordion"></div>
+      </div>
+    </div>
+    <script src="assets/js/facilitiesData.js"></script>
+    <script src="assets/js/facilitiesPage.js"></script>
+    <script src="assets/js/facilitiesHover.js"></script>
+  </body>
+</html>

@@ -54,15 +54,72 @@
     <div class="w-full h-[calc(100vh-56px)] relative">
       <iframe
         id="overall-iframe"
-        src="./tong-quan/tour360.html"
+        src="./tong-quan/tour360.html?startscene=scene_s1!tongthe!ngay"
         frameborder="0"
         width="100%"
         height="100%"
       ></iframe>
+      <section
+        class="absolute right-0 top-[8rem] z-10 flex flex-col gap-2 w-auto"
+      >
+        <button
+          onclick="changeTour('scene_s1!tongthe!ngay')"
+          class="flex justify-end items-center capitalize text-xs-8 md:text-xs font-semibold"
+        >
+          <div
+            class="flex items-center justify-center text-center rounded-bl-2xl rounded-tr-2xl w-16 md:w-24 h-8 md:h-9 p-2 border-2 border-primary transition-all duration-200 bg-active text-white"
+          >
+            <span class="text-xs lg:text-sm">Ngày</span>
+          </div>
+          <div
+            class="relative transition-all duration-300 activeBtn__line_active w-4 md:w-10"
+          >
+            <hr
+              class="bg-red-500 border-primary border-[1.5px] before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-primary before:rounded-full"
+            />
+          </div></button
+        ><button
+          onclick="changeTour('scene_s2!tongthe!dem')"
+          class="flex justify-end items-center capitalize text-xs-8 md:text-xs font-semibold"
+        >
+          <div
+            class="flex items-center justify-center text-center rounded-bl-2xl rounded-tr-2xl w-16 md:w-24 h-8 md:h-9 p-2 border-2 border-primary transition-all duration-200 bg-secondary hover:bg-hover text-primary hover:text-white"
+          >
+            <span class="text-xs lg:text-sm">Đêm</span>
+          </div>
+          <div class="relative transition-all duration-300 w-4 md:w-10">
+            <hr
+              class="bg-red-500 border-primary border-[1.5px] before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-primary before:rounded-full"
+            />
+          </div>
+        </button>
+      </section>
       <div id="navbar-container"></div>
     </div>
 
     <script>
+      function changeTour(scene) {
+        const iframe = document.getElementById("overall-iframe");
+        iframe.src = `./tong-quan/tour360.html?startscene=${scene}`;
+
+        // Cập nhật trạng thái active cho button (tuỳ chọn)
+        const buttons = document.querySelectorAll("section button");
+        buttons.forEach((btn) => {
+          const div = btn.querySelector("div:first-child");
+          const div2 = btn.querySelector("div:last-child");
+          if (btn.getAttribute("onclick")?.includes(scene)) {
+            div.classList.remove("bg-secondary", "text-primary");
+            div.classList.add("bg-active", "text-white");
+
+            div2.classList.add("activeBtn__line_active");
+          } else {
+            div.classList.remove("bg-active", "text-white");
+            div.classList.add("bg-secondary", "text-primary");
+
+            div2.classList.remove("activeBtn__line_active");
+          }
+        });
+      }
       fetch("navbar.html")
         .then((response) => response.text())
         .then((data) => {

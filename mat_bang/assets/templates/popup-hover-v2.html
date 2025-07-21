@@ -1,0 +1,93 @@
+<div
+  class="popup-hover-content v2"
+  style="display: flex; align-items: center; background: #fff; overflow: unset"
+>
+  <div
+    class="popup-hover-name"
+    style="
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 10px;
+    "
+  >
+    <span
+      style="
+        display: inline-block;
+        color: var(--floor-plan-color);
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px 0;
+        text-align: left;
+        margin-left: 5px;
+      "
+    >
+      {{type}}
+    </span>
+    <div
+      class="popup-hover-info"
+      style="
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 4px;
+        gap: 10px;
+      "
+    >
+      <div
+        style="
+          font-size: 12px;
+          color: black;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px dashed black;
+          padding-bottom: 10px;
+        "
+      >
+        <span>Mã căn</span> <span>{{name}}</span>
+      </div>
+      <div
+        style="
+          font-size: 12px;
+          color: black;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          border-bottom: 1px dashed black;
+          padding-bottom: 10px;
+        "
+      >
+        <span>Diện tích tim tường</span> <span>{{ll}} m²</span>
+      </div>
+      <div
+        style="
+          font-size: 12px;
+          color: black;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <span>Diện tích thông thuỷ</span> <span>{{tt}} m²</span>
+      </div>
+    </div>
+    <button
+      class="popup-hover-btn"
+      style="
+        width: 100%;
+        padding: 6px 0;
+        background: var(--floor-plan-color);
+        color: #fff;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 10px;
+      "
+    >
+      {{button}}
+    </button>
+  </div>
+</div>
