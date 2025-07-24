@@ -27,7 +27,8 @@
 		<hotspot name="tthab" title="tthab"   ath="33.80" atv="1.58" t_height="30" images="thab.png" t_align="center"   style="hotspot1l" onclick="loadscene(scene_s2!tongthe!dem)"/>
 		<hotspot name="bvtp" title="bvtp"   ath="89.09" atv="0.21" t_height="30" images="bvtp.png" t_align="center"   style="hotspot1l" onclick=""/>
 		<hotspot name="dhnl" title="bvtp"   ath="265.16" atv="-0.68" t_height="60" images="dhnl.png" t_align="center"   style="hotspot1l" onclick=""/>
-		
+		<hotspot name="cw" title="cw"   ath="314.78" atv="2.42" t_height="60" images="cw.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s5!coworking)"/>
+		 
 		<hotspot name="s1" title="s1"   ath="321.07" atv="6.09" t_height="60" images="t1.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s3!tongthe!tang1!2)"/>
 		
 		
@@ -60,6 +61,7 @@
 		<hotspot name="dhnl" title="dhnl"   ath="86.89" atv="1.03 " t_height="30" images="dhnl.png" t_align="center"   style="hotspot1l"  onclick=""/>
 		<hotspot name="kcnlt1" title="kcnlt1"   ath="151.98" atv="1.13 " t_height="30" images="kcnlt1.png" t_align="center"   style="hotspot1l"  onclick=""/>
 		<hotspot name="lm81" title="lm81"   ath="205.11" atv="0.44" t_height="30" images="lm81.png" t_align="center"   style="hotspot1l"  onclick=""/>
+		<hotspot name="cw" title="cw"   ath="306.95" atv="6.81" t_height="60" images="cw.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s5!coworking)"/>
 		
 	<hotspot name="s1" title="s1"   ath="304.43" atv="9.63" t_height="30" images="t1.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s3!tongthe!tang1!2)"/>
 		
@@ -134,14 +136,7 @@
 		
 		
 		<hotspot name="cw" title="cw"   ath="59.73" atv="-52.42" t_height="60" images="cw.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s5!coworking)"/>
-		<hotspot name="golf" title="golf"   ath="87.22" atv="-51.13" t_height="60" images="golf.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s6!golf)"/>
-		<hotspot name="gym" title="gym"   ath="102.80" atv="-48.31 " t_height="60" images="gym.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s7!gym!1)"/>
-		<hotspot name="karaoke" title="karaoke"   ath="113.64" atv="-43.79 " t_height="30" images="karaoke.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s9!karaoke)"/>
-		<hotspot name="kte" title="kte"   ath="40.25" atv="-48.54 " t_height="30" images="kte.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s10!khutreem!1)"/>
-		<hotspot name="kc" title="kc"   ath="126.40" atv="-36.66" t_height="30" images="kr.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s12!kitchenroom)"/>
-		<hotspot name="ls" title="ls"   ath="134.12" atv="-31.39" t_height="30" images="ls.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s13!livestream)"/>
-		<hotspot name="sauna" title="sauna"   ath="139.39" atv="-26.42" t_height="30" images="sauna.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s14!sauna)"/>
-		<hotspot name="yoga" title="yoga"   ath="143.13" atv="-24.23" t_height="80" images="yoga.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s15!yoga!1)"/>
+		
 		
 	
 		
@@ -180,7 +175,9 @@
 		
 		
 		
-		<hotspot name="t1" title="t1"   ath="86.89" atv="1.03 " t_height="30" images="t1.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="t1" title="t1"   ath="86.89" atv="1.03 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		
+		<hotspot name="ls" title="ls"   ath="283.93" atv="25.05 " t_height="30" images="ls.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s13!livestream)"/>
 		
 		
 	
@@ -217,9 +214,9 @@
 		<image>
 			<cube url="panos/s6!golf.tiles/pano_%s.jpg" />
 		</image>
+		<hotspot name="t1" title="t1"   ath="261.17" atv="1.97 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
 		
-		
-		<hotspot name="t1" title="t1"   ath="180.66" atv="41.97 " t_height="30" images="t1.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="kr" title="kr"   ath="180.66" atv="41.97 " t_height="30" images="t1.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s9!karaoke)"/>
 		
 	
 		
@@ -258,7 +255,7 @@
 		
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="94.10" atv="38.09" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s8!gym!2)"/>
-		<hotspot name="t1" title="t1"   ath="38.79" atv="2.63 " t_height="30" images="t1.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="t1" title="t1"   ath="38.79" atv="2.63 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
 		
 	
 		
@@ -297,7 +294,8 @@
 		
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="263.02" atv="21.72" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s7!gym!1)"/>
-		<hotspot name="t1" title="t1"   ath="11.11" atv="-2.60 " t_height="30" images="t1.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="kcnst2" title="kcnst2"   ath="211.70" atv="26.23" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s15!yoga!1)"/>
+		<hotspot name="t1" title="t1"   ath="11.11" atv="-2.60 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
 		
 	
 		
@@ -334,8 +332,8 @@
 			<cube url="panos/s9!karaoke.tiles/pano_%s.jpg" />
 		</image>
 		
-		
-		<hotspot name="kcnst1" title="kcnst1"   ath="276.82" atv="36.98" t_height="60" images="t1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="t1" title="t1"   ath="36.87" atv="1.32" t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="kcnst1" title="kcnst1"   ath="276.82" atv="36.98" t_height="60" images="tc.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s12!kitchenroom)"/>
 		
 	
 		
@@ -374,7 +372,7 @@
 		
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="274.71" atv="55.27" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s11!khutreem!2)"/>
-		<hotspot name="t1" title="t1"   ath="163.05" atv="-3.91 " t_height="30" images="t1.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="t1" title="t1"   ath="162.22" atv="-1.95" t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
 		
 	
 		
@@ -412,8 +410,8 @@
 		</image>
 		
 		
-		<hotspot name="kcnst1" title="kcnst1"   ath="118.41" atv="34.81" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s10!khutreem!1)"/>
-		<hotspot name="t1" title="t1"   ath="290.21" atv="2.08 " t_height="30" images="t1.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="kcnst1" title="kcnst1"   ath="118.41" atv="34.81" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s7!gym!1)"/>
+		<hotspot name="t1" title="t1"   ath="290.21" atv="2.08 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
 		
 	
 		
@@ -452,7 +450,8 @@
 		
 		
 		
-		<hotspot name="t1" title="t1"   ath="255.26" atv="3.17 " t_height="30" images="t1.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="t1" title="t1"   ath="255.26" atv="3.17 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="gym" title="gym"   ath="159.57" atv="47.50" t_height="30" images="tc.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s10!khutreem!1)"/>
 		
 	
 		
@@ -489,7 +488,9 @@
 			<cube url="panos/s13!livestream.tiles/pano_%s.jpg" />
 		</image>
 		
-		<hotspot name="t1" title="t1"   ath="179.43" atv="48.14 " t_height="30" images="t1.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="t1" title="t1"   ath="154.57" atv="6.93" t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		
+		<hotspot name="kr" title="kr"   ath="179.43" atv="48.14 " t_height="30" images="kr.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s6!golf)"/>
 		
 		
 	
@@ -528,7 +529,7 @@
 		</image>
 		
 		
-		<hotspot name="t1" title="t1"   ath="222.61" atv="7.65 " t_height="30" images="t1.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="t1" title="t1"   ath="222.61" atv="7.65 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
 		
 	
 		
@@ -567,7 +568,7 @@
 		
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="118.41" atv="34.81" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s16!yoga!2)"/>
-		<hotspot name="t1" title="t1"   ath="249.28" atv="-1.91 " t_height="30" images="t1.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="t1" title="t1"   ath="249.28" atv="-1.91 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
 		
 	
 		
@@ -605,8 +606,8 @@
 		</image>
 		
 		
-		<hotspot name="kcnst1" title="kcnst1"   ath="267.18" atv="31.60" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s15!yoga!1)"/>
-		<hotspot name="t1" title="t1"   ath="106.36" atv="-0.88 " t_height="30" images="t1.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="kcnst1" title="kcnst1"   ath="267.18" atv="31.60" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s14!sauna)"/>
+		<hotspot name="t1" title="t1"   ath="106.36" atv="-0.88 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
 		
 	
 		

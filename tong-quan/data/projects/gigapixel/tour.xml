@@ -8,7 +8,7 @@
 	<incsldusde url="videospot_editor.xml" />
 	<include url="%SWFPATH%/plugins/video-player.xml"/>
 	<include url="%SWFPATH%/plugins/youtube-player.xml"/>
-	
+	<include url="%SWFPATH%/floorplan_SM/editor/floorplan_SM.xml" />
 	
 	<incclude url="%SWFPATH%/skin/debug.xml"/>
 	<include url="%SWFPATH%/skin/gallery.xml"/>

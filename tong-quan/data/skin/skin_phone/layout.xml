@@ -114,62 +114,11 @@
 	
 		
 	
-		<layer name="toolbar_container" type="container" bgalpha=".8" bgcolor="0x054a4b" align="bottom" x="0" y="5" width="100%"  height="50" maskchildren="true" bgroundedge="0"  bgcapture="true">
+		<layer name="toolbar_container" type="container" bgalpha="0" bgcolor="0x054a4b" align="bottom" x="0" y="5" width="100%"  height="50" maskchildren="true" bgroundedge="0"  bgcapture="true">
 			
 				
 		
-			<layer name="toancanh_box" type="container" align="left" x="0" y="0" width="80" height="100%" bgcolor="0xfffff" visible="true" bgroundedge="0" bgalpha="0"  scalechildren="true" scale="1.0" keep="true" >
-				<layer name="toancanh_bt" url="images/tienichmobile/toancanh.png" align="center" scale=".7" y="0" 
-						onhover="tween(layer[toancanh_box].bgalpha,.8,0);
-								 " 
-						onout="tween(layer[toancanh_box].bgalpha,0,.8);"	 
-					    onclick="skin_loadscene(scene_s2);close_phoicanh();close_matbang();"/>
-			</layer>
-			<layer name="matbang_box" type="container" align="left" x="55" y="0" width="80" height="100%" bgcolor="0xfffff" visible="true" bgroundedge="0" bgalpha="0"  scalechildren="true" scale="1.0" keep="true" >
-				<layer name="matbang_bt" url="images/tienichmobile/matbang.png" align="center" scale=".7" y="0" 
-						onhover="tween(layer[matbang_box].bgalpha,.8,0);
-								 " 
-						onout="tween(layer[matbang_box].bgalpha,0,.8);"	 
-					    onclick="skin_loadscene(scene_s7);close_phoicanh();close_matbang();"/>
-			</layer>
 			
-			<layer name="phoicanh_box" type="container" align="center" x="-50" y="0" width="80" height="100%" bgcolor="0xfffff" visible="true" bgroundedge="0" bgalpha="0"  scalechildren="true" scale="1.0" keep="true" >
-				<layer name="phoicanh_bt" url="images/tienichmobile/3d.png" align="center" scale=".7" y="0" 
-						onhover="tween(layer[phoicanh_box].bgalpha,.8,0);
-								 " 
-						onout="tween(layer[phoicanh_box].bgalpha,0,.8);"	 
-					    onclick="skin_loadscene(scene_s1);close_matbang(); "/>
-			</layer>
-			
-			<layer name="kientruc_box" type="container" align="center" x="50" y="0" width="80" height="100%" bgcolor="0xfffff" visible="true" bgroundedge="0" bgalpha="0"  scalechildren="true" scale="1.0" keep="true" >
-				<layer name="kientruc_bt" url="images/tienichmobile/kientruc.png" align="center" scale=".7" y="0" 
-						onhover="tween(layer[kientruc_box].bgalpha,.8,0);
-								 " 
-						onout="tween(layer[kientruc_box].bgalpha,0,.8);"	 
-					    onclick="if(layer[tienich_set].state==hide,set(layer[tienich_set].visible,1);set(layer[tienich_set].state,show),set(layer[tienich_set].visible,0);set(layer[tienich_set].state,hide)) ;close_matbang();
-								  tween(layer[skin_thumbs_container].y,100,.2);
-								 close_phoicanh() "/>
-			</layer>
-			
-			
-			
-			<layer name="map_box" type="container" align="right" x="55" y="0" width="80" height="100%" bgcolor="0xfffff" visible="true" bgroundedge="0" bgalpha="0"  scalechildren="true" scale="1.0" keep="true" >
-				<layer name="map_bt" url="images/tienichmobile/map.png" align="center" scale=".7" y="0" 
-						onhover="tween(layer[map_box].bgalpha,.8,0);
-								 " 
-						onout="tween(layer[map_box].bgalpha,0,.8);"	 
-					    onclick="plugin[easy_html_lightbox].open_url('https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4761.938064088691!2d108.37513539999999!3d15.881146000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4 f13.1!3m3!1m2!1s0x31420d0011debcd7%3A0x2b5037b9b324b2ee!2zS2h1IMSRw7QgdGjhu4sgQ2FzYW1pYSBCYWxhbmNhIEhvaSBBbg!5e1!3m2!1svi!2s!4v1749751965035!5m2!1svi!2s',90%,90%,'Casamia Balanca Hội An',true); close_matbang();"/>
-			</layer>
-			
-		<layer name="video_box" type="container" align="right" x="0" y="0" width="80" height="100%" bgcolor="0xfffff" visible="true" bgroundedge="0" bgalpha="0"  scalechildren="true" scale="1.0" keep="true" >
-				<layer name="video_bt" url="images/tienichmobile/video.png" align="center" scale=".7" y="0" 
-						onhover="tween(layer[video_box].bgalpha,.8,0);
-								 " 
-						onout="tween(layer[video_box].bgalpha,0,.8);"	 
-					    onclick=""/>
-			</layer>
-			plugin[easy_html_lightbox].play_video('https://www.youtube.com/watch?v=l-OL8znml-A',640,360);pausesound(bgsound);close_video();
-	
 	
 			
 	
@@ -179,34 +128,7 @@
 			
 		</layer>
 	
-		<layer name="skin_right_open"  url="%SWFPATH%/skin/skin_phone/images/menu_open.png"  align="righttop" x="2" y="150" scale="0.5" alpha="1" onhover="tween(y,-38,.1);" onout="tween(y,-35,.1);" visible="0" zorder="2" ondown="tween(layer[right_container].x,2,.2);set(visible,0);" /> 
-	
-	<layer name="right_container" type="container" bgalpha=".8" bgcolor="0x054a4b" align="right" x="2" y="-80" width="40"  height="20%" maskchildren="false" bgroundedge="10"  bgcapture="true">
-		<layer name="skin_right_close"  url="%SWFPATH%/skin/skin_phone/images/close_thumb.png"  align="righttop" rotate="-90" x="68" y="0" scale="0.3" alpha=".8" onhover="tween(y,-38,.1);" onout="tween(y,-35,.1);" zorder="2" ondown="tween(layer[right_container].x,-500,.2);set(layer[skin_right_open].visible,1);" /> 
 		
-		
-	 
-		 <layer name="hint" url="%SWFPATH%/plugins/textfield.swf" align="righttop" html="BẠN ĐANG XEM" x="55" y="50" alpha="0"   bgalpha="0"  css="calc:skin_settings.design_text_css" />	
-		
-		<layer name="sound_bt" url="%SWFPATH%/skin/skin_phone/images/sound.png" style="button_toolbar"  align="top" x="0" y="20" hint="Tắt Nhạc Nền" onclick="if(state==playing,set(state,off);pausesound(bgsound);set(hint,Mở Nhạc Nền);,set(state,playing);pausesoundtoggle(bgsound);;set(hint,Tắt Nhạc Nền));" state="on"
-						/>
-						
-		<layer name="setting_bt" url="%SWFPATH%/skin/skin_phone/images/setting.png" style="button_toolbar"  align="bottom" x="0" y="20" hint="Cài Đặt" onclick="open_settings()"
-						/>
-		
-		<layer name="info_bt" url="%SWFPATH%/skin/skin_phone/images/info.png" style="button_toolbar"  align="center" y="0" x="0" hint="Xem Giới Thiệu" onclick="plugin[easy_html_lightbox].open_image('
-                                                                                                                  
-%SWFPATH%/editsoure/gallery/img_ (12).png;
-
-								 
-							 
-							 
- ');close_matbang();close_phoicanh();"
-						/>
-		
-		
-	
-		</layer>
 		
 	
 	<layer name="sound_l" keep="true" parent="layer_root" type="container" align="right" width="150" height="250" bgcolor="0xffffff" x="60" bgroundedge="20"  y="90" bgalpha="0.3" state="hide" visible="0">
