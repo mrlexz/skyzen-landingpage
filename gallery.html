@@ -472,6 +472,43 @@
         border-radius: 10px;
       }
 
+      /* Thêm vào phần style */
+      .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .loading-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         .header h1 {
@@ -557,6 +594,10 @@
         </div>
       </div>
       <div id="navbar-container"></div>
+    </div>
+
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loading-spinner"></div>
     </div>
 
     <script>
@@ -982,7 +1023,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene13_1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene13_1.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 47",
           category: "facilities_playground",
         },
@@ -991,7 +1032,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene14_3.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene14_3.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 48",
           category: "facilities_playground",
         },
@@ -1000,7 +1041,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene15.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene15.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 49",
           category: "facilities_playground",
         },
@@ -1009,7 +1050,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene16.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene16.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 50",
           category: "facilities_playground",
         },
@@ -1018,7 +1059,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene17_1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene17_1.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 51",
           category: "facilities_playground",
         },
@@ -1027,7 +1068,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene2_1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene2_1.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 52",
           category: "facilities_playground",
         },
@@ -1036,7 +1077,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene3_1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene3_1.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 53",
           category: "facilities_playground",
         },
@@ -1045,7 +1086,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene4_1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene4_1.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 54",
           category: "facilities_playground",
         },
@@ -1054,7 +1095,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene5_1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene5_1.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 55",
           category: "facilities_playground",
         },
@@ -1063,7 +1104,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene7_1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene7_1.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 56",
           category: "facilities_playground",
         },
@@ -1072,7 +1113,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/FACILITIES_PLAYGROUND/Scene8_1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/FACILITIES_PLAYGROUND/Scene8_1.webp",
-          title: "FACILITIES PLAYGROUND",
+          title: "FACILITIES - PLAYGROUND",
           description: "View 57",
           category: "facilities_playground",
         },
@@ -1198,7 +1239,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/floor_18/Hoboi1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/floor_18/Hoboi1.webp",
-          title: "Tiện ích tầng 38",
+          title: "TIỆN ÍCH TẦNG 38",
           description: "View 71",
           category: "floor_18",
         },
@@ -1207,7 +1248,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/floor_18/z6653489983940_781b8242d05039e9ed353f9af20999e9.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/floor_18/z6653489983940_781b8242d05039e9ed353f9af20999e9.webp",
-          title: "Tiện ích tầng 38",
+          title: "TIỆN ÍCH TẦNG 38",
           description: "View 72",
           category: "floor_18",
         },
@@ -1216,7 +1257,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/floor_18/z6653489996860_5aeb6399ec5d5a3ea6fafe1f88a39de0.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/floor_18/z6653489996860_5aeb6399ec5d5a3ea6fafe1f88a39de0.webp",
-          title: "Tiện ích tầng 38",
+          title: "TIỆN ÍCH TẦNG 38",
           description: "View 73",
           category: "floor_18",
         },
@@ -1225,7 +1266,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/floor_18/z6697789485589_53cf73ab63202065635ba84554d3129c.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/floor_18/z6697789485589_53cf73ab63202065635ba84554d3129c.webp",
-          title: "Tiện ích tầng 38",
+          title: "TIỆN ÍCH TẦNG 38",
           description: "View 74",
           category: "floor_18",
         },
@@ -1234,7 +1275,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/floor_18/z6697789685310_3705c0d397b7916923bf829d7593503b.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/floor_18/z6697789685310_3705c0d397b7916923bf829d7593503b.webp",
-          title: "Tiện ích tầng 38",
+          title: "TIỆN ÍCH TẦNG 38",
           description: "View 75",
           category: "floor_18",
         },
@@ -1243,7 +1284,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/floor_18/z6697789685310_3705c0d397b7916923bf829d759350d.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/floor_18/z6697789685310_3705c0d397b7916923bf829d759350d.webp",
-          title: "Tiện ích tầng 38",
+          title: "TIỆN ÍCH TẦNG 38",
           description: "View 76",
           category: "floor_18",
         },
@@ -1252,7 +1293,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/BG_03073.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/BG_03073.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 77",
           category: "phoi_canh_du_an",
         },
@@ -1261,7 +1302,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/Gate_V3.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/Gate_V3.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 78",
           category: "phoi_canh_du_an",
         },
@@ -1270,7 +1311,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/KIMSON2_FACADE_1.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/KIMSON2_FACADE_1.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 79",
           category: "phoi_canh_du_an",
         },
@@ -1279,7 +1320,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/KIMSON2_FACADE_2.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/KIMSON2_FACADE_2.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 80",
           category: "phoi_canh_du_an",
         },
@@ -1288,7 +1329,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/TT1b.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/TT1b.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 81",
           category: "phoi_canh_du_an",
         },
@@ -1297,7 +1338,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/TT2.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/TT2.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 82",
           category: "phoi_canh_du_an",
         },
@@ -1306,7 +1347,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/good_quality.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/good_quality.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 83",
           category: "phoi_canh_du_an",
         },
@@ -1315,7 +1356,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/render_skyzen_draft.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/render_skyzen_draft.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 84",
           category: "phoi_canh_du_an",
         },
@@ -1324,7 +1365,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/z6697788732364_5e454a8a7d6f1c8745dbae6ca27e0511.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/z6697788732364_5e454a8a7d6f1c8745dbae6ca27e0511.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 85",
           category: "phoi_canh_du_an",
         },
@@ -1333,7 +1374,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/z6697788929984_e080ea70b6aaa03716089d20ed50c3e0.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/z6697788929984_e080ea70b6aaa03716089d20ed50c3e0.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 86",
           category: "phoi_canh_du_an",
         },
@@ -1342,7 +1383,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/z6697789203137_402817945e10f53e324cc2b4db688dcf.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/z6697789203137_402817945e10f53e324cc2b4db688dcf.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 87",
           category: "phoi_canh_du_an",
         },
@@ -1351,7 +1392,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/z6697789408833_f7bf812eb66c91009192c67ab35c9b1e.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/z6697789408833_f7bf812eb66c91009192c67ab35c9b1e.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 88",
           category: "phoi_canh_du_an",
         },
@@ -1360,7 +1401,7 @@
           src: "https://3dscanning.vn/360/skyzenv2/gallery/phoi_canh_du_an/z6697789456204_bf5290371924563315819848df10f6af.webp",
           thumbnail:
             "https://3dscanning.vn/360/skyzenv2/thumbnails/phoi_canh_du_an/z6697789456204_bf5290371924563315819848df10f6af.webp",
-          title: "Phối cảnh dự án",
+          title: "PHỐI CẢNH DỰ ÁN",
           description: "View 89",
           category: "phoi_canh_du_an",
         },
@@ -1398,6 +1439,15 @@
       let currentDisplayCount = 20;
       const loadMoreStep = 20;
 
+      // Thêm hàm show/hide loading
+      function showLoading() {
+        document.getElementById("loadingOverlay").classList.add("active");
+      }
+
+      function hideLoading() {
+        document.getElementById("loadingOverlay").classList.remove("active");
+      }
+
       // Initialize gallery with virtualization
       function initGallery() {
         renderVirtualizedGallery(galleryData);
@@ -1410,34 +1460,39 @@
         const galleryGrid = document.getElementById("galleryGrid");
         galleryGrid.innerHTML = "";
 
-        const displayData = data.slice(0, currentDisplayCount);
+        // Nhóm dữ liệu theo category và lấy ảnh đầu tiên của mỗi category
+        const groupedData = {};
+        data.forEach((item) => {
+          if (!groupedData[item.category]) {
+            groupedData[item.category] = [];
+          }
+          groupedData[item.category].push(item);
+        });
 
-        // Create placeholder elements for all items
+        // Tạo array chỉ chứa ảnh đầu tiên của mỗi category
+        const categoryData = Object.keys(groupedData).map((category) => {
+          const items = groupedData[category];
+          return {
+            ...items[0], // Lấy item đầu tiên làm đại diện
+            totalImages: items.length, // Thêm thông tin số lượng ảnh
+          };
+        });
+
+        const displayData = categoryData.slice(0, currentDisplayCount);
+
+        // Render các category items
         displayData.forEach((item, index) => {
           const placeholder = document.createElement("div");
           placeholder.className = "gallery-item group";
           placeholder.style.minHeight = "250px";
           placeholder.dataset.index = index;
-          placeholder.innerHTML = `
-            <div class="image-placeholder"></div>
-          `;
+          placeholder.dataset.category = item.category;
+          placeholder.innerHTML = `<div class="image-placeholder"></div>`;
           galleryGrid.appendChild(placeholder);
         });
 
-        // Add Load More button if there are more items
-        if (currentDisplayCount < data.length) {
-          const loadMoreBtn = document.createElement("div");
-          loadMoreBtn.className = "col-span-full flex justify-center mt-8";
-          loadMoreBtn.innerHTML = `
-              <button onclick="loadMoreItems()" class="btn-custom bg-primary text-white px-8 py-3 rounded-lg hover:bg-hover transition-all duration-300">
-                Xem thêm (${Math.min(
-                  loadMoreStep,
-                  data.length - currentDisplayCount
-                )} ảnh)
-              </button>
-            `;
-          galleryGrid.appendChild(loadMoreBtn);
-        }
+        // Cập nhật filteredData để chứa dữ liệu đã nhóm
+        filteredData = categoryData;
 
         // Set up intersection observer cho items đã hiển thị
         if (observer) {
@@ -1467,8 +1522,6 @@
         document.querySelectorAll(".gallery-item").forEach((item) => {
           observer.observe(item);
         });
-
-        filteredData = data;
       }
 
       function loadMoreItems() {
@@ -1491,16 +1544,17 @@
 
         placeholder.innerHTML = `
           <img src="${item.thumbnail}" 
-               alt="${item.title}" 
-               loading="lazy">
+              alt="${item.title}" 
+              loading="lazy">
           <div class="gallery-overlay">
               <div class="transition-all duration-300">
                   <h3 class="text-white text-base font-bold">${item.title}</h3>
+                  <p class="text-white text-sm">${item.totalImages} ảnh</p>
               </div>
-              <button class="view-btn" onclick="openFullscreen(${index}, false)">Xem ảnh</button>
+              <button class="view-btn" onclick="openCategoryModal('${item.category}')">Xem ảnh</button>
           </div>
           <div class="gallery-info group-hover:opacity-0 group-hover:invisible transition-all duration-300">
-              <p class="px-2 text-lg backdrop-blur-sm">${item.title}</p>
+              <p class="px-2 text-lg backdrop-blur-sm">${item.title} (${item.totalImages} ảnh)</p>
           </div>
         `;
         placeholder.classList.add("loaded");
@@ -1642,11 +1696,10 @@
 
         if (tabName === "images") {
           document.getElementById("imagesTab").classList.add("active");
-          filteredData = [...galleryData];
           if (observer) {
             observer.disconnect();
           }
-          renderVirtualizedGallery(galleryData);
+          renderVirtualizedGallery(galleryData); // Truyền galleryData gốc
         } else if (tabName === "videos") {
           document.getElementById("videosTab").classList.add("active");
           filteredData = [...videoData];
@@ -1656,6 +1709,7 @@
 
       // Open fullscreen modal
       function openFullscreen(index, isVideo = false) {
+        showLoading();
         currentImageIndex = index;
         isVideoMode = isVideo;
         const modal = document.getElementById("fullscreenModal");
@@ -1665,20 +1719,34 @@
 
         const currentItem = filteredData[index];
 
+        // Thêm sự kiện load cho hình ảnh và video
+        const onLoaded = () => {
+          hideLoading();
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+
+          // Xóa sự kiện sau khi sử dụng
+          if (isVideo) {
+            modalVideo.removeEventListener("loadeddata", onLoaded);
+          } else {
+            modalImage.removeEventListener("load", onLoaded);
+          }
+        };
+
         if (isVideo) {
           modalImage.style.display = "none";
           modalVideo.style.display = "block";
           modalVideo.src = currentItem.src;
+          modalVideo.addEventListener("loadeddata", onLoaded);
           modalVideo.load();
         } else {
           modalVideo.style.display = "none";
           modalImage.style.display = "block";
           modalImage.src = currentItem.src;
+          modalImage.addEventListener("load", onLoaded);
         }
 
         modalTitle.textContent = currentItem.title;
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
       }
 
       // Close fullscreen modal
@@ -1711,20 +1779,72 @@
 
       // Update modal content
       function updateModalContent() {
+        showLoading();
         const modalImage = document.getElementById("modalImage");
         const modalVideo = document.getElementById("modalVideo");
         const modalTitle = document.getElementById("modalTitle");
 
         const currentItem = filteredData[currentImageIndex];
 
+        const onLoaded = () => {
+          hideLoading();
+
+          // Xóa sự kiện sau khi sử dụng
+          if (isVideoMode) {
+            modalVideo.removeEventListener("loadeddata", onLoaded);
+          } else {
+            modalImage.removeEventListener("load", onLoaded);
+          }
+        };
+
         if (isVideoMode) {
           modalVideo.src = currentItem.src;
+          modalVideo.addEventListener("loadeddata", onLoaded);
           modalVideo.load();
+          modalTitle.textContent = currentItem.title;
         } else {
           modalImage.src = currentItem.src;
+          modalImage.addEventListener("load", onLoaded);
+          modalTitle.textContent = `${currentItem.title} (${
+            currentImageIndex + 1
+          }/${filteredData.length})`;
         }
+      }
 
-        modalTitle.textContent = currentItem.title;
+      function openCategoryModal(category) {
+        showLoading();
+        // Lọc tất cả ảnh theo category
+        const categoryImages = galleryData.filter(
+          (item) => item.category === category
+        );
+
+        // Cập nhật filteredData thành danh sách ảnh của category
+        filteredData = categoryImages;
+        currentImageIndex = 0;
+        isVideoMode = false;
+
+        // Mở modal với ảnh đầu tiên
+        const modal = document.getElementById("fullscreenModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalVideo = document.getElementById("modalVideo");
+        const modalTitle = document.getElementById("modalTitle");
+
+        const currentItem = categoryImages[0];
+
+        const onLoaded = () => {
+          hideLoading();
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+          modalImage.removeEventListener("load", onLoaded);
+        };
+        
+        modalVideo.style.display = "none";
+        modalImage.style.display = "block";
+        modalImage.src = currentItem.src;
+        modalImage.addEventListener("load", onLoaded);
+        modalTitle.textContent = `${currentItem.title} (${
+          currentImageIndex + 1
+        }/${categoryImages.length})`;
       }
 
       // Initialize when page loads
