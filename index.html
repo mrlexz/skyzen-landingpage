@@ -7,9 +7,9 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
     <style type="text/tailwindcss">
       :root {
-        --primary: #016672;       /* Your CMYK color converted to HEX */
-        --primary-light:#83afb4; /* Lighter variant */
-        --primary-light-50: #83afb480;  /* Darker variant */
+        --primary: #016672; /* Your CMYK color converted to HEX */
+        --primary-light: #83afb4; /* Lighter variant */
+        --primary-light-50: #83afb480; /* Darker variant */
       }
       /* Custom CSS that gets processed by Tailwind */
       @layer components {
@@ -47,6 +47,8 @@
         .then((data) => {
           document.getElementById("navbar-container").innerHTML = data;
         });
+
+      window.location.href = "overall.html";
     </script>
     <script src="js/script.js"></script>
   </body>
