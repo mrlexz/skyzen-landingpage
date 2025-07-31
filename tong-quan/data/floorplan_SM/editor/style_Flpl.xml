@@ -55,14 +55,10 @@
  
 		
 	<!-- Раздвигать панель  -->		  
-	<style 	name="rastyanuty_flpl"  type="container" keep="true"  edge="center" x="0"  y="0" width="30"  height="30" zorder="99" parent="container_plan1" 
-			bgcolor="0xDDDDDD" bgalpha="0.4" alpha="1"   bgcapture="true" bgroundedge="10" bgborder="1 0x57606a 0.8"
-			onover="set(bgalpha,1); tween(scale,1.4,0.05); tween(bgroundedge,12,0.05); set(cursors.url,'%FIRSTXML%/skin/rotate_device.png'); "  
-			onout="set(bgalpha,0.4); tween(scale,1,0.05); tween(bgroundedge,10,0.05);"
-		/>	
+	
 	<!-- radar  floorplan_SM/editor/style_Flpl.xml - layer name="radarEFR"  add(layer[radarEFR].heading, 45);  -->
 	<layer name="radarEFR" keep="true"  url.html5="%FIRSTXML%/plugins/radar.js" align="lefttop" edge="center" zorder="51" parent="image_floorplan_SM"  
-	       scale="get:plan_settings.radar_scale" fillalpha="0.5" fillcolor="0x7F5F3F" linewidth="1.0" linecolor="0xE0E0A0" linealpha="0.5" alpha="1" enabled="true"
+	       scale="get:plan_settings.radar_scale" fillalpha="0.5" fillcolor="0x45e7af" linewidth="1.0" linecolor="0xE0E0A0" linealpha="0.5" alpha="1" enabled="true"
 		   heading="0" headingoffset="180" editmode="true"   
 		/>
 	<!-- Картинка активной точки -->
@@ -84,7 +80,9 @@
 	<!--/////////////////////// Раздвигающийся контейнер ///////////////////////////-->
 	
 		<!-- Крестик закрыть план -->
-			
+		<layer 	name="knopka_plan"   keep="true" align="right" edge="center" x="15"   url="picture/close.png" height="18" width="prop"  alpha="0.6" zorder="92"  parent="top_container_plan"
+				onover="set(alpha,1);" onout="set(alpha,0.6);"
+				onclick="close_plan(); " /> 	
 				
 				
 				

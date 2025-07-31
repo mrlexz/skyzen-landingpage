@@ -19,17 +19,18 @@
 		
 		
 		
-		<hotspot name="kcnst1" title="kcnst1"   ath="135.15" atv="0.04" t_height="30" images="kcnst1.png" t_align="center"   style="hotspot1l" onclick=""/>
+		<hotspot name="kcnst1" title="kcnst1"   ath="135.15" atv="0.04" t_height="10" images="kcnst1.png" t_align="center"   style="hotspot36" onclick=""/>
 		
-		<hotspot name="tthcda" title="tthcda"   ath="161.77" atv="-0.25" t_height="30" images="tthcda.png" t_align="center"   style="hotspot1l" onclick=""/>
-		<hotspot name="dhqg" title="dhqg"   ath="277.23" atv="-0.47" t_height="30" images="dhqg.png" t_align="center"   style="hotspot1l" onclick=""/>
-		<hotspot name="kcnlt1" title="kcnlt1"   ath="297.43" atv="-0.22" t_height="30" images="kcnlt1.png" t_align="center"   style="hotspot1l" onclick=""/>
-		<hotspot name="tthab" title="tthab"   ath="33.80" atv="1.58" t_height="30" images="thab.png" t_align="center"   style="hotspot1l" onclick="loadscene(scene_s2!tongthe!dem)"/>
-		<hotspot name="bvtp" title="bvtp"   ath="89.09" atv="0.21" t_height="30" images="bvtp.png" t_align="center"   style="hotspot1l" onclick=""/>
-		<hotspot name="dhnl" title="bvtp"   ath="265.16" atv="-0.68" t_height="60" images="dhnl.png" t_align="center"   style="hotspot1l" onclick=""/>
-		<hotspot name="cw" title="cw"   ath="314.78" atv="2.42" t_height="60" images="cw.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s5!coworking)"/>
+		<hotspot name="tthcda" title="tthcda"   ath="161.77" atv="-0.25" t_height="10" images="tthcda.png" t_align="center"   style="hotspot36" onclick=""/>
+		<hotspot name="dhqg" title="dhqg"   ath="277.23" atv="-0.47" t_height="10" images="dhqg.png" t_align="center"   style="hotspot36" onclick=""/>
+		<hotspot name="kcnlt1" title="kcnlt1"   ath="297.43" atv="-0.22" t_height="10" images="kcnlt1.png" t_align="center"   style="hotspot36" onclick=""/>
+		<hotspot name="tthab" title="tthab"   ath="33.80" atv="1.58" t_height="10" images="thab.png" t_align="center"   style="hotspot36" onclick="loadscene(scene_s2!tongthe!dem)"/>
+		<hotspot name="bvtp" title="bvtp"   ath="89.09" atv="0.21" t_height="10" images="bvtp.png" t_align="center"   style="hotspot36" onclick=""/>
+		<hotspot name="dhnl" title="bvtp"   ath="255.16" atv="-0.68" t_height="10" images="dhnl.png" t_align="center"   style="hotspot36" onclick=""/>
+		<hotspot name="t5" title="cw"   ath="314.78" atv="2.42" t_height="10" images="t5.png" t_align="center"   style="hotspot36" onclick=""/>
+		 <hotspot name="tt" title="tt"   ath="316.18" atv="-27.55" t_height="10" images="tt.png" t_align="center"   style="hotspot36" onclick=""/>
 		 
-		<hotspot name="s1" title="s1"   ath="321.07" atv="6.09" t_height="60" images="t1.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s3!tongthe!tang1!2)"/>
+		<hotspot name="s1" title="s1"   ath="321.07" atv="6.09" t_height="10" images="t1.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s19!tang1!congchinh)"/>
 		
 		
 		
@@ -55,15 +56,15 @@
 		</image>
 		
 		
-		<hotspot name="kcnst1" title="kcnst1"   ath="329.11" atv="0.99" t_height="60" images="kcnst1.png" t_align="center"   style="hotspot1l" onclick=""/>
-		<hotspot name="tthcda" title="tthcda"   ath="349.66" atv="1.34" t_height="60" images="tthcda.png" t_align="center"   style="hotspot1l" onclick=""/>
-		<hotspot name="bc" title="bc"   ath="31.15" atv="1.32 " t_height="60" images="bigc.png" t_align="center"   style="hotspot1l"  onclick=""/>
-		<hotspot name="dhnl" title="dhnl"   ath="86.89" atv="1.03 " t_height="30" images="dhnl.png" t_align="center"   style="hotspot1l"  onclick=""/>
-		<hotspot name="kcnlt1" title="kcnlt1"   ath="151.98" atv="1.13 " t_height="30" images="kcnlt1.png" t_align="center"   style="hotspot1l"  onclick=""/>
-		<hotspot name="lm81" title="lm81"   ath="205.11" atv="0.44" t_height="30" images="lm81.png" t_align="center"   style="hotspot1l"  onclick=""/>
-		<hotspot name="cw" title="cw"   ath="306.95" atv="6.81" t_height="60" images="cw.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s5!coworking)"/>
+		<hotspot name="kcnst1" title="kcnst1"   ath="329.11" atv="0.99" t_height="10" images="kcnst1.png" t_align="center"   style="hotspot36" onclick=""/>
+		<hotspot name="tthcda" title="tthcda"   ath="349.66" atv="1.34" t_height="10" images="tthcda.png" t_align="center"   style="hotspot36" onclick=""/>
+		<hotspot name="bc" title="bc"   ath="31.15" atv="1.32 " t_height="10" images="bigc.png" t_align="center"   style="hotspot36"  onclick=""/>
+		<hotspot name="dhnl" title="dhnl"   ath="86.89" atv="1.03 " t_height="10" images="dhnl.png" t_align="center"   style="hotspot36"  onclick=""/>
+		<hotspot name="kcnlt1" title="kcnlt1"   ath="151.98" atv="1.13 " t_height="10" images="kcnlt1.png" t_align="center"   style="hotspot36"  onclick=""/>
+		<hotspot name="lm81" title="lm81"   ath="205.11" atv="0.44" t_height="10" images="lm81.png" t_align="center"   style="hotspot36"  onclick=""/>
+		<hotspot name="cw" title="cw"   ath="306.95" atv="6.81" t_height="10" images="t5.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s5!coworking)"/>
 		
-	<hotspot name="s1" title="s1"   ath="304.43" atv="9.63" t_height="30" images="t1.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s3!tongthe!tang1!2)"/>
+	<hotspot name="s1" title="s1"   ath="304.43" atv="9.63" t_height="10" images="t1.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s3!tongthe!tang1!2)"/>
 		
 		
 		
@@ -86,7 +87,7 @@
 		
 	</scene>
 	
-<scene name="scene_s3!tongthe!tang1!2" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s3!tongthe!tang1!2.tiles.jpg" lat="" lng="" heading="">
+<scene name="scene_s3!tongthe!tang1!2" title="Khu Giao Nhận Hàng" onstart="" thumburl="panos/thumb/s3!tongthe!tang1!2.tiles.jpg" lat="" lng="" heading="">
 
 		<view hlookat ="17.46" vlookat ="-7.84" fovtype="MFOV" fov="135.09" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
@@ -97,7 +98,9 @@
 		</image>
 		
 		
-		<hotspot name="kcnst1" title="kcnst1"   ath="19.69" atv="14.56" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="kcnst1" title="kcnst1"   ath="19.69" atv="14.56" t_height="10" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		
+	<hotspot name="t5" title="t5"   ath="26.85" atv="-20.55" t_height="10" images="t5.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s18!tang5)"/>
 		
 	
 		
@@ -124,7 +127,7 @@
 		
 	</scene>
 	
-<scene name="scene_s4!tongthe!tang1!1" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s4!tongthe!tang1!1.jpg" lat="" lng="" heading="">
+<scene name="scene_s4!tongthe!tang1!1" title="Công Viên" onstart="" thumburl="panos/thumb/s4!tongthe!tang1!1.jpg" lat="" lng="" heading="">
 
 		<view hlookat ="169.12" vlookat ="-2.71" fovtype="MFOV" fov="131.62" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
@@ -135,7 +138,9 @@
 		</image>
 		
 		
-		<hotspot name="cw" title="cw"   ath="59.73" atv="-52.42" t_height="60" images="cw.png" t_align="center"   style="hotspot1l" onclick="skin_loadscene(scene_s5!coworking)"/>
+		<hotspot name="cw" title="cw"   ath="33.98" atv="-48.86" t_height="10" images="t5.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s18!tang5)"/>
+		<hotspot name="cc" title="cc"   ath="328.23" atv="37.19" t_height="10" images="cw.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s19!tang1!congchinh)"/>
+		<hotspot name="gh" title="gh"   ath="144.95" atv="10.45" t_height="10" images="cw.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s3!tongthe!tang1!2)"/>
 		
 		
 	
@@ -175,9 +180,9 @@
 		
 		
 		
-		<hotspot name="t1" title="t1"   ath="86.89" atv="1.03 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="86.89" atv="1.03 " t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
 		
-		<hotspot name="ls" title="ls"   ath="283.93" atv="25.05 " t_height="30" images="ls.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s13!livestream)"/>
+		<hotspot name="ls" title="ls"   ath="283.93" atv="25.05 " t_height="10" images="ls.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s13!livestream)"/>
 		
 		
 	
@@ -214,9 +219,9 @@
 		<image>
 			<cube url="panos/s6!golf.tiles/pano_%s.jpg" />
 		</image>
-		<hotspot name="t1" title="t1"   ath="261.17" atv="1.97 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="261.17" atv="1.97 " t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
 		
-		<hotspot name="kr" title="kr"   ath="180.66" atv="41.97 " t_height="30" images="t1.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s9!karaoke)"/>
+		<hotspot name="kr" title="kr"   ath="180.66" atv="41.97 " t_height="10" images="t1.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s9!karaoke)"/>
 		
 	
 		
@@ -255,9 +260,10 @@
 		
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="94.10" atv="38.09" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s8!gym!2)"/>
-		<hotspot name="t1" title="t1"   ath="38.79" atv="2.63 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="38.79" atv="2.63 " t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
 		
-	
+		<hotspot name="kte" title="kte"   ath="220.25" atv="25.27 " t_height="30" images="kte.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s10!khutreem!1)"/>
+		<hotspot name="golf" title="golf"   ath="268.08" atv="25.80 " t_height="30" images="t5.png" t_align="center"   style="ahead"  onclick="skin_loadscene(s6!golf)"/>
 		
 		
 		
@@ -295,7 +301,9 @@
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="263.02" atv="21.72" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s7!gym!1)"/>
 		<hotspot name="kcnst2" title="kcnst2"   ath="211.70" atv="26.23" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s15!yoga!1)"/>
-		<hotspot name="t1" title="t1"   ath="11.11" atv="-2.60 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="11.11" atv="-2.60 " t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
+		
+	<hotspot name="sauna" title="sauna"   ath="11.11" atv="36.05 " t_height="30" images="sauna.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s14!sauna)"/>
 		
 	
 		
@@ -332,7 +340,7 @@
 			<cube url="panos/s9!karaoke.tiles/pano_%s.jpg" />
 		</image>
 		
-		<hotspot name="t1" title="t1"   ath="36.87" atv="1.32" t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="36.87" atv="1.32" t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5))"/>
 		<hotspot name="kcnst1" title="kcnst1"   ath="276.82" atv="36.98" t_height="60" images="tc.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s12!kitchenroom)"/>
 		
 	
@@ -372,7 +380,7 @@
 		
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="274.71" atv="55.27" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s11!khutreem!2)"/>
-		<hotspot name="t1" title="t1"   ath="162.22" atv="-1.95" t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="162.22" atv="-1.95" t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
 		
 	
 		
@@ -411,7 +419,8 @@
 		
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="118.41" atv="34.81" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s7!gym!1)"/>
-		<hotspot name="t1" title="t1"   ath="290.21" atv="2.08 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="290.21" atv="2.08 " t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
+		
 		
 	
 		
@@ -450,7 +459,7 @@
 		
 		
 		
-		<hotspot name="t1" title="t1"   ath="255.26" atv="3.17 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="255.26" atv="3.17 " t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
 		<hotspot name="gym" title="gym"   ath="159.57" atv="47.50" t_height="30" images="tc.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s10!khutreem!1)"/>
 		
 	
@@ -488,7 +497,7 @@
 			<cube url="panos/s13!livestream.tiles/pano_%s.jpg" />
 		</image>
 		
-		<hotspot name="t1" title="t1"   ath="154.57" atv="6.93" t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="154.57" atv="6.93" t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
 		
 		<hotspot name="kr" title="kr"   ath="179.43" atv="48.14 " t_height="30" images="kr.png" t_align="center"   style="ahead"  onclick="skin_loadscene(scene_s6!golf)"/>
 		
@@ -529,7 +538,7 @@
 		</image>
 		
 		
-		<hotspot name="t1" title="t1"   ath="222.61" atv="7.65 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="222.61" atv="7.65 " t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
 		
 	
 		
@@ -568,7 +577,7 @@
 		
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="118.41" atv="34.81" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s16!yoga!2)"/>
-		<hotspot name="t1" title="t1"   ath="249.28" atv="-1.91 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="249.28" atv="-1.91 " t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5))"/>
 		
 	
 		
@@ -607,7 +616,365 @@
 		
 		
 		<hotspot name="kcnst1" title="kcnst1"   ath="267.18" atv="31.60" t_height="60" images="kcnst1.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s14!sauna)"/>
-		<hotspot name="t1" title="t1"   ath="106.36" atv="-0.88 " t_height="30" images="tc.png" t_align="center"   style="hotspot1l"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		<hotspot name="t1" title="t1"   ath="106.36" atv="-0.88 " t_height="10" images="t5.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s18!tang5)"/>
+		
+	
+		
+		
+		
+	<events name="novaworldhotram!toancanh!s1"
+		onloadcomplete="
+
+	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						"
+		/>
+		
+		
+	</scene>
+	
+
+<scene name="scene_s17!santhuong" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s17!santhuong.jpg" lat="" lng="" heading="">
+
+		<view hlookat ="358.31" vlookat ="5.20" fovtype="MFOV" fov="138.36" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s17!santhuong.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s17!santhuong.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		<hotspot name="bb1" title="bb"   ath="357.33" atv="35.92" t_height="10" images="hb.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s24!tt!hoboi)"/>
+		<hotspot name="hbte" title="hbte"   ath="18.35" atv="26.99" t_height="10" images="hbte.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s23!tt!hoboitreem)"/>
+		
+	<hotspot name="bbq" title="bbq"   ath="312.78" atv="17.30" t_height="10" images="bbq.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s25!tt!bbq)"/>
+		
+	<hotspot name="ccnt" title="ccnt"   ath="327.23" atv="18.00" t_height="10" images="cpnt.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s22!tt!chieuphim)"/>
+		
+	<hotspot name="tc" title="tc"   ath="90.70" atv="-13.62" t_height="10" images="tc.png" t_align="center"   style="hotspot36"  onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		
+	
+		
+		
+		
+	<events name="novaworldhotram!toancanh!s1"
+		onloadcomplete="
+
+	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						"
+		/>
+		
+		
+	</scene>
+	
+
+<scene name="scene_s18!tang5" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s18!tang5.jpg" lat="" lng="" heading="">
+
+		<view hlookat ="358.31" vlookat ="5.20" fovtype="MFOV" fov="138.36" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s18!tang5.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s18!tang5.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		
+		<hotspot name="kr" title="kr"   ath="296.37" atv="23.77" t_height="10" images="kr.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s12!kitchenroom)"/>
+		<hotspot name="gym" title="gym"   ath="15.72" atv="31.41" t_height="10" images="gym.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s7!gym!1)"/>
+		<hotspot name="tc" title="tc"   ath="150.57" atv="-22.50" t_height="10" images="tc.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s1!tongthe!ngay)"/>
+		
+		
+	
+		
+		
+		
+	<events name="novaworldhotram!toancanh!s1"
+		onloadcomplete="
+
+	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						"
+		/>
+		
+		
+	</scene>
+	
+<scene name="scene_s19!tang1!congchinh" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s19!tang1!congchinh.jpg" lat="" lng="" heading="">
+
+		<view hlookat ="54.64" vlookat ="-3.59" fovtype="MFOV" fov="138.36" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s19!tang1!congchinh.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s19!tang1!congchinh.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		<hotspot name="kcnst1" title="kcnst1"   ath="47.89" atv="37.54" t_height="60" images="kte.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="tq" title="tq"   ath="298.81" atv="-42.83" t_height="10" images="tc.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s4!tongthe!tang1!1)"/>
+		<hotspot name="t5" title="t5"   ath="0.81" atv="-38.12" t_height="10" images="t5.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s18!tang5)"/>
+		
+		
+	
+		
+		
+		
+	<events name="novaworldhotram!toancanh!s1"
+		onloadcomplete="
+
+	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						"
+		/>
+		
+		
+	</scene>
+	
+<scene name="scene_s20!tang1!khugiaohang" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s20!tang1!khugiaohang.jpg" lat="" lng="" heading="">
+
+		<view hlookat ="358.31" vlookat ="5.20" fovtype="MFOV" fov="138.36" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s20!tang1!khugiaohang.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s20!tang1!khugiaohang.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		<hotspot name="kcnst1" title="kcnst1"   ath="338.01" atv="39.40" t_height="10" images="kte.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s10!khutreem!1)"/>
+		<hotspot name="kr" title="kr"   ath="296.37" atv="23.77" t_height="10" images="kr.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s12!kitchenroom)"/>
+		<hotspot name="gym" title="gym"   ath="15.72" atv="31.41" t_height="10" images="gym.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s7!gym!1)"/>
+		
+		
+	
+		
+		
+		
+	<events name="novaworldhotram!toancanh!s1"
+		onloadcomplete="
+
+	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						"
+		/>
+		
+		
+	</scene>
+	
+<scene name="scene_s21!tang1!congvien" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s21!tang1!congvien.jpg" lat="" lng="" heading="">
+
+		<view hlookat ="358.31" vlookat ="5.20" fovtype="MFOV" fov="138.36" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s21!tang1!congvien.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s21!tang1!congvien.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		<hotspot name="kcnst1" title="kcnst1"   ath="338.01" atv="39.40" t_height="10" images="kte.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s10!khutreem!1)"/>
+		<hotspot name="kr" title="kr"   ath="296.37" atv="23.77" t_height="10" images="kr.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s12!kitchenroom)"/>
+		<hotspot name="gym" title="gym"   ath="15.72" atv="31.41" t_height="10" images="gym.png" t_align="center"   style="hotspot36" onclick="skin_loadscene(scene_s7!gym!1)"/>
+		
+		
+	
+		
+		
+		
+	<events name="novaworldhotram!toancanh!s1"
+		onloadcomplete="
+
+	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						"
+		/>
+		
+		
+	</scene>
+	
+<scene name="scene_s22!tt!chieuphim" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s22!tt!chieuphim.jpg" lat="" lng="" heading="">
+
+		<view hlookat ="358.31" vlookat ="5.20" fovtype="MFOV" fov="138.36" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s22!tt!chieuphim.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s22!tt!chieuphim.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		<hotspot name="bbq" title="bbq"   ath="190.83" atv="44.27" t_height="60" images="bbq.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s25!tt!bbq)"/>
+		
+		<hotspot name="hb" title="hb"   ath="8.47" atv="52.81" t_height="60" images="hb.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s24!tt!hoboi)"/>
+		
+		
+		
+	
+		
+		
+		
+	<events name="novaworldhotram!toancanh!s1"
+		onloadcomplete="
+
+	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						"
+		/>
+		
+		
+	</scene>
+	
+<scene name="scene_s23!tt!hoboitreem" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s23!tt!hoboitreem.jpg" lat="" lng="" heading="">
+
+		<view hlookat ="358.31" vlookat ="5.20" fovtype="MFOV" fov="138.36" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s23!tt!hoboitreem.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s23!tt!hoboitreem.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		<hotspot name="kcnst1" title="kcnst1"   ath="146.30" atv="25.81" t_height="60" images="kte.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s24!tt!hoboi)"/>
+		
+		
+		
+	
+		
+		
+		
+	<events name="novaworldhotram!toancanh!s1"
+		onloadcomplete="
+
+	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						"
+		/>
+		
+		
+	</scene>
+	
+<scene name="scene_s24!tt!hoboi" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s24!tt!hoboi.jpg" lat="" lng="" heading="">
+
+		<view hlookat ="358.31" vlookat ="5.20" fovtype="MFOV" fov="138.36" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s24!tt!hoboi.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s24!tt!hoboi.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		<hotspot name="hbte" title="hbte"   ath="329.59" atv="46.48" t_height="60" images="hbte.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s23!tt!hoboitreem)"/>
+		<hotspot name="bbq" title="bbq"   ath="227.41" atv="50.98" t_height="60" images="bbq.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s25!tt!bbq)"/>
+		
+		
+	
+		
+		
+		
+	<events name="novaworldhotram!toancanh!s1"
+		onloadcomplete="
+
+	
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						"
+		/>
+		
+		
+	</scene>
+	
+<scene name="scene_s25!tt!bbq" title="Toàn Cảnh Dự Án Kita Capital" onstart="" thumburl="panos/thumb/s25!tt!bbq.jpg" lat="" lng="" heading="">
+
+		<view hlookat ="358.31" vlookat ="5.20" fovtype="MFOV" fov="138.36" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/s25!tt!bbq.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/s25!tt!bbq.tiles/pano_%s.jpg" />
+		</image>
+		
+		
+		<hotspot name="cpnt" title="cpnt"   ath="183.41" atv="22.30" t_height="60" images="cpnt.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s22!tt!chieuphim)"/>
+		
+		<hotspot name="kcnst1" title="kcnst1"   ath="219.20" atv="23.08" t_height="60" images="kte.png" t_align="center"   style="ahead" onclick="skin_loadscene(scene_s24!tt!hoboi)"/>
+		
+		
 		
 	
 		

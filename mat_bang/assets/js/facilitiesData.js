@@ -1,38 +1,96 @@
 window.facilitiesFloors = [
   {
+    id: 1,
     floor: 'Tầng 1',
     image: './assets/images/FloorPlan/T1_facilities.jpg',
+    image_mobile: './assets/images/FloorPlan/T1_facilities_mobile.jpg',
     facilities: [
-      { label: '01', name: 'Cổng chính' },
-      { label: '02', name: 'Chốt an ninh' },
-      { label: '03', name: 'Lối đi phụ' },
-      { label: '04', name: 'Dốc lên/xuống hầm' },
+      {
+        label: '01',
+        name: 'Cổng chính',
+        previewImgUrl: './assets/images/FacilityImage/Cong-chinh.webp',
+      },
+      {
+        label: '02',
+        name: 'Chốt an ninh',
+        previewImgUrl: '',
+      },
+      {
+        label: '03',
+        name: 'Lối đi phụ',
+        previewImgUrl: '',
+      },
+      {
+        label: '04',
+        name: 'Dốc lên/xuống hầm',
+        previewImgUrl: '',
+      },
       { label: '05', name: 'Dốc lên/xuống hầm' },
-      { label: '06', name: 'Điểm nhấn nghệ thuật' },
-      { label: '07', name: 'Điểm đón trả khách' },
-      { label: '08', name: 'Vòng xoay Thịnh Vượng' },
-      { label: '09', name: 'Góc thú cưng' },
-      { label: '10', name: 'Khu vực giao nhận hàng hóa' },
-      { label: '11', name: 'Vườn điêu khắc' },
-      { label: '12', name: 'Góc Thiền' },
-      { label: '13', name: 'Tường xanh sinh thái' },
-      { label: '14', name: 'Sân chơi vận động' },
-      { label: '15', name: 'Đường dạo bộ' },
-      { label: '16', name: 'Lối vào sảnh căn hộ' },
-      { label: '17', name: 'Lối vào sảnh Officetel' },
-      { label: '18', name: 'Khu đón khách' },
-      { label: '19', name: 'Khu đón khách' },
-      { label: '20', name: 'Sảnh Officetel' },
-      { label: '21', name: 'Hòm thư Officetel' },
-      { label: '22', name: 'Quầy lễ tân' },
-      { label: '23', name: 'Sảnh thang máy Officetel' },
-      { label: '24', name: 'Hòm thư cư dân' },
-      { label: '25', name: 'Sảnh thang máy cư dân' },
-      { label: '26', name: 'Phòng sinh hoạt cộng đồng' },
-      { label: '27', name: 'Trường mầm non' },
-      { label: '28', name: 'Vườn Zen' },
-      { label: '29', name: 'Lối thoát hiểm' },
-      { label: '30', name: 'Hành lang thương mại' },
+      {
+        label: '06',
+        name: 'Điểm nhấn nghệ thuật',
+        previewImgUrl: '',
+      },
+      { label: '07', name: 'Điểm đón trả khách', previewImgUrl: '' },
+      {
+        label: '08',
+        name: 'Vòng xoay Thịnh Vượng',
+        previewImgUrl:
+          './assets/images/FacilityImage/Vong-xoay-Thinh-Vuong.webp',
+      },
+      { label: '09', name: 'Góc thú cưng', previewImgUrl: '' },
+      { label: '10', name: 'Khu vực giao nhận hàng hóa', previewImgUrl: '' },
+      { label: '11', name: 'Vườn điêu khắc', previewImgUrl: '' },
+      { label: '12', name: 'Góc Thiền', previewImgUrl: '' },
+      { label: '13', name: 'Tường xanh sinh thái', previewImgUrl: '' },
+      { label: '14', name: 'Sân chơi vận động', previewImgUrl: '' },
+      {
+        label: '15',
+        name: 'Đường dạo bộ',
+        previewImgUrl: './assets/images/FacilityImage/15.-Duong-dao-bo-1.webp',
+      },
+      { label: '16', name: 'Lối vào sảnh căn hộ', previewImgUrl: '' },
+      { label: '17', name: 'Lối vào sảnh Officetel', previewImgUrl: '' },
+      {
+        label: '18',
+        name: 'Khu đón khách',
+        previewImgUrl: './assets/images/FacilityImage/Khu-don-khach18-2.webp',
+      },
+      {
+        label: '19',
+        name: 'Khu đón khách',
+        previewImgUrl: './assets/images/FacilityImage/Khu-don-khach18-2.webp',
+      },
+      { label: '20', name: 'Sảnh Officetel', previewImgUrl: '' },
+      { label: '21', name: 'Hòm thư Officetel', previewImgUrl: '' },
+      {
+        label: '22',
+        name: 'Quầy lễ tân',
+        previewImgUrl: './assets/images/FacilityImage/22.-Quay-le-tan-1-1.webp',
+      },
+      {
+        label: '23',
+        name: 'Sảnh thang máy Officetel',
+        previewImgUrl:
+          './assets/images/FacilityImage/SanhThangMayOfficetel.webp',
+      },
+      {
+        label: '24',
+        name: 'Hòm thư cư dân',
+        previewImgUrl:
+          './assets/images/FacilityImage/24.-Hom-thu-cu-dan-2.webp',
+      },
+      {
+        label: '25',
+        name: 'Sảnh thang máy cư dân',
+        previewImgUrl:
+          './assets/images/FacilityImage/25.-Sanh-thang-may-cu-dan-2.webp',
+      },
+      { label: '26', name: 'Phòng sinh hoạt cộng đồng', previewImgUrl: '' },
+      { label: '27', name: 'Trường mầm non', previewImgUrl: '' },
+      { label: '28', name: 'Vườn Zen', previewImgUrl: '' },
+      { label: '29', name: 'Lối thoát hiểm', previewImgUrl: '' },
+      { label: '30', name: 'Hành lang thương mại', previewImgUrl: '' },
     ],
     numbers: [
       { label: '01', left: 0.1215547703180212, top: 0.6517931609674729 },
@@ -52,7 +110,7 @@ window.facilitiesFloors = [
       { label: '15', left: 0.3003533568904594, top: 0.8236030025020851 },
       { label: '16', left: 0.6678445229681979, top: 0.6075896580483736 },
       { label: '17', left: 0.7197879858657243, top: 0.4641367806505421 },
-      { label: '18', left: 0.6565371024734983, top: 0.4916597164303586 },
+      { label: '18', left: 0.6565371025734983, top: 0.4916597164303586 },
       { label: '19', left: 0.7215547703180212, top: 0.567556296914095 },
       { label: '20', left: 0.731095406360424, top: 0.4974979149291076 },
       { label: '21', left: 0.7568904593639576, top: 0.567556296914095 },
@@ -68,23 +126,66 @@ window.facilitiesFloors = [
     ],
   },
   {
+    id: 2,
     floor: 'Tầng 5',
     image: './assets/images/FloorPlan/T5_facilities.jpg',
+    image_mobile: './assets/images/FloorPlan/T5_facilities_mobile.jpg',
     facilities: [
-      { label: '01', name: 'Phòng tập Technogym' },
+      {
+        label: '01',
+        name: 'Phòng tập Technogym',
+        previewImgUrl:
+          './assets/images/FacilityImage/Phong-tap-Technogym-1-1.webp',
+      },
       { label: '02', name: 'Phòng tập Boxing' },
-      { label: '03', name: 'Phòng tập Yoga' },
+      {
+        label: '03',
+        name: 'Phòng tập Yoga',
+        previewImgUrl: './assets/images/FacilityImage/Phong-tap-Yoga.webp',
+      },
       { label: '04', name: 'Phòng tập nhảy' },
-      { label: '05', name: 'Phòng Pilates' },
-      { label: '06', name: 'Phòng Sauna' },
+      {
+        label: '05',
+        name: 'Phòng Pilates',
+        previewImgUrl: './assets/images/FacilityImage/pilates.webp',
+      },
+      {
+        label: '06',
+        name: 'Phòng Sauna',
+        previewImgUrl: './assets/images/FacilityImage/Phong-Sauna.webp',
+      },
       { label: '07', name: 'Khu vực Locker' },
       { label: '08', name: 'Khu vực vệ sinh' },
-      { label: '09', name: 'Kid’s Wonder' },
-      { label: '10', name: 'Phòng tiệc' },
-      { label: '11', name: 'Phòng Karaoke' },
-      { label: '12', name: 'Phòng Golf 3D' },
-      { label: '13', name: 'Co-working Space' },
-      { label: '14', name: 'Livestream Studio' },
+      {
+        label: '09',
+        name: 'Kid’s Wonder',
+        previewImgUrl: './assets/images/FacilityImage/Kid-Wonder-1-2.webp',
+      },
+      {
+        label: '10',
+        name: 'Phòng tiệc',
+        previewImgUrl: './assets/images/FacilityImage/PhongTiec.webp',
+      },
+      {
+        label: '11',
+        name: 'Phòng Karaoke',
+        previewImgUrl: './assets/images/FacilityImage/karaoke.jpg',
+      },
+      {
+        label: '12',
+        name: 'Phòng Golf 3D',
+        previewImgUrl: './assets/images/FacilityImage/golf.jpg',
+      },
+      {
+        label: '13',
+        name: 'Co-working Space',
+        previewImgUrl: './assets/images/FacilityImage/co_working.jpg',
+      },
+      {
+        label: '14',
+        name: 'Livestream Studio',
+        previewImgUrl: './assets/images/FacilityImage/livestream_booth.jpg',
+      },
       { label: '15', name: 'Phòng sinh hoạt cộng đồng' },
       { label: '16', name: 'Vườn thiền Zen' },
       { label: '17', name: 'Sân chơi trẻ em đa năng' },
@@ -112,23 +213,52 @@ window.facilitiesFloors = [
     ],
   },
   {
-    floor: 'Tầng thượng',
+    id: 3,
+    floor: 'Tầng Thượng',
     image: './assets/images/FloorPlan/TangThuong_facilities.jpg',
+    image_mobile: './assets/images/FloorPlan/TangThuong_facilities_mobile.jpg',
     facilities: [
-      { label: '01', name: 'Hồ bơi vô cực Acrylic muối khoáng' },
+      {
+        label: '01',
+        name: 'Hồ bơi vô cực Acrylic muối khoáng',
+        previewImgUrl: './assets/images/FacilityImage/swimming_pool.jpg',
+      },
       { label: '02', name: 'Bể sục Jacuzzi' },
       { label: '03', name: 'Giường thủy trị liệu' },
-      { label: '04', name: 'Hồ bơi trẻ em' },
+      {
+        label: '04',
+        name: 'Hồ bơi trẻ em',
+        previewImgUrl: './assets/images/FacilityImage/Ho-boi-tre-em.webp',
+      },
       { label: '05', name: 'Thác nước' },
       { label: '06', name: 'Khu tắm nắng' },
       { label: '07', name: 'Phòng thay đồ' },
-      { label: '08', name: 'Rooftop Lounge' },
-      { label: '09', name: 'Khu BBQ' },
+      {
+        label: '08',
+        name: 'Sky Lounge',
+        previewImgUrl: './assets/images/FacilityImage/08.-Sky-Lounge-1.webp',
+      },
+
+      {
+        label: '09',
+        name: 'Rooftop Lounge',
+        previewImgUrl: './assets/images/FacilityImage/09.-Rooftop-BBQ-1.webp',
+      },
       { label: '10', name: 'Bậc thang nước' },
       { label: '11', name: 'Thác nước' },
       { label: '12', name: 'Vườn ngắm sao' },
-      { label: '13', name: 'Khu chiếu phim' },
-      { label: '14', name: 'Hồ bơi sàn kính' },
+      {
+        label: '13',
+        name: 'Khu chiếu phim',
+        previewImgUrl:
+          './assets/images/FacilityImage/13.-Khu-chieu-phim-1.webp',
+      },
+      {
+        label: '14',
+        name: 'Hồ bơi sàn kính',
+        previewImgUrl:
+          './assets/images/FacilityImage/14.-Ho-boi-san-kinh-1.webp',
+      },
       { label: '15', name: 'Điểm checkin' },
       { label: '16', name: 'Ốc đảo thư giãn' },
       { label: '17', name: 'Vòm che nghệ thuật' },
@@ -154,3 +284,10 @@ window.facilitiesFloors = [
     ],
   },
 ];
+
+const isMobileView = window.innerWidth <= 768;
+if (isMobileView) {
+  window.facilitiesFloors.forEach((floor) => {
+    floor.image = floor.image_mobile;
+  });
+}

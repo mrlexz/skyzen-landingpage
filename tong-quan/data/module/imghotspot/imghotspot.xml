@@ -167,7 +167,7 @@ clearinterval(calc('crop_anim_' + caller.name)); ); );
 	   distorted="false"
 	  edge="bottom"
 	   oy="0"
-        url="hs/arrow_down_2.png"
+        url="hs/arrow_down_3.png"
        onloaded="animation();add_hs(calc(name+'_home'),get(ath),get(atv),get(t_height),-50);add_tien_ich_nx(calc(name+'_home'),get(title),get(title),0,get(images));"
       animation=""
       
@@ -307,15 +307,15 @@ clearinterval(calc('crop_anim_' + caller.name)); ); );
         onloaded="hotspot_animate();"
 	/>
 <style name="hotspot36"
-		scale=".6"
-	   scale.touch=".6"
+		scale=".8"
+	   scale.touch=".8"
 	   distorted="false"
 	  edge="bottom"
 	   oy="0"
-        url="hs/new_spotd7_gif.png"
-	    crop="0|0|128|128"
+        url="hs/arrow_down_3.png"
+	    
        onloaded="animation();add_hs_1(calc(name+'_home'),get(ath),get(atv),get(t_height),-50);add_tien_ich_nx(calc(name+'_home'),get(title),get(title),0,get(images));"
-      animation=""
+      animation="tween(oy, calc(3 - oy), 0.3, easeoutbounce, animation());"
       
 	/>
 	
@@ -331,6 +331,67 @@ clearinterval(calc('crop_anim_' + caller.name)); ); );
       animation=""
       
 	/>
+	<style name="hotspotp1"
+		scale=".5"
+	   scale.touch=".5"
+	   distorted="false"
+	  edge="bottom"
+	   oy="0"
+        url="hs/hotspot_p1.png"
+	    
+       onloaded="animation();add_hs(calc(name+'_home'),get(ath),get(atv),get(t_height),-50);add_tien_ich_nx(calc(name+'_home'),get(title),get(title),0,get(images));"
+      animation=""
+      
+	/>
+	<style name="hotspotp2"
+		scale=".5"
+	   scale.touch=".5"
+	   distorted="false"
+	  edge="bottom"
+	   oy="0"
+        url="hs/hotspot_p2.png"
+	    
+       onloaded="animation();add_hs(calc(name+'_home'),get(ath),get(atv),get(t_height),-50);add_tien_ich_nx(calc(name+'_home'),get(title),get(title),0,get(images));"
+      animation=""
+      
+	/>
+	<style name="hotspotp3"
+		scale=".5"
+	   scale.touch=".5"
+	   distorted="false"
+	  edge="bottom"
+	   oy="0"
+        url="hs/hotspot_p3.png"
+	    
+       onloaded="animation();add_hs(calc(name+'_home'),get(ath),get(atv),get(t_height),-50);add_tien_ich_nx(calc(name+'_home'),get(title),get(title),0,get(images));"
+      animation=""
+      
+	/>
+	<style name="hotspotp4"
+		scale=".5"
+	   scale.touch=".5"
+	   distorted="false"
+	  edge="bottom"
+	   oy="0"
+        url="hs/hotspot_p4.png"
+	    
+       onloaded="animation();add_hs(calc(name+'_home'),get(ath),get(atv),get(t_height),-50);add_tien_ich_nx(calc(name+'_home'),get(title),get(title),0,get(images));"
+      animation=""
+      
+	/>
+	<style name="hotspotp5"
+		scale=".5"
+	   scale.touch=".5"
+	   distorted="false"
+	  edge="bottom"
+	   oy="0"
+        url="hs/hotspot_p5.png"
+	    
+       onloaded="animation();add_hs(calc(name+'_home'),get(ath),get(atv),get(t_height),-50);add_tien_ich_nx(calc(name+'_home'),get(title),get(title),0,get(images));"
+      animation=""
+      
+	/>
+	
 	<style name="hotspot39"
 		scale=".5"
 	   scale.touch=".5"

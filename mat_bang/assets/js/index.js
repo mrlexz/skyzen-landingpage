@@ -78,7 +78,7 @@ window.handleClickActive = (id) => {
   renderLegend();
 
   // Đóng menu trên mobile sau khi chọn
-  if (window.innerWidth <= 1024) {
+  if (window.innerWidth <= 1025) {
     window.closeFloorPlanList();
   }
 };
@@ -118,7 +118,7 @@ const renderLegend = () => {
   console.log(legendEl.offsetHeight);
 
   const mainImg = document.querySelector('.floor-plan-main-img');
-  if (window.innerWidth <= 1024) {
+  if (window.innerWidth <= 1025) {
     mainImg.style.top = `${legendEl.offsetHeight + 65}px`;
     window.updateSvgContainerPosition();
   }
@@ -277,7 +277,7 @@ const renderLayout = () => {
   window.updateSvgContainerPosition = () => {
     const mainImgRect = mainImg.getBoundingClientRect();
     const wrapperRect = wrapper.getBoundingClientRect();
-    const isMobile = window.innerWidth <= 1024;
+    const isMobile = window.innerWidth <= 1025;
 
     // Tính toán vị trí tương đối của mainImg trong wrapper
     const mainImgLeft = mainImgRect.left - wrapperRect.left;
@@ -365,7 +365,7 @@ window.toggleFloorPlanList = () => {
   const hamburgerButton = document.querySelector('.hamburger-button');
   const overlay = document.querySelector('.floor-plan-overlay');
 
-  if (window.innerWidth <= 1024) {
+  if (window.innerWidth <= 1025) {
     floorPlanList.classList.toggle('active');
     hamburgerButton.classList.toggle('active');
     overlay.classList.toggle('active');
@@ -377,7 +377,7 @@ window.closeFloorPlanList = () => {
   const hamburgerButton = document.querySelector('.hamburger-button');
   const overlay = document.querySelector('.floor-plan-overlay');
 
-  if (window.innerWidth <= 1024) {
+  if (window.innerWidth <= 1025) {
     floorPlanList.classList.remove('active');
     hamburgerButton.classList.remove('active');
     overlay.classList.remove('active');

@@ -32,11 +32,19 @@
           border-top-right-radius: 2rem;
         }
       }
+      
+      /* Thêm media query cho mobile */
+      @media (max-width: 768px) {
+        .mobile-scroll-container {
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="w-full h-full">
-      <section class="w-full h-full overflow-auto">
+      <section class="w-full h-full overflow-auto mobile-scroll-container">
         <div class="w-max mx-auto h-[calc(100vh-56px)]">
           <img alt="map" class="aspect-[2000/958] h-full w-full 2xl:w-[100vw]" src="./assets/Map-SkyZen.gif">
         </div>
@@ -50,6 +58,26 @@
         .then((data) => {
           document.getElementById("navbar-container").innerHTML = data;
         });
+      
+      // Function để scroll ngang 50% trên mobile
+      function scrollToMiddleOnMobile() {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          const container = document.querySelector('.mobile-scroll-container');
+          if (container) {
+            const scrollWidth = container.scrollWidth;
+            const containerWidth = container.clientWidth;
+            const scrollTo = (scrollWidth - containerWidth) / 1.8;
+            container.scrollTo({
+              left: scrollTo,
+              behavior: 'auto'
+            });
+          }
+        }
+      }
+      
+      // Gọi hàm khi trang tải xong và khi resize
+      window.addEventListener('load', scrollToMiddleOnMobile);
+      window.addEventListener('resize', scrollToMiddleOnMobile);
     </script>
     <script src="js/script.js"></script>
   </body>

@@ -23,11 +23,13 @@
       href="./assets/images/icons/cropped-favicon-192x192.webp"
       sizes="192x192"
     />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./assets/styles/facilities.css" />
     <style>
       @font-face {
         font-family: 'SVN-Gilroy';
@@ -36,7 +38,19 @@
         font-style: normal;
       }
       @font-face {
-        font-family: 'SVN-Gilroy';
+        font-family: 'SVN-Gilroy regular';
+        src: url('./assets/fonts/SVN-Gilroy Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'SVN-Gilroy medium';
+        src: url('./assets/fonts/SVN-Gilroy Medium.otf') format('opentype');
+        font-weight: 600;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'SVN-Gilroy bold';
         src: url('./assets/fonts/SVN-Gilroy SemiBold.otf') format('opentype');
         font-weight: 600;
         font-style: normal;
@@ -50,28 +64,106 @@
         display: block;
         object-fit: contain;
       }
+      .heading-wrapper {
+        font-family: 'SVN-Gilroy regular', 'Inter', sans-serif;
+      }
+      .close-x {
+        position: absolute;
+        width: 24px;
+        height: 2px;
+        background: #006673;
+        border-radius: 2px;
+        transition: background 0.3s;
+        @media (max-width: 677px) {
+          width: 16px;
+          height: 2px;
+        }
+      }
+      .close-x:first-child {
+        transform: rotate(45deg);
+      }
+      .close-x:last-child {
+        transform: rotate(-45deg);
+      }
+      .custom-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: radial-gradient(
+          50% 50% at 60% 40%,
+          rgba(2, 82, 93, 0) 50%,
+          rgba(2, 82, 93, 0.5) 100%
+        );
+        z-index: 2;
+        pointer-events: none;
+        @media (max-width: 1024px) {
+          background: radial-gradient(
+            50% 50% at 50% 80%,
+            rgba(2, 82, 93, 0) 0,
+            rgba(2, 82, 93, 0.5) 100%
+          );
+        }
+      }
+      #facilities-numbers-container {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
     <div
-      class="relative h-[100dvh] w-full flex justify-center items-center overflow-hidden"
+      class="main_container h-[100dvh] relative w-full flex justify-center items-center overflow-hidden"
     >
       <div
-        class="relative max-lg:absolute max-lg:bottom-0"
+        class="map_img_container absolute right-0 max-xl:bottom-0 max-xl:top-auto"
         id="facilities-wrapper"
       >
         <img
           alt="Detailed architectural floor plan of a building complex with pink apartment blocks, pool area, roads, trees, and numbered red and white circular labels on various locations"
-          class="bg_img object-contain"
-          src="./assets/images/FloorPlan/T1_facilities.jpg"
+          class="bg_img"
         />
         <!-- Numbered circles on the floor plan inside relative container -->
-        <div id="facilities-numbers-container"></div>
+        <div
+          id="facilities-numbers-container"
+          style="position: absolute; z-index: 3"
+        ></div>
       </div>
+      <!-- Overlay nằm ở đây -->
+      <div class="custom-overlay"></div>
+      <div class="overlay_blue"></div>
       <div
-        class="absolute top-1/2 max-lg:left-0 left-6 -translate-y-1/2 max-lg:top-[300px] max-w-[19.79167rem] bg-transparent rounded-xl p-6 text-white"
+        class="absolute top-1/2 max-xl:left-0 left-6 -translate-y-1/2 max-xl:top-[300px] max-xl:w-[100vw] w-[379px] bg-transparent rounded-xl p-6 text-white z-[9]"
       >
         <div id="facilities-accordion"></div>
+      </div>
+    </div>
+    <!-- Modal hiển thị chi tiết tiện ích -->
+    <div id="facility-modal">
+      <div id="facility-modal-content">
+        <button id="facility-modal-close">
+          <span class="close-x"></span>
+          <span class="close-x"></span>
+        </button>
+        <div
+          style="
+            border-radius: 0.625rem;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            max-height: 548px;
+          "
+        >
+          <img id="facility-modal-img" src="" alt="" />
+        </div>
+        <div
+          id="facility-modal-title"
+          style="color: white; font-size: 2rem; font-family: inherit"
+        ></div>
       </div>
     </div>
     <script src="assets/js/facilitiesData.js"></script>

@@ -1,0 +1,285 @@
+<krpano >
+  <style name="help_ghichu" rotate="0"  zoder="0"
+	   url="%SWFPATH%/plugins/textfield.swf"
+	   align="centertop" edge="bottom"   autowidth="true" autoheight="true" vcenter="true"  
+       background="false" backgroundcolor="0x228B22"
+         enabled="false"
+       css="						color:#ffebd4; 
+									font-family: menufont1;
+									font-size:10px;
+									font-weight:bold;
+									text-align:center; 
+                                     background-image: url(data/module/placehotspot/core/hoala.png);     
+									background-color: #ffffff;
+                                      background-repeat: no-repeat;
+                                     background-position: center;    
+									padding:5px 8px 5px 8px;
+									height:auto;
+									border-radius: 10px;
+									border:solid 1.5px #ffebd4;
+                                    text-shadow: 0px 0px #000000;
+            
+			
+			"
+		css.mobile="			color:#ffebd4; 
+									font-family: menufont1;
+									font-size:8px;
+									font-weight:bold;
+									text-align:center; 
+                                     background-image: url(data/module/placehotspot/core/hoala.png);     
+									background-color: #ffffff;
+                                      background-repeat: no-repeat;
+                                     background-position: center;    
+									padding:8px 15px 8px 25px;
+									height:auto;
+									border-radius: 10px;
+									border:solid 1.5px #ffebd4;
+                                    text-shadow: 1px 1px #000000;"
+		 
+    onhover="tween(css,get(skin_setting.design_text_css_m),0)"
+ 	/>
+    
+     <style name="help_img" rotate="0"  zoder="0" oy="-20" scale=".8"
+	   url="%SWFPATH%/editsoure/habana.png"
+	   align="centertop" edge="bottom"   autowidth="true" autoheight="true" vcenter="true"  
+       background="false" backgroundcolor="0x228B22"
+         enabled="false"
+     
+ 	/>
+    
+    
+    
+    
+    
+	<style name="help_ghichu_x" rotate="0" zoder="0"
+	   url="%SWFPATH%/plugins/textfield.swf"
+	   align="centertop" edge="bottom"   autowidth="true" autoheight="true" vcenter="true"  
+       background="false" backgroundcolor="0x228B22"
+       enabled="false"
+       css="						color:#ffffff; 
+									font-family:menufont1;
+									font-size:11px;
+									text-align:center; 
+										background-color: #0e9096;
+									padding:6px;
+									height:auto;
+									border-radius: 0px;
+									border:solid 0px white;"
+		css.mobile="				color:#ffffff; 
+									font-family:menufont1;
+									font-size:10px;
+									text-align:center; 
+										background-color: #0e9096;
+									padding:5px;
+									height:auto;
+									border-radius: 0px;
+									border:solid 0px white;"
+		 
+    onhover="tween(css,get(skin_setting.design_text_css_m),0)"
+ 	/>
+	
+	  <style name="help_ghichu_v"
+	   url="%SWFPATH%/plugins/textfield.swf"
+	   align="centertop" edge="bottom"   autowidth="true" autoheight="true" vcenter="true" bgborder="1,100 0xFFFFFF 1"  
+       background="true" backgroundcolor="0xFFD700"
+       backgroundalpha="1" padding="4" zoder="-999"
+       roundedge="2"  enabled="false"
+       css="calc:skin_settings.design_text_css "
+			
+
+ 	/>
+	
+  <style name="point" url="%SWFPATH%/module/placehotspot/core/hs/point.png" show="true" width="50" height="prop" scale="0.15" edge="bottom" enable="false" enabled="false" />
+	
+  <style name="hs_trait" url="%SWFPATH%/module/placehotspot/core/hs/trait.png" oy="0" show="true" width="drop" height="90" scale="1.5" edge="bottomleft" zoder="-1000" rotate="0"  enabled="true" alpha="0" onloaded="callout()" callout="if((ath LT calc(view.hlookat+30)) AND (ath GT calc(view.hlookat-30)),tween(alpha,1,.5);tween(height,get(n_height),.3,easeoutsine,callout()); ,  tween(alpha,0,.2);tween(height,0,.3,easeoutsine,callout()); );"	  />
+
+
+<style name="hs_trait1" url="%SWFPATH%/module/placehotspot/core/hs/trait1.png" oy="0" show="true" width="drop" height="90" scale="1.5" edge="bottomleft" zoder="-1000" rotate="0"  enabled="true" alpha="0" onloaded="callout()" callout="if((ath LT calc(view.hlookat+30)) AND (ath GT calc(view.hlookat-30)),tween(alpha,1,.5);tween(height,get(n_height),.3,easeoutsine,callout()); ,  tween(alpha,0,.2);tween(height,0,.3,easeoutsine,callout()); );"	  />
+
+
+
+	
+  <action name="create_hs_place">
+	  for(set(i,0),i LT %1.tienich.count, inc(i),
+    txtadd(temps,p,get(i));
+    txtadd(temp_hs1,get(temps),x);
+    
+    if(%1.tienich[get(i)].scence,
+    create_hs(get(%1.tienich[get(i)].scence),get(%1.tienich[get(i)].style),get(%1.tienich[get(i)].ath),get(%1.tienich[get(i)].atv),0);
+    
+    add_hs(get(temp_hs1),get(%1.tienich[get(i)].ath),get(%1.tienich[get(i)].atv),get(%1.tienich[get(i)].t_height),-40);
+	  add_tien_ich_n(get(temp_hs1),get(%1.tienich[get(i)].title),get(%1.tienich[get(i)].t_edge),get(%1.tienich[get(i)].t_ox));,
+	
+    add_hs(get(temp_hs1),get(%1.tienich[get(i)].ath),get(%1.tienich[get(i)].atv),get(%1.tienich[get(i)].t_height),10);
+    add_tien_ich_n(get(temp_hs1),get(%1.tienich[get(i)].title),get(%1.tienich[get(i)].t_edge),get(%1.tienich[get(i)].t_ox)); 
+    
+    );
+    
+    
+    
+    );
+	for(set(i,0),i LT %1.tienich.count, inc(i),txtadd(temps,p,get(i));
+    txtadd(temp_hs1,get(temps),x);
+    
+    if(%1.tienich[get(i)].colors,
+    create_hs(get(%1.tienich[get(i)].scence),get(%1.tienich[get(i)].style),get(%1.tienich[get(i)].ath),get(%1.tienich[get(i)].atv),0);
+    
+    add_hs(get(temp_hs1),get(%1.tienich[get(i)].ath),get(%1.tienich[get(i)].atv),get(%1.tienich[get(i)].t_height),-40);
+	  add_tien_ich(get(temp_hs1),get(%1.tienich[get(i)].title),get(%1.tienich[get(i)].t_edge),get(%1.tienich[get(i)].t_ox));));
+	
+	</action>
+	
+	
+	
+  <action name="add_hs">addhotspot(%1);
+    copy(hs,hotspot[%1]);
+    hs.loadstyle(hs_trait);
+    set(hs.ath,%2);
+    set(hs.atv,%3);
+    set(hs.zoder,-1);
+    set(hs.showh,1);
+	set(edge,bottom);
+    if(%4,set(hs.height,%4);
+	 set(hs.n_height,%4););  
+    if(%5,set(hs.oy,-30));
+	set(hs.hstype,callout);  
+	</action>
+	<action name="add_hs_1">addhotspot(%1);
+    copy(hs,hotspot[%1]);
+    hs.loadstyle(hs_trait1);
+    set(hs.ath,%2);
+    set(hs.atv,%3);
+    set(hs.zoder,-1);
+    set(hs.showh,1);
+	set(edge,bottom);
+    if(%4,set(hs.height,%4);
+	 set(hs.n_height,%4););  
+    if(%5,set(hs.oy,-30));
+	set(hs.hstype,callout);  
+	</action>
+	
+ 	
+  <action name="add_hs_y">addhotspot(%1);
+    copy(hs,hotspot[%1]);
+    hs.loadstyle(hs_trait1);
+    set(hs.ath,%2);
+    set(hs.atv,%3);
+    set(hs.zoder,-1);
+    set(hs.showh,1);
+	set(edge,bottom);
+    if(%4,set(hs.height,%4);
+	 set(hs.n_height,%4););  
+    if(%5,set(hs.oy,-30));
+	set(hs.hstype,callout);  
+	</action>
+	
+ 
+ 	
+  <action name="add_hs_nk">
+	  addhotspot(%1);
+    copy(hsa,hotspot[%1]);
+    hsa.loadstyle(hs_trait1);
+    set(hsa.ath,%2);
+    set(hsa.atv,%3);
+    set(hsa.zoder,-1);
+    set(hsa.showh,1);
+	set(edge,bottom);
+	  set(hsa.height,%4);
+    
+	 set(hsa.n_height,%4); 
+    if(%5,set(hs.oy,0));
+	
+	
+	  
+	  
+	</action>
+	
+	
+  <action name="add_tien_ich">
+	  addlayer(%1);
+    copy(ti,layer[%1]);
+  ti.loadstyle(help_ghichu_v);
+    set(ti.parent,hotspot[%1]);
+    set(ti.html,%2);
+    set(ti.edge,%3);
+    set(ti.zoder,-1);
+    set(ti.ox,%4);</action>
+	
+	<action name="add_tien_ich_n">
+	  addlayer(%1);
+    copy(ti,layer[%1]);
+  ti.loadstyle(help_ghichu);
+    set(ti.parent,hotspot[%1]);
+    set(ti.html,%2);
+    set(ti.edge,%3);
+    set(ti.zoder,-1);
+    set(ti.ox,%4);</action>
+	
+		<action name="add_tien_ich_nx">
+	  addlayer(%1);
+    copy(ti,layer[%1]);
+  ti.loadstyle(help_img);
+    set(ti.parent,hotspot[%1]);
+    set(ti.html,%2);
+    set(ti.edge,%3);
+    set(ti.zoder,-1);
+    set(ti.ox,%4);
+    txtadd(urlx,%SWFPATH%/editsoure/,%5);        
+    set(ti.url,get(urlx));
+    
+    
+    </action>
+	
+	
+	<action name="add_tien_ich_x">
+	  addlayer(%1);
+    copy(ti,layer[%1]);
+  ti.loadstyle(help_ghichu_x);
+    set(ti.parent,hotspot[%1]);
+    set(ti.html,%2);
+    set(ti.edge,%3);
+    set(ti.zoder,-1);
+    set(ti.ox,%4);</action>
+	
+	
+  <action name="add_point">add(p_name,'a',get(i));
+    addlayer(get(p_name));
+    copy(pn,layer[get(p_name)]);
+    pn.loadstyle(point);
+    set(pn.parent,hotspot[get(%1.tienich[get(i)].name)]);
+    set(pn.edge,center);
+    set(pn.ox,0);</action>
+	
+ <action name="removehs">
+		
+	
+	for(set(i,0),i LT hotspot.count, inc(i),
+	if(hotspot[get(i)].showh,tween(hotspot[get(i)].visible,0,0););	
+	 
+		);
+	 
+	tween(hotspot[get(name)].alpha,1);
+	tween(hotspot[hs_ao].visible,1,0);
+	
+	
+	</action>
+
+<action name="add_hs_again">
+	
+	for(set(i,0),i LT hotspot.count, inc(i),
+		if(hotspot[get(i)].showh,tween(hotspot[get(i)].visible,1,0););	
+	 
+		);
+	 
+		
+		
+	</action>
+<action name="count_callout">
+	
+	for(set(i,0),i LT hotspot.count, inc(i),
+		tween(hotspot[get(i)].alpha,1);
+	 
+		);
+		
+	</action>
+</krpano>

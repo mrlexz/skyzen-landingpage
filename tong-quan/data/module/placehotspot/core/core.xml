@@ -93,10 +93,7 @@
 	
   <style name="hs_trait" url="%SWFPATH%/module/placehotspot/core/hs/trait.png" oy="0" show="true" width="drop" height="90" scale="1.5" edge="bottomleft" zoder="-1000" rotate="0"  enabled="true" alpha="0" onloaded="callout()" callout="if((ath LT calc(view.hlookat+30)) AND (ath GT calc(view.hlookat-30)),tween(alpha,1,.5);tween(height,get(n_height),.3,easeoutsine,callout()); ,  tween(alpha,0,.2);tween(height,0,.3,easeoutsine,callout()); );"	  />
 
-
-<style name="hs_trait1" url="%SWFPATH%/module/placehotspot/core/hs/trait1.png" oy="0" show="true" width="drop" height="90" scale="1.5" edge="bottomleft" zoder="-1000" rotate="0"  enabled="true" alpha="0" onloaded="callout()" callout="if((ath LT calc(view.hlookat+30)) AND (ath GT calc(view.hlookat-30)),tween(alpha,1,.5);tween(height,get(n_height),.3,easeoutsine,callout()); ,  tween(alpha,0,.2);tween(height,0,.3,easeoutsine,callout()); );"	  />
-
-
+<style name="hs_trait1" url="%SWFPATH%/module/placehotspot/core/hs/trait.png" oy="0" show="true" width="drop" height="90" scale="1.5" edge="bottomleft" zoder="-1000" rotate="0"  enabled="true" alpha="1" 	  />
 
 	
   <action name="create_hs_place">

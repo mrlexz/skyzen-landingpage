@@ -4,20 +4,20 @@
     <plan_settings  pin_cod="" 
  					start_open_plan="true" 
  					start_open_plan_mobila="false" 
-					point_url_1="an-01.png" 
+					point_url_1="an-03.png" 
 					point_url_2="gray.png" 
 					point_url_3="an-03.png" 
 					pointV_url_1="gl_r.png" 
 					pointV_url_2="gl.png" 
 					point_current="true" 
-					point_scale="2.1" 
-					radar_scale="1" 
+					point_scale="10" 
+					radar_scale="5" 
 					compass_enabled="false" 
 					start_open_compass="false" 
 					compass_on_plan="false" 
 					title_spot="true" 
 					title_V="true" 
-					keep_viev="false" 
+					keep_viev="true" 
 					design_bgcolor_cb="6513507" 
 					click_spot_close_plan="false" 
 					click_V_close_plan="false" 
@@ -32,30 +32,41 @@
 					open_plan_resetting_size="false" 
  				/>
 
-  
-	<layer  name="plansm_1"  style="plan_layer"  name_plan="plansm_1"  plan_ur="%FIRSTXML%/floorplan_SM/editor/picture/1_plan.jpg"  start_scene="0"  compas_flpl="0"  />
-    <layer  name="plansm_2"  style="plan_layer"  name_plan="plansm_6"  plan_ur="ti5.png"  start_scene="scene_s5!coworking"  compas_flpl="0"  />
+    <layer  name="plansm_1"  style="plan_layer"  name_plan="plansm_1"  plan_ur="t1.jpg"  start_scene="scene_s1!tongthe!ngay"  compas_flpl="0"  />
+    <layer  name="plansm_2"  style="plan_layer"  name_plan="plansm_6"  plan_ur="t5.png"  start_scene="scene_s5!coworking"  compas_flpl="0"  />
+    <layer  name="plansm_3"  style="plan_layer"  name_plan="plansm_3"  plan_ur="tt.png"  start_scene="scene_s17!santhuong"  compas_flpl="0"  />
 
-    <layer  name="pointfr_1"  style="point_fpr"  erscena="scene_s5!coworking"  x="1373"  y="1104"  scale="2.1"  heading2="-119.01"  nam_plan="plansm_2"  tit_scena="Phòng Coworking"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_2"  style="point_fpr"  erscena="scene_s13!livestream"  x="1288"  y="1018"  scale="2.1"  heading2="265.37"  nam_plan="plansm_2"  tit_scena="Phòng Livestream"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_3"  style="point_fpr"  erscena="scene_s6!golf"  x="1300"  y="899"  scale="2.1"  heading2="194.71"  nam_plan="plansm_2"  tit_scena="Phòng Golf 3D"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_4"  style="point_fpr"  erscena="scene_s9!karaoke"  x="1334"  y="716"  scale="2.1"  heading2="221.15"  nam_plan="plansm_2"  tit_scena="Phòng Karaoke"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_5"  style="point_fpr"  erscena="scene_s12!kitchenroom"  x="1334"  y="545"  scale="2.1"  heading2="324.74"  nam_plan="plansm_2"  tit_scena="Phòng Tiệc"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_6"  style="point_fpr"  erscena="scene_s10!khutreem!1"  x="1108"  y="524"  scale="2.1"  heading2="310.79"  nam_plan="plansm_2"  tit_scena="Kid's Wonder"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_7"  style="point_fpr"  erscena="scene_s11!khutreem!2"  x="1155"  y="601"  scale="2.1"  heading2="-175.8"  nam_plan="plansm_2"  tit_scena="Kid's Wonder"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_8"  style="point_fpr"  erscena="scene_s7!gym!1"  x="699"  y="844"  scale="2.1"  heading2="2.63"  nam_plan="plansm_2"  tit_scena="Phòng Gym"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_9"  style="point_fpr"  erscena="scene_s8!gym!2"  x="451"  y="848"  scale="2.1"  heading2="1.58"  nam_plan="plansm_2"  tit_scena="Phòng Gym"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_10"  style="point_fpr"  erscena="scene_s15!yoga!1"  x="259"  y="976"  scale="2.1"  heading2="196.92"  nam_plan="plansm_2"  tit_scena="Phòng Yoga"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-    <layer  name="pointfr_11"  style="point_fpr"  erscena="scene_s16!yoga!2"  x="263"  y="1091"  scale="2.1"  heading2="-178.31"  nam_plan="plansm_2"  tit_scena="Phòng Yoga"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-	<layer  name="pointfr_12"  style="point_fpr"  erscena="scene_s14!sauna"  x="434"  y="1023"  scale="2.1"  heading2="139.28"  nam_plan="plansm_2"  tit_scena="Phòng Sauna"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-01.png"  icon_1="an-01.png"  icon_2="gray.png"  icon_3="an-03.png"  />
-	<!-- no points  --> 
+    <layer  name="pointfr_1"  style="point_fpr"  erscena="scene_s5!coworking"  x="4504"  y="2359"  scale="8"  heading2="263.98"  nam_plan="plansm_2"  tit_scena="Phòng Coworking"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_2"  style="point_fpr"  erscena="scene_s13!livestream"  x="4150"  y="2156"  scale="8"  heading2="265.37"  nam_plan="plansm_2"  tit_scena="Phòng Livestream"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_3"  style="point_fpr"  erscena="scene_s6!golf"  x="4361"  y="1685"  scale="8"  heading2="7.91"  nam_plan="plansm_2"  tit_scena="Phòng Golf 3D"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_4"  style="point_fpr"  erscena="scene_s9!karaoke"  x="4360"  y="1021"  scale="8"  heading2="224.06"  nam_plan="plansm_2"  tit_scena="Phòng Karaoke"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_5"  style="point_fpr"  erscena="scene_s12!kitchenroom"  x="4278"  y="299"  scale="8"  heading2="324.74"  nam_plan="plansm_2"  tit_scena="Phòng Tiệc"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_6"  style="point_fpr"  erscena="scene_s10!khutreem!1"  x="3418"  y="254"  scale="8"  heading2="287.98"  nam_plan="plansm_2"  tit_scena="Kid's Wonder"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_7"  style="point_fpr"  erscena="scene_s11!khutreem!2"  x="3630"  y="566"  scale="8"  heading2="170.43"  nam_plan="plansm_2"  tit_scena="Kid's Wonder"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_8"  style="point_fpr"  erscena="scene_s7!gym!1"  x="2440"  y="1477"  scale="8"  heading2="357.62"  nam_plan="plansm_2"  tit_scena="Phòng Gym"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_9"  style="point_fpr"  erscena="scene_s8!gym!2"  x="1599"  y="1474"  scale="8"  heading2="1.58"  nam_plan="plansm_2"  tit_scena="Phòng Gym"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_10"  style="point_fpr"  erscena="scene_s15!yoga!1"  x="482"  y="2348"  scale="8"  heading2="196.92"  nam_plan="plansm_2"  tit_scena="Phòng Yoga"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_11"  style="point_fpr"  erscena="scene_s16!yoga!2"  x="486"  y="1982"  scale="8"  heading2="4.39"  nam_plan="plansm_2"  tit_scena="Phòng Yoga"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_12"  style="point_fpr"  erscena="scene_s14!sauna"  x="1032"  y="2208"  scale="8"  heading2="135.86"  nam_plan="plansm_2"  tit_scena="Phòng Sauna"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_13"  style="point_fpr"  erscena="scene_s1!tongthe!ngay"  x="446"  y="378"  scale="8"  heading2="-5.25"  nam_plan="plansm_1"  tit_scena="Toàn Cảnh"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_14"  style="point_fpr"  erscena="scene_s19!tang1!congchinh"  x="492"  y="1847"  scale="8"  heading2="208.75"  nam_plan="plansm_1"  tit_scena="Cổng Chính"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_15"  style="point_fpr"  erscena="scene_s4!tongthe!tang1!1"  x="1476"  y="2460"  scale="8"  heading2="114.07"  nam_plan="plansm_1"  tit_scena="Công Viên"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_16"  style="point_fpr"  erscena="scene_s3!tongthe!tang1!2"  x="3860"  y="1931"  scale="8"  heading2="65.44"  nam_plan="plansm_1"  tit_scena="Khu Giao Nhận Hàng"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_17"  style="point_fpr"  erscena="scene_s17!santhuong"  x="1646"  y="712"  scale="8"  heading2="-0.12"  nam_plan="plansm_3"  tit_scena="Toàn Cảnh Dự Án Kita Capital"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_18"  style="point_fpr"  erscena="scene_s24!tt!hoboi"  x="856"  y="1471"  scale="8"  heading2="94.92"  nam_plan="plansm_3"  tit_scena="Toàn Cảnh Dự Án Kita Capital"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_19"  style="point_fpr"  erscena="scene_s23!tt!hoboitreem"  x="380"  y="2290"  scale="8"  heading2="91.2"  nam_plan="plansm_3"  tit_scena="Hồ Bơi Trẻ Em"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_20"  style="point_fpr"  erscena="scene_s25!tt!bbq"  x="4199"  y="2317"  scale="8"  heading2="260.55"  nam_plan="plansm_3"  tit_scena="Khu BBQ"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_21"  style="point_fpr"  erscena="scene_s22!tt!chieuphim"  x="2762"  y="2489"  scale="8"  heading2="82.23"  nam_plan="plansm_3"  tit_scena="Khu Chiếu Phim Ngoài Trời"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+    <layer  name="pointfr_22"  style="point_fpr"  erscena="scene_s18!tang5"  x="2276"  y="156"  scale="8"  heading2="-0.33"  nam_plan="plansm_2"  tit_scena="Toàn Cảnh Dự Án Kita Capital"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+	 <layer  name="pointfr_23"  style="point_fpr"  erscena="scene_s2!tongthe!dem"  x="455"  y="2473"  scale="8"  heading2="302.38"  nam_plan="plansm_1"  tit_scena="Toàn Cảnh Dự Án Kita Capital"  url="%FIRSTXML%/floorplan_SM/iconPoint/an-03.png"  icon_1="an-03.png"  icon_2="gray.png"  icon_3="an-03.png"  />
+
 	<!-- no viewpoints  --> 
 
-   <layer  name="undefined"  type="undefined"  keep="undefined"  enabled="true"  alpha="0"  align="undefined"  x="undefined"  y="undefined"  width="NaN"  height="NaN"  maskchildren="undefined"  zorder="undefined" 
- 			ox="undefined"  oy="undefined"  bgcolor="undefined"  bgalpha="undefined"  bgcapture="undefined"  bgborder="undefined"  bgshadow="undefined"  bgroundedge="undefined" 
+   <layer  name="top_container_plan"  type="container"  keep="true"  enabled="true"  alpha="0"  align="lefttop"  x="30"  y="10"  width="406"  height="27"  maskchildren="false"  zorder="50" 
+ 			ox="0"  oy="7.47"  bgcolor="32912"  bgalpha="0.56"  bgcapture="true"  bgborder="0,0,0,0 0xE7FF00 1.00"  bgshadow="0 -101 152 0 0x0B0B0B 0.34"  bgroundedge="2 10 10 2" 
  			onhover=""  onout=""  ondown="undefined"  />
 
-   <layer  name="container_plan1"  type="container"  keep="true"  enabled="true"  alpha="0"  align="lefttop"  x="30"  y="15"  width="374"  height="345"  maskchildren="true"  zorder="49" 
+   <layer  name="container_plan1"  type="container"  keep="true"  enabled="true"  alpha="0"  align="lefttop"  x="30"  y="40"  width="406"  height="228"  maskchildren="true"  zorder="49" 
  			ox="1.52"  oy="15.27"  bgcolor="0"  bgalpha="0.1"  bgcapture="true"  bgborder="0,0,0,0 0xE6FF00 0.00"  bgshadow="2 5 0 -118 0x1D1D1D 0.49"  bgroundedge="0 0 0 0" 
  			onhover="set(maschtab,true); "  onout="set(maschtab,false);"  ondown="0"  />
 

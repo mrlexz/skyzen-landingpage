@@ -62,7 +62,7 @@
 		/>	
 	<!-- radar  floorplan_SM/editor/style_Flpl.xml - layer name="radarEFR"  add(layer[radarEFR].heading, 45);  -->
 	<layer name="radarEFR" keep="true"  url.html5="%FIRSTXML%/plugins/radar.js" align="lefttop" edge="center" zorder="51" parent="image_floorplan_SM"  
-	       scale="get:plan_settings.radar_scale" fillalpha="0.5" fillcolor="0x7F5F3F" linewidth="1.0" linecolor="0xE0E0A0" linealpha="0.5" alpha="1" enabled="true"
+	       scale="get:plan_settings.radar_scale" fillalpha="0.5" fillcolor="0x008090" linewidth="1.0" linecolor="0xE0E0A0" linealpha="0.5" alpha="1" enabled="true"
 		   heading="0" headingoffset="180" editmode="true"   
 		/>
 	<!-- Картинка активной точки -->

@@ -9,6 +9,9 @@ import {
   createSvgT6_13WithActivePaths,
 } from '../data/skyZenSvgAnimation.js';
 import { floorPlanList } from './floorPlanList.js';
+
+const emptyHouseImg = ['assets/images/house/house-empty.png'];
+
 const houseImg = [
   {
     name: 'Officetel',
@@ -169,12 +172,8 @@ const renderModal = (data, hoverInfo, activePathIds = [], floor = '') => {
   window.renderModal({
     images:
       window.innerWidth < 768
-        ? houseImgUrl?.imgMobile || [
-            'https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2025/06/Anh-3.png',
-          ]
-        : houseImgUrl?.img || [
-            'https://img.iproperty.com.my/angel/750x1000-fit/wp-content/uploads/sites/7/2025/06/Anh-3.png',
-          ],
+        ? (houseImgUrl?.imgMobile || emptyHouseImg)
+        : (houseImgUrl?.img || emptyHouseImg),
     name: data.type || 'Mặt bằng',
     area: data.ll || data.area || '',
     area_wall: data.tt || '',
